@@ -13,9 +13,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     @include_once(get_social_skin_path().'/social_register.skin.php');
     ?>
 
+    <div class="alert alert-info" role="alert">
+	     <strong><i class="fa fa-exclamation-circle fa-lg"></i> 회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</strong>
+    </div>
+
     <form  name="fregister" id="fregister" action="<?php echo $register_action_url ?>" onsubmit="return fregister_submit(this);" method="POST" autocomplete="off">
 
-    <p>회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
     <div id="fregister_chkall">
         <label for="chk_all">전체선택</label>
         <input type="checkbox" name="chk_all"  value="1"  id="chk_all">
@@ -86,7 +89,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 
         return true;
     }
-    
+
     jQuery(function($){
         // 모두선택
         $("input[name=chk_all]").click(function() {
