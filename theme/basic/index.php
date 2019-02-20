@@ -10,7 +10,7 @@ if (G5_IS_MOBILE) {
 include_once(G5_THEME_PATH.'/head.php');
 ?>
 <div>
-    <a href="http://hmcoder.kr"> <img src="img/main_ad_dark.png" width=100%> </a>
+    <a href="http://hmcoder.kr" target="_blank"> <img src="img/main_ad_dark.png" width=100%> </a>
     <br>
     <br>
 </div>
