@@ -89,8 +89,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 </script>
 
             </fieldset>
-                
-            <?php echo popular('theme/basic'); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
+            
         </div>
 
     </div>
