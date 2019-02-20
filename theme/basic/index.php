@@ -9,6 +9,11 @@ if (G5_IS_MOBILE) {
 
 include_once(G5_THEME_PATH.'/head.php');
 ?>
+<div>
+    <a href="http://hmcoder.kr"> <img src="img/main_ad_dark.png" width=100%> </a>
+    <br>
+    <br>
+</div>
 
 <h2 class="sound_only">최신글</h2>
 
