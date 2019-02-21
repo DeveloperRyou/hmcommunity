@@ -25,7 +25,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 <input type="hidden" name="mb_nick" value="<?php echo get_text($member['mb_nick']) ?>">
 <?php }  ?>
  <div id="register_form"  class="form_01">
-    <div>
+    <div class="panel panel-default">
         <h2>사이트 이용정보 입력</h2>
         <ul>
             <li>
@@ -44,7 +44,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         </ul>
     </div>
 
-    <div class="tbl_frm01 tbl_wrap">
+    <div class="panel panel-default">
         <h2>개인정보 입력</h2>
 
         <ul>
@@ -153,7 +153,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         </ul>
     </div>
 
-    <div class="tbl_frm01 tbl_wrap">
+    <div class="panel panel-default">
         <h2>기타 개인설정</h2>
         <ul>
             <?php if ($config['cf_use_signature']) {  ?>

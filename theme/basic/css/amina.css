@@ -275,7 +275,7 @@ blockquote { font-size: 12px; margin:0px 0px 20px; }
 .is-pc .ko .btn-xs,
 .is-pc .ko .btn-sm { font-family:dotum, sans-serif; }
 
-/* Panel : Accordions *
+/* Panel : Accordions */
 .panel { box-shadow: none; -webkit-box-shadow: none; border-radius: 0px; }
 .panel-group .panel { border-radius: 0px; }
 .panel .panel-heading { border-radius: 0px; }
