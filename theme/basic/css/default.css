@@ -174,7 +174,7 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
 #wrapper{} /* 게시물이 없습니다. 회원정보 와 정보찾기 사이에 슬래시*/
 #container_wr:after {display:block;visibility:hidden;clear:both;content:""}
 #container_wr {z-index:5;margin:0 auto;height:100%;zoom:1}
-#aside {float:right;width:305px;padding:0;background: #e7ebf3;height: 100%;border: 1px solid #adbfd2;margin:20px 0 20px 20px}
+#aside {float:right;width:262px;padding:0;background: #fff;height: 100%;border-top: 0px solid #adbfd2;margin:20px 0 20px 20px}
 
 #container {z-index:4;position:relative;float:left;min-height:500px;height:auto !important;margin:20px  0;height:500px;font-size:1em;width:875px;zoom:1}
 #container:after {display:block;visibility:hidden;clear:both;content:""}
@@ -184,6 +184,7 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
 .lt_wr{width:49%;}
 .lt_wr:nth-child(2n+1){clear:both}
 .latest_wr:after {display:block;visibility:hidden;clear:both;content:"";}
+
 /* 하단 레이아웃 */
 #ft {border-top:1px solid #d5d5d5;background:#fff;padding-bottom:30px;margin:0 auto;text-align:center}
 #ft h1 {position:absolute;font-size:0;line-height:0;overflow:hidden}
