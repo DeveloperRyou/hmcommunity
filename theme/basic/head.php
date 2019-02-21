@@ -230,6 +230,13 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
       </div>
     </div>
   <?php } ?>
+  <!--
+  <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>">
+    <?php echo get_head_title($g5['title']); ?>
+  </span></h2>
+  -->
+<?php } ?>
+
 <!-- 타이틀 끝 -->
 
 <!-- 콘텐츠 시작  -->
@@ -237,8 +244,3 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <div id="container_wr">
 
     <div id="container">
-      <!--
-      <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>">
-        <?php echo get_head_title($g5['title']); ?>
-      </span></h2><?php } ?>
-      -->

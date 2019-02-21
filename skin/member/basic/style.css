@@ -264,5 +264,5 @@ box-shadow: 0 1px 3px #eee;
 
 /*아미나 빌더 참조 부분*/
 #container {float: none;margin: auto;}
-.alert {padding: 15px;margin-bottom: 20px;border: 1px solid transparent;}
+.alert {padding: 15px;margin-bottom: 20px;margin-top: 20px;border: 1px solid transparent;}
 .alert-info {color: #31708f; background-color: #d9edf7; border-color: #bce8f1;}

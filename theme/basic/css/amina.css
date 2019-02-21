@@ -21,12 +21,11 @@ blockquote { font-size: 12px; margin:0px 0px 20px; }
 /********************************************************
 ■ Layout : 레이아웃
 ********************************************************
-.wrapper { margin:0 auto; background:#fff;  }
-.at-container { margin:0px auto; padding:0px; }
-.is-pc .at-body { min-height:600px; }
-.at-body .at-container { padding:0px 15px; overflow:hidden; }
-.boxed.wrapper .at-body .at-container { padding:0px 20px; }
-.at-content { position:relative; padding:20px 0px; }
+#wrapper { margin:0px auto; padding:0px; }/*
+.is-pc .at-body { min-height:600px; }*
+#wrapper #container_wr { padding:0px 15px; overflow:hidden; }/*
+.boxed.wrapper .at-body .at-container { padding:0px 20px; }*
+#container { position:relative; padding:20px 0px; }/*
 .at-row { margin-left:-15px; margin-right:-15px; }
 .at-col { position:relative; padding-left:15px; padding-right:15px; padding-top:20px; padding-bottom:20px; }
 .nav-fixed .at-menu { width:100%; z-index:10; left:0px; -webkit-transition: height .4s ease, opacity .3s ease; -o-transition: height .4s ease, opacity .3s ease; transition: height .4s ease, opacity .3s ease; }
@@ -206,7 +205,7 @@ blockquote { font-size: 12px; margin:0px 0px 20px; }
 /********************************************************
 ■ Page Title : 페이지 타이틀 및 설명글
 ********************************************************/
-.at-title { height:80px; position:relative; color:#000; background-color: #fafafa; border-bottom:1px solid #dfdfdf; }
+.at-title { min-width: 1200px; height:80px; position:relative; color:#000; background-color: #fafafa; border-bottom:1px solid #dfdfdf; }
 .at-title .at-container { height:100%; position:relative; }
 .at-title .page-title { font-size:24px; position:absolute; left:20px; bottom:15px; z-index:1; }
 .at-title .page-desc { color:#888; position:absolute; right:20px; bottom:10px; z-index:1; }
