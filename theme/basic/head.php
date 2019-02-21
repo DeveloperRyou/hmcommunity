@@ -207,14 +207,38 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
     </script>
 </div>
-<!-- } 상단 끝 -->
-
+<!--  상단 끝 -->
 
 <hr>
 
-<!-- 콘텐츠 시작 { -->
+<!-- 타이틀 시작-->
+<?php if (!defined("_INDEX_")) { ?>
+  <?php if($g5['title']) { // 페이지 타이틀 ?>
+    <div class="at-title">
+      <div class="at-container">
+        <div class="page-title en">
+          <strong<?php echo ($bo_table) ? " class=\"cursor\" onclick=\"go_page('".G5_BBS_URL."/board.php?bo_table=".$bo_table."');\"" : "";?>>
+            <?php echo $g5['title'];?>
+          </strong>
+        </div>
+        <?php if($page_desc) { // 페이지 설명글 ?>
+          <div class="page-desc hidden-xs">
+            <?php echo $g5['title'];?>
+          </div>
+        <?php } ?>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  <?php } ?>
+<!-- 타이틀 끝 -->
+
+<!-- 콘텐츠 시작  -->
 <div id="wrapper">
     <div id="container_wr">
 
     <div id="container">
-        <?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php } ?>
+      <!--
+      <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>">
+        <?php echo get_head_title($g5['title']); ?>
+      </span></h2><?php } ?>
+      -->

@@ -13,6 +13,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     @include_once(get_social_skin_path().'/social_register.skin.php');
     ?>
 
+
     <div class="alert alert-info" role="alert">
 	     <strong><i class="fa fa-exclamation-circle fa-lg"></i> 회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</strong>
     </div>
