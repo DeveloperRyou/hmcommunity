@@ -243,4 +243,4 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <div id="wrapper">
     <div id="container_wr">
 
-    <div id="container">
+    <div id="container"<?php if($_POST[side_hidden]) echo "style=\" float: none; margin: 20px auto;\""; ?>>
