@@ -8,18 +8,21 @@ if (G5_IS_MOBILE) {
 ?>
 
     </div>
-    <div id="aside">
-        <?php
-        //공지사항
-        // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-        // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-        // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-        echo latest('theme/notice', 'notice', 4, 13);
-        ?>
-        <?php echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-        <?php echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-        <?php echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-    </div>
+
+    <?php
+    if(!$_POST["side_hidden"]){
+        echo "<div id=\"aside\">";
+            //공지사항
+            // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
+            // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
+            // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
+            echo latest('theme/notice', 'notice', 4, 13);
+            echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
+            echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
+            echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
+        echo "</div>";
+    }
+    ?>
 </div>
 
 </div>
@@ -40,10 +43,10 @@ if (G5_IS_MOBILE) {
         <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo.png" alt="<?php echo G5_VERSION ?>"></div>
         <div id="ft_copy">Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.</div>
     </div>
-    
+
     <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
         <script>
-        
+
         $(function() {
             $("#top_btn").on("click", function() {
                 $("html, body").animate({scrollTop:0}, '500');
