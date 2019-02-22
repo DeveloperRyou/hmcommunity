@@ -7,8 +7,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
 
 <!-- 로그인 후 아웃로그인 시작 { -->
 <section id="ol_after" class="ol">
+    <h3 class="log_title"><b>Profile</b></h3>
     <header id="ol_after_hd">
-        <h2>나의 회원정보</h2>
         <span class="profile_img">
             <?php echo get_member_profile_img($member['mb_id']); ?>
             <a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=register_form.php" id="ol_after_info" title="정보수정"><i class="fa fa-cog" aria-hidden="true"></i><span class="sound_only">정보수정</span></a>
