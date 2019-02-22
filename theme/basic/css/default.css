@@ -51,7 +51,7 @@ border: 1px solid #558ab7 !important;
 #tnb ul,
 #gnb .gnb_wrap,
 #container_wr,
-#ft_wr{width:1200px}
+#ft_wr{width:1300px}
 
 /* 팝업레이어 */
 #hd_pop {z-index:1000;position:relative;margin:0 auto;height:0}

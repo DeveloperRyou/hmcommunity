@@ -244,7 +244,6 @@ function captcha_html($class="captcha")
     //$html .= "\n".'<script>var g5_captcha_path = "'.G5_CAPTCHA_PATH.'";</script>';
     $html .= "\n".'<script src="'.G5_CAPTCHA_URL.'/kcaptcha.js"></script>';
     $html .= "\n".'<fieldset id="captcha" class="'.$class.'">';
-    $html .= "\n".'<legend><label for="captcha_key">자동등록방지</label></legend>';
     if (is_mobile()) $html .= '<audio id="captcha_audio" controls></audio>';
     //$html .= "\n".'<img src="#" alt="" id="captcha_img">';
     $html .= "\n".'<img src="'.G5_CAPTCHA_URL.'/img/dot.gif" alt="" id="captcha_img">';

@@ -101,6 +101,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
       </div>
     <?php } ?>
 
+    <!--닉네임 DB 수정 개발 필요-->
     <?php if ($req_nick) {  ?>
       <div class="form-group has-feedback text-gap">
         <label class="col-sm-2 control-label" for="reg_mb_nick"><b>닉네임</b><strong class="sound_only">필수</strong></label>
