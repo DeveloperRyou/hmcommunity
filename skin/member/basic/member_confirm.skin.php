@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <!-- 회원 비밀번호 확인 시작 { -->
-<div id="mb_confirm" class="mbskin">
+<div id="mb_confirm" class="mbskin" style="margin-bottom: 100px;">
     <h1><?php echo $g5['title'] ?></h1>
 
     <p>
