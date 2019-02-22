@@ -112,11 +112,11 @@ box-shadow: 0 1px 3px #eee;
 #fregister h2 {text-align:left;padding:15px 20px;border-bottom:1px solid #dbdbdb;background:#f8f8f8}
 #fregister textarea {display:block;padding:20px;width:100%;height:150px;background:#fff;border:0;line-height:1.6em}
 #fregister .fregister_agree {position:absolute;top:0;right:0;;padding:15px}
-#fregister_private div{padding:20px;background:#fff}
-#fregister_private table{width:100%;border-collapse:collapse}
-#fregister_private table caption {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#fregister_private table  th{background:#646982;width:33.33%;color:#fff;padding:10px;border:1px solid #555971}
-#fregister_private table  td{border:1px solid #ddd;padding:10px;}
+/*#fregister_private div{padding:20px;background:#fff}*/
+#fregister_private .table{width:100%;border-collapse:collapse;font-size:12px}
+#fregister_private .table caption {position:absolute;font-size:0;line-height:0;overflow:hidden}
+#fregister_private .table  th{vertical-align:middle; width: 33.33%}
+#fregister_private .table  td{vertical-align:middle; width: 33.33%}
 #fregister .btn_confirm{text-align:center;}
 #fregister .btn_confirm .btn_submit{height:50px;padding:0 40px;font-weight:bold;font-size:1.083em}
 
