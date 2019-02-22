@@ -240,7 +240,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <!-- 타이틀 끝 -->
 
 <!-- 콘텐츠 시작  -->
-<div id="wrapper">
+<div id="wrapper" class="ko">
     <div id="container_wr">
 
     <div id="container"<?php if($_POST[side_hidden]) echo "style=\" float: none; margin: 20px auto;\""; ?>>
