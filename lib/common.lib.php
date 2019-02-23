@@ -168,7 +168,7 @@ function alert($msg='', $url='', $error=true, $post=false)
 function alert_close($msg, $error=true)
 {
     global $g5;
-    
+
     $msg = strip_tags($msg, '<br>');
 
     $header = '';
@@ -579,6 +579,7 @@ function html_purifier($html)
     }
     $config->set('URI.SafeIframeRegexp','%^(https?:)?//('.$safeiframe.')%');
     $config->set('Attr.AllowedFrameTargets', array('_blank'));
+    $config->set('URI.AllowedSchemes', array('http' => true, 'https' => true, 'data' => true));
     //유튜브, 비메오 전체화면 가능하게 하기
     $config->set('Filter.Custom', array(new HTMLPurifier_Filter_Iframevideo()));
     $purifier = new HTMLPurifier($config);
@@ -715,7 +716,7 @@ function get_group($gr_id)
 function get_member($mb_id, $fields='*')
 {
     global $g5;
-    
+
     $mb_id = preg_replace("/[^0-9a-z_]+/i", "", $mb_id);
 
     return sql_fetch(" select $fields from {$g5['member_table']} where mb_id = TRIM('$mb_id') ");
@@ -2040,7 +2041,7 @@ function sql_real_escape_string($str, $link=null)
 
     if(!$link)
         $link = $g5['connect_db'];
-    
+
     if(function_exists('mysqli_connect') && G5_MYSQLI_USE) {
         return mysqli_real_escape_string($link, $str);
     }
@@ -2885,7 +2886,7 @@ function get_search_string($stx)
 function clean_xss_tags($str)
 {
     $str_len = strlen($str);
-    
+
     $i = 0;
     while($i <= $str_len){
         $result = preg_replace('#</*(?:applet|b(?:ase|gsound|link)|embed|frame(?:set)?|i(?:frame|layer)|l(?:ayer|ink)|meta|object|s(?:cript|tyle)|title|xml)[^>]*+>#i', '', $str);
@@ -2994,7 +2995,7 @@ function replace_filename($name)
     $usec = get_microtime();
     $file_path = pathinfo($name);
     $ext = $file_path['extension'];
-    $return_filename = sha1($ss_id.$_SERVER['REMOTE_ADDR'].$usec); 
+    $return_filename = sha1($ss_id.$_SERVER['REMOTE_ADDR'].$usec);
     if( $ext )
         $return_filename .= '.'.$ext;
 
@@ -3056,7 +3057,7 @@ function check_url_host($url, $msg='', $return_url=G5_URL, $is_redirect=false)
     $p = @parse_url($url);
     $host = preg_replace('/:[0-9]+$/', '', $_SERVER['HTTP_HOST']);
     $is_host_check = false;
-    
+
     // url을 urlencode 를 2번이상하면 parse_url 에서 scheme와 host 값을 가져올수 없는 취약점이 존재함
     if ( $is_redirect && !isset($p['host']) && urldecode($url) != $url ){
         $i = 0;
@@ -3366,7 +3367,7 @@ function get_member_profile_img($mb_id='', $width='', $height='', $alt='profile_
 
     static $no_profile_cache = '';
     static $member_cache = array();
-    
+
     $src = '';
 
     if( $mb_id ){
@@ -3448,7 +3449,7 @@ function check_mail_bot($ip=''){
     //아이피를 체크하여 메일 크롤링을 방지합니다.
     $check_ips = array('211.249.40.');
     $bot_message = 'bot 으로 판단되어 중지합니다.';
-    
+
     if($ip){
         foreach( $check_ips as $c_ip ){
             if( preg_match('/^'.preg_quote($c_ip).'/', $ip) ) {
@@ -3459,13 +3460,13 @@ function check_mail_bot($ip=''){
 
     // user agent를 체크하여 메일 크롤링을 방지합니다.
     $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
-    if ($user_agent === 'Carbon' || strpos($user_agent, 'BingPreview') !== false || strpos($user_agent, 'Slackbot') !== false) { 
+    if ($user_agent === 'Carbon' || strpos($user_agent, 'BingPreview') !== false || strpos($user_agent, 'Slackbot') !== false) {
         die($bot_message);
-    } 
+    }
 }
 
 function get_call_func_cache($func, $args=array()){
-    
+
     static $cache = array();
 
     $key = md5(serialize($args));
@@ -3481,7 +3482,7 @@ function get_call_func_cache($func, $args=array()){
     } catch (Exception $e) {
         return null;
     }
-    
+
     return $result;
 }
 
@@ -3539,7 +3540,7 @@ function is_include_path_check($path='', $is_input='')
         }
 
         $extension = pathinfo($path, PATHINFO_EXTENSION);
-        
+
         if($extension && preg_match('/(jpg|jpeg|png|gif|bmp|conf)$/i', $extension)) {
             return false;
         }

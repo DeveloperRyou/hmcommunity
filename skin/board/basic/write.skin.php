@@ -4,12 +4,14 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
 ?>
+<script type="text/javascript" src="<?php echo G5_EDITOR_URL?>/ckeditor_custom/ckeditor.js"></script>
 
 <section id="bo_w">
     <h2 class="sound_only"><?php echo $g5['title'] ?></h2>
 
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off" style="width:<?php echo $width; ?>">
+
     <input type="hidden" name="uid" value="<?php echo get_uniqid(); ?>">
     <input type="hidden" name="w" value="<?php echo $w ?>">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
@@ -97,7 +99,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
     <div class="bo_w_tit write_div">
         <label for="wr_subject" class="sound_only">제목<strong>필수</strong></label>
-        
+
         <div id="autosave_wrapper write_div">
             <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" size="50" maxlength="255" placeholder="제목">
             <?php if ($is_member) { // 임시 저장된 글 기능 ?>
@@ -111,7 +113,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             </div>
             <?php } ?>
         </div>
-        
+
     </div>
 
     <div class="write_div">
@@ -127,7 +129,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <div id="char_count_wrap"><span id="char_count"></span>글자</div>
             <?php } ?>
         </div>
-        
+
     </div>
 
     <?php for ($i=1; $is_link && $i<=G5_LINK_COUNT; $i++) { ?>
@@ -152,7 +154,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <input type="checkbox" id="bf_file_del<?php echo $i ?>" name="bf_file_del[<?php echo $i;  ?>]" value="1"> <label for="bf_file_del<?php echo $i ?>"><?php echo $file[$i]['source'].'('.$file[$i]['size'].')';  ?> 파일 삭제</label>
         </span>
         <?php } ?>
-        
+
     </div>
     <?php } ?>
 
