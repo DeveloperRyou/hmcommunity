@@ -450,7 +450,9 @@ box-sizing: content-box;
 
 /* HMCM 자체 CSS(POPUP부분) */
 .popup {text-align: center;}
-.popup .button01{background: #2a2a2a; color: #fff; font-size: 15px; border: none;}
-.new_win .p_table{width:100%;}
-.new_win .p_table .p_head{text-align: center; font-size: 15px; background: grey;}
-.new_win .p_table .p_body{text-align: center; font-size: 10px; background: white;}
+.popup .button01{background: #2a2a2a; color: #fff; font-size: 15px; border: none;  height: 20px;}
+.new_win .p_table{width:100%; padding: 0px 0px; border-collapse: collapse; }
+.new_win .p_table .p_head{height: 30px;text-align: center; font-size: 17px; color: white; background: rgb(44, 44, 44); }
+.new_win .p_table .p_head th{border: 0px solid rgb(44, 44, 44); }
+.new_win .p_table .p_body{text-align: center; font-size: 13px; background: white; }
+.new_win .p_table .p_body td{border-bottom: 1px solid #292929;}

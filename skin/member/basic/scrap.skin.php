@@ -34,6 +34,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 </div>
 
 <div class="popup">
+    <br>
+    <br>
     <button type="button" onclick="window.close();" class ="button01"> 닫기 </button>
 </div>
 <!-- } 스크랩 목록 끝 -->
