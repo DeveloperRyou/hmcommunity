@@ -450,4 +450,7 @@ box-sizing: content-box;
 
 /* HMCM 자체 CSS(POPUP부분) */
 .popup {text-align: center;}
-.popup .button01{background: #2a2a2a; color: #fff; font-size: 15px; border: none;};
+.popup .button01{background: #2a2a2a; color: #fff; font-size: 15px; border: none;}
+.new_win .p_table{width:100%;}
+.new_win .p_table .p_head{text-align: center; font-size: 15px; background: grey;}
+.new_win .p_table .p_body{text-align: center; font-size: 10px; background: white;}
