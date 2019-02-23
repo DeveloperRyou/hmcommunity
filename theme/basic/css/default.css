@@ -380,7 +380,7 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 /* 새창 기본 스타일 */
 .new_win {position:relative;}
 .new_win .tbl_wrap {margin:0 20px}
-.new_win #win_title {font-size:1.25em;height:50px;line-height:30px;padding:10px 20px;background:#333;color:#fff;}
+.new_win #win_title {font-size:1.55em;height:60px;line-height:45px;padding:10px 30px;background:rgb(219, 219, 219);color:#333;}
 .new_win #win_title .sv {font-size:0.75em;line-height:1.2em}
 .new_win .win_ul {border-right:1px solid #dfe6e7;}
 .new_win .win_ul:after {display:block;visibility:hidden;clear:both;content:""}
@@ -449,3 +449,15 @@ box-sizing: content-box;
 
 /* Mobile화면으로 */
 #device_change {display:block;margin:0.3em;padding:0.5em 0;border:1px solid #eee;border-radius:2em;background:#fff;color:#000;font-size:2em;text-decoration:none;text-align:center}
+<<<<<<< HEAD
+=======
+
+/* HMCM 자체 CSS(POPUP부분) */
+.popup {text-align: center;}
+.popup .button01{background: #2a2a2a; color: #fff; font-size: 15px; border: none;  height: 20px;}
+.new_win .p_table{width:100%; padding: 0px 0px; border-collapse: collapse; }
+.new_win .p_table .p_head{height: 30px;text-align: center; font-size: 17px; color: white; background: rgb(44, 44, 44); }
+.new_win .p_table .p_head th{border: 0px solid rgb(44, 44, 44); }
+.new_win .p_table .p_body{text-align: center; font-size: 13px; background: white; }
+.new_win .p_table .p_body td{border-bottom: 1px solid #292929;}
+>>>>>>> feature_scrap
