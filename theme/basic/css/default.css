@@ -449,8 +449,6 @@ box-sizing: content-box;
 
 /* Mobile화면으로 */
 #device_change {display:block;margin:0.3em;padding:0.5em 0;border:1px solid #eee;border-radius:2em;background:#fff;color:#000;font-size:2em;text-decoration:none;text-align:center}
-<<<<<<< HEAD
-=======
 
 /* HMCM 자체 CSS(POPUP부분) */
 .popup {text-align: center;}
@@ -460,4 +458,3 @@ box-sizing: content-box;
 .new_win .p_table .p_head th{border: 0px solid rgb(44, 44, 44); }
 .new_win .p_table .p_body{text-align: center; font-size: 13px; background: white; }
 .new_win .p_table .p_body td{border-bottom: 1px solid #292929;}
->>>>>>> feature_scrap
