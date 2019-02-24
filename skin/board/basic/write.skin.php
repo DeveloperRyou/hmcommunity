@@ -90,18 +90,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </div>
     <?php } ?>
 
-    <?php if ($option) { ?>
-    <div class="write_div">
-        <span class="sound_only">옵션</span>
-        <?php echo $option ?>
-    </div>
-    <?php } ?>
-
     <div class="bo_w_tit write_div">
         <label for="wr_subject" class="sound_only">제목<strong>필수</strong></label>
 
         <div id="autosave_wrapper write_div">
-            <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" size="50" maxlength="255" placeholder="제목">
+            <input type="text" name="wr_subject" style="border-radius:0px" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" size="50" maxlength="255" placeholder="제목">
             <?php if ($is_member) { // 임시 저장된 글 기능 ?>
             <script src="<?php echo G5_JS_URL; ?>/autosave.js"></script>
             <?php if($editor_content_js) echo $editor_content_js; ?>
@@ -165,8 +158,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </div>
     <?php } ?>
 
+    <?php if ($option) { ?>
+    <div class="write_div" style="margin: 20px 0px;float: left;width: 50%">
+        <span class="sound_only">옵션</span>
+        <?php echo $option ?>
+    </div>
+    <?php } ?>
 
-    <div class="btn_confirm write_div">
+    <div class="btn_confirm write_div" style="float:right;width:50%">
         <a href="./board.php?bo_table=<?php echo $bo_table ?>" class="btn_cancel btn">취소</a>
         <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn_submit btn">
     </div>
