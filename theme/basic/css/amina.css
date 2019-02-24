@@ -281,8 +281,7 @@ blockquote { font-size: 12px; margin:0px 0px 20px; }*/
 .panel-group .panel { border-radius: 0px; }
 .panel .panel-heading { border-radius: 0px; color: #333;
     background-color: #f5f5f5;
-    border-color: #ddd;padding: 10px 15px;
-    border-bottom: 1px solid transparent;}
+    border-color: #ddd;padding: 10px 15px;}
 .panel .panel-body {padding: 15px;}
 
 
