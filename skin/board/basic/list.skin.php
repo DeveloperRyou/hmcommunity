@@ -56,7 +56,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <input type="hidden" name="sw" value="">
 
     <div class="tbl_head01 tbl_wrap">
-        <table>
+        <table style="border-right:0px;border-left:0px">
         <caption><?php echo $board['bo_subject'] ?> 목록</caption>
         <thead>
         <tr>
@@ -66,13 +66,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 <input type="checkbox" id="chkall" onclick="if (this.checked) all_checked(true); else all_checked(false);">
             </th>
             <?php } ?>
-            <th scope="col">번호</th>
-            <th scope="col">제목</th>
-            <th scope="col">글쓴이</th>
-            <th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?>조회 <i class="fa fa-sort" aria-hidden="true"></i></a></th>
-            <?php if ($is_good) { ?><th scope="col"><?php echo subject_sort_link('wr_good', $qstr2, 1) ?>추천 <i class="fa fa-sort" aria-hidden="true"></i></a></th><?php } ?>
-            <?php if ($is_nogood) { ?><th scope="col"><?php echo subject_sort_link('wr_nogood', $qstr2, 1) ?>비추천 <i class="fa fa-sort" aria-hidden="true"></i></a></th><?php } ?>
-            <th scope="col"><?php echo subject_sort_link('wr_datetime', $qstr2, 1) ?>날짜  <i class="fa fa-sort" aria-hidden="true"></i></a></th>
+            <th scope="col"><strong>번호</strong></th>
+            <th scope="col"><strong>제목</strong></th>
+            <th scope="col"><strong>글쓴이</strong></th>
+            <th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?><strong>조회</strong> <i class="fa fa-sort" aria-hidden="true"></i></a></th>
+            <?php if ($is_good) { ?><th scope="col"><?php echo subject_sort_link('wr_good', $qstr2, 1) ?><strong>추천</strong> <i class="fa fa-sort" aria-hidden="true"></i></a></th><?php } ?>
+            <?php if ($is_nogood) { ?><th scope="col"><?php echo subject_sort_link('wr_nogood', $qstr2, 1) ?><strong>비추천</strong> <i class="fa fa-sort" aria-hidden="true"></i></a></th><?php } ?>
+            <th scope="col"><?php echo subject_sort_link('wr_datetime', $qstr2, 1) ?><strong>날짜</strong>  <i class="fa fa-sort" aria-hidden="true"></i></a></th>
         </tr>
         </thead>
         <tbody>

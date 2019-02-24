@@ -26,8 +26,9 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 
     $list[$i]['num'] = sprintf('%03d',$i+1);
 }
-
+/*접속자 페이지 주석처리
 include_once($connect_skin_path.'/current_connect.skin.php');
+*/alert('개발중입니다.',G5_URL);
 
 include_once('./_tail.php');
 ?>

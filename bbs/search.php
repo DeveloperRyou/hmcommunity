@@ -1,6 +1,9 @@
 <?php
 include_once('./_common.php');
 
+if (!$is_member)//미가입자 접근 불가 설정
+    alert('회원만 이용하실 수 있습니다.', './login.php');
+
 $g5['title'] = '전체검색 결과';
 include_once('./_head.php');
 
@@ -58,14 +61,14 @@ if ($stx) {
 
     // 검색어를 구분자로 나눈다. 여기서는 공백
     $s = explode(' ', strip_tags($stx));
-    
+
     if( count($s) > 1 ){
         $s = array_slice($s, 0, 2);
         $stx = implode(' ', $s);
     }
 
     $text_stx = get_text(stripslashes($stx));
-    
+
     $search_query = 'sfl='.urlencode($sfl).'&amp;stx='.urlencode($stx).'&amp;sop='.$sop;
 
     // 검색필드를 구분자로 나눈다. 여기서는 +
