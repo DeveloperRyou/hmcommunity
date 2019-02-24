@@ -325,13 +325,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         </div>
       </div>
     <?php }  ?>
-
+    <!--
     <div class="form-group">
       <label class="col-sm-2 control-label"><b>자동등록방지</b></label>
       <div class="col-sm-8">
         <?php echo captcha_html(); ?>
       </div>
     </div>
+  -->
   </div>
 </div>
 
@@ -518,7 +519,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             }
         }
 
-        <?php echo chk_captcha_js();  ?>
+        <!--<?php echo chk_captcha_js();  ?>-->
 
         document.getElementById("btn_submit").disabled = "disabled";
 
