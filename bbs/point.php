@@ -1,6 +1,8 @@
 <?php
 include_once('./_common.php');
 
+$_POST["use_bootstrap"]=TRUE;
+
 if ($is_guest)
     alert_close('회원만 조회하실 수 있습니다.');
 

@@ -460,3 +460,5 @@ box-sizing: content-box;
 .new_win .p_table .p_head th{border: 0px solid rgb(44, 44, 44); }
 .new_win .p_table .p_body{text-align: center; font-size: 10px; background: white; }
 .new_win .p_table .p_body td{border-bottom: 1px solid #292929;}
+.new_win .p_table .p_foot01 {text-align:center; color:white; background: #2a2a2a;}
+table .bgblack{background: rgb(37, 37, 37); text-align: center;}
