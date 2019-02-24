@@ -44,9 +44,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             쪽지 보관일수는 최장 <strong><?php echo $config['cf_memo_del'] ?></strong>일 입니다.
         </p>
 
-        <div class="win_btn">
-            <button type="button" onclick="window.close();" class="btn_close">창닫기</button>
-        </div>
     </div>
 </div>
 
