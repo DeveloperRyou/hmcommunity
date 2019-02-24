@@ -281,7 +281,7 @@ a.btn_b01,.btn_b01 {display:inline-block;background:#4c4f6f;color:#fff;text-deco
 .btn_b01:hover, .btn_b01:hover {background:#54598c}
 a.btn_b02,.btn_b02 {display:inline-block;background:#253dbe;padding:0 10px;color:#fff;text-decoration:none;border:0;vertical-align:middle;}
 a.btn_b02:hover, .btn_b02:hover {background:#0025eb}
-a.btn_b03, .btn_b03 {display:inline-block;background:#fff;border:1px solid #b9bdd3;color:#646982;text-decoration:none;vertical-align:middle}
+a.btn_b03, .btn_b03 {display:inline-block;background:#fff;margin-left:10px;border:1px solid #b9bdd3;color:#646982;text-decoration:none;vertical-align:middle}
 a.btn_b03:hover, .btn_b03:hover {background:#ebedf6}
 a.btn_b04, .btn_b04 {display:inline-block;background:#fff;border:1px solid #ccc;color:#707070;text-decoration:none;vertical-align:middle}
 a.btn_b04:hover, .btn_b04:hover {color:#333;background:#f9f9f9}
