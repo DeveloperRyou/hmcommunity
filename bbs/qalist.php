@@ -1,3 +1,4 @@
+<!--QA페이지 주석처리
 <?php
 include_once('./_common.php');
 
@@ -122,3 +123,4 @@ if(is_file($skin_file)) {
 
 include_once('./qatail.php');
 ?>
+-->
