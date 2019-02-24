@@ -3,6 +3,9 @@ include_once('./_common.php');
 include_once(G5_EDITOR_LIB);
 include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 
+if (!$is_member)//미가입자 접근 불가 설정
+    alert('회원만 이용하실 수 있습니다.', G5_URL);
+
 if (!$board['bo_table']) {
     alert('존재하지 않는 게시판입니다.', G5_URL);
 }
@@ -20,8 +23,6 @@ if (!($w == '' || $w == 'u' || $w == 'r')) {
 }
 
 if ($w == 'u' || $w == 'r') {
-    alert("개발중입니다.",G5_URL);
-    /* 답변 주석처리
     if ($write['wr_id']) {
         // 가변 변수로 $wr_1 .. $wr_10 까지 만든다.
         for ($i=1; $i<=10; $i++) {
@@ -31,7 +32,6 @@ if ($w == 'u' || $w == 'r') {
     } else {
         alert("글이 존재하지 않습니다.\\n삭제되었거나 이동된 경우입니다.", G5_URL);
     }
-    */
 }
 
 if ($w == '') {
