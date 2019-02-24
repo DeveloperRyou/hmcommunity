@@ -4,7 +4,7 @@ include_once(G5_LIB_PATH.'/naver_syndi.lib.php');
 include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 
 if (!$is_member)//미가입자 접근 불가 설정
-    alert('회원만 이용하실 수 있습니다.', G5_URL);
+    alert('회원만 이용하실 수 있습니다.', './login.php');
 
 // 토큰체크
 check_write_token($bo_table);
