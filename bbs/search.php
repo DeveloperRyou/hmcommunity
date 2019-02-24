@@ -2,7 +2,7 @@
 include_once('./_common.php');
 
 if (!$is_member)//미가입자 접근 불가 설정
-    alert('회원만 이용하실 수 있습니다.', G5_URL);
+    alert('회원만 이용하실 수 있습니다.', './login.php');
 
 $g5['title'] = '전체검색 결과';
 include_once('./_head.php');
