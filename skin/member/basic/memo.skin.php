@@ -26,7 +26,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             <?php for($i=0; $i<count($list); $i++) { ?>
                 <tr>
                     <?php echo "<td> $i </td>" ?> 
-                    <td> <?php echo $list[$i]['mb_nick'] ?> </td>
+                    <td> <a href="<?php echo $list[$i]['view_href'] ?>"><?php echo $list[$i]['mb_nick'] ?></a> </td>
                     <td> <?php echo $list[$i]['send_datetime'] ?> </td>                   
                     <td> <?php echo $list[$i]['read_datetime'] ?> </td>
                     <td> <a href="<?php echo $list[$i]['del_href'] ?>" onclick="del(this.href); return false;" class="memo_del"><i class="fa fa-times-circle" aria-hidden="true"></i> <span class="sound_only">삭제</span></a> </td>
