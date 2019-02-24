@@ -267,11 +267,8 @@ box-shadow: 0 1px 3px #eee;
 #profile .my_profile_img img{border-radius:50%;border:1px solid #aaa}
 #profile .profile_img img{border-radius:50%}
 #profile .profile_name .sv_wrap{font-weight:bold;text-align:left}
-<<<<<<< HEAD
-=======
 
 /*아미나 빌더 참조 부분*/
 #container {float: none;margin: auto;}
 .alert {padding: 15px;margin-bottom: 20px;margin-top: 20px; border: 1px solid transparent;}
 .alert-info {color: #31708f; background-color: #d9edf7; border-color: #bce8f1;}
->>>>>>> feature_scrap
