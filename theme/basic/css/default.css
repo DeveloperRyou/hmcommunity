@@ -87,7 +87,8 @@ border: 1px solid #558ab7 !important;
 #tnb h3 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 #tnb ul {margin:0 auto;zoom:1}
 #tnb ul:after {display:block;visibility:hidden;clear:both;content:""}
-#tnb li {float:right;border-left:1px solid #ddd;margin-bottom:-1px;font-size:12px}
+#tnb li:nth-child(1){float:right;border-left: 1px solid #ddd;border-right: 1px solid #ddd;margin-bottom:-1px;font-size:12px}
+#tnb li {float:right;border-left: 1px solid #ddd;margin-bottom:-1px;font-size:12px}
 #tnb a {display:inline-block;padding:0 10px;color:#646464;line-height:35px}
 #tnb a:focus, #tnb a:hover {color:#253dbe;background:#fafafa}
 #tnb .tnb_admin a{color:#ff0000;}
