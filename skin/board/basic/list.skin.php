@@ -104,14 +104,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link"><?php echo $list[$i]['ca_name'] ?></a>
                 <?php } ?>
                 <div class="bo_tit">
-                    
+
                     <a href="<?php echo $list[$i]['href'] ?>">
                         <?php echo $list[$i]['icon_reply'] ?>
                         <?php
                             if (isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']);
                          ?>
                         <?php echo $list[$i]['subject'] ?>
-                       
+
                     </a>
                     <?php
                     // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
@@ -124,7 +124,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 </div>
 
             </td>
-            <td class="td_name sv_use"><?php echo $list[$i]['name'] ?></td>
+            <td class="td_name sv_use"><?php echo ($_GET['bo_table']=='anonymous') ? '익명' :  $list[$i]['name']; //익명 게시판 기능 추가 ?></td>
             <td class="td_num"><?php echo $list[$i]['wr_hit'] ?></td>
             <?php if ($is_good) { ?><td class="td_num"><?php echo $list[$i]['wr_good'] ?></td><?php } ?>
             <?php if ($is_nogood) { ?><td class="td_num"><?php echo $list[$i]['wr_nogood'] ?></td><?php } ?>
@@ -154,7 +154,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <?php } ?>
 
     </form>
-     
+
        <!-- 게시판 검색 시작 { -->
     <fieldset id="bo_sch">
         <legend>게시물 검색</legend>
@@ -178,7 +178,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
         </form>
     </fieldset>
-    <!-- } 게시판 검색 끝 -->   
+    <!-- } 게시판 검색 끝 -->
 </div>
 
 <?php if($is_checkbox) { ?>
