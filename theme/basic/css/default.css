@@ -10,6 +10,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 ul, dl,dt,dd {margin:0;padding:0;list-style:none}
 legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 label, input, button, select, img {vertical-align:middle;font-size:1em}
+.profile_img img {width: 0px;height: 0px;}/*댓글 프로필 이미지 삭제 코드*/
 input, button {margin:0;padding:0;font-family:'Malgun Gothic', dotum, sans-serif;font-size:1em}
 input[type="submit"]{cursor:pointer}
 button {cursor:pointer}
@@ -288,7 +289,6 @@ a.btn_b04, .btn_b04 {display:inline-block;background:#fff;border:1px solid #ccc;
 a.btn_b04:hover, .btn_b04:hover {color:#333;background:#f9f9f9}
 a.btn_admin,.btn_admin {display:inline-block;background:#d13f4a;color:#fff;text-decoration:none;vertical-align:middle} /* 관리자 전용 버튼 */
 .btn_admin:hover, a.btn_admin:hover {background:#ff3746}
-
 
 /*컬러*/
 .color_1 {background:#169dd6}
