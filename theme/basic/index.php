@@ -9,12 +9,28 @@ if (G5_IS_MOBILE) {
 
 include_once(G5_THEME_PATH.'/head.php');
 ?>
+<div id="slide">
+  <input type="radio" name="pos" id="pos1" checked>
+  <input type="radio" name="pos" id="pos2">
+  <input type="radio" name="pos" id="pos3">
+  <ul>
+    <li> <a href="http://www.hanmin.hs.kr" target="_blank"> <img src="img/main_ad_01.png" width=100%> </a> </li>
+    <li> <a href="http://my.hanmin.hs.kr/" target="_blank"><img src="img/main_ad_02.png" width=100%> </a> </li>
+    <li> <a href="http://hmcoder.kr" target="_blank"><img src="img/main_ad_03.png" width=100%> </a> </li>
+  </ul>
+  <p class="pos">
+    <label for="pos1"></label>
+    <label for="pos2"></label>
+    <label for="pos3"></label>
+  </p>
+</div>
+<!--
 <div>
     <a href="http://hmcoder.kr" target="_blank"> <img src="img/main_ad_dark.png" width=100%> </a>
     <br>
     <br>
 </div>
-
+-->
 <h2 class="sound_only">최신글</h2>
 
 <div class="latest_wr">

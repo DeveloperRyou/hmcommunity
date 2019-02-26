@@ -32,12 +32,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                     <label for="me_memo" class="sound_only">내용</label>
                     <textarea name="me_memo" id="me_memo" required class="required"><?php echo $content ?></textarea>
                 </li>
+                
                 <li>
                     <span class="sound_only">자동등록방지</span>
                     
-                    <?php echo captcha_html(); ?>
+                     <?php echo captcha_html(); ?> 
                     
                 </li>
+                
             </ul>
         </div>
 

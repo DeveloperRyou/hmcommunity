@@ -88,18 +88,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 	</tbody>
 	<tfoot>
 	<tr class="active">
-		<th></th>
+		<td> </td>
 		<th scope="row">소계</th>
-		<th></th>
-		<td align="right"><b><?php echo $sum_point1; ?></b></td>
-		<td align="right"><b><?php echo $sum_point2; ?></b></td>
-		<td></td>
+		<td> </td>
+		<td align="center"><b><?php echo $sum_point1; ?></b></td>
+		<td align="center"><b><?php echo $sum_point2; ?></b></td>
+		<td> </td>
 	</tr>
 	<tr class="p_foot01">
 		<th></th>
 		<th scope="row">보유포인트</th>
 		<th></th>
-		<td align="right"><b><?php echo number_format($member['mb_point']); ?></b></td>
+		<td align="center"><b><?php echo number_format($member['mb_point']); ?></b></td>
 		<td></td>
 		<td></td>
 	</tr>
