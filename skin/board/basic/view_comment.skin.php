@@ -55,8 +55,8 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 					//} //나중에 회원 사진 수정할때 사용
 				?>
 		    <header style="z-index:<?php echo $cmt_sv; ?>">
-            <h2><?php echo get_text($list[$i]['wr_name']); ?>님의 <?php if ($cmt_depth) { ?><span class="sound_only">댓글의</span><?php } ?> 댓글</h2>
-            <?php echo $list[$i]['name'] ?>
+            <h2><?php echo ($_GET['bo_table']=='anonymous') ? '익명' : get_text($list[$i]['wr_name']); //익명 추가?>님의 <?php if ($cmt_depth) { ?><span class="sound_only">댓글의</span><?php } ?> 댓글</h2>
+            <?php echo ($_GET['bo_table']=='anonymous') ? '<span class="sv_member">익명</span>' : $list[$i]['name']//익명추가?>
             <?php if ($is_ip_view) { ?>
             <span class="sound_only">아이피</span>
             <span>(<?php echo $list[$i]['ip']; ?>)</span>
