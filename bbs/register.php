@@ -1,5 +1,7 @@
 <?php
 include_once('./_common.php');
+$_POST["side_hidden"]=TRUE;
+$_POST["use_bootstrap"]=TRUE;
 
 // 로그인중인 경우 회원가입 할 수 없습니다.
 if ($is_member) {

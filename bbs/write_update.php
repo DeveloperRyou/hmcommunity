@@ -3,6 +3,9 @@ include_once('./_common.php');
 include_once(G5_LIB_PATH.'/naver_syndi.lib.php');
 include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 
+if (!$is_member)//미가입자 접근 불가 설정
+    alert('회원만 이용하실 수 있습니다.', './login.php');
+
 // 토큰체크
 check_write_token($bo_table);
 
@@ -134,7 +137,7 @@ if ($w == '' || $w == 'u') {
         alert('관리자만 공지할 수 있습니다.');
     }
 
-    //회원 자신이 쓴글을 수정할 경우 공지가 풀리는 경우가 있음 
+    //회원 자신이 쓴글을 수정할 경우 공지가 풀리는 경우가 있음
     if($w =='u' && !$is_admin && $board['bo_notice'] && in_array($wr['wr_id'], $notice_array)){
         $notice = 1;
     }

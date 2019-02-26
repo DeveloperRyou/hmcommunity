@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 if (G5_IS_MOBILE) {
@@ -41,14 +41,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <?php }  ?>
 
         </ul>
-  
+
     </div>
     <div id="hd_wrapper">
 
         <div id="logo">
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
-    
+
         <div class="hd_sch_wr">
             <fieldset id="hd_sch" >
                 <legend>사이트 내 전체검색</legend>
@@ -89,17 +89,11 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 </script>
 
             </fieldset>
-                
-            <?php echo popular('theme/basic'); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
+
         </div>
-        <ul id="hd_qnb">
-            <li><a href="<?php echo G5_BBS_URL ?>/faq.php"><i class="fa fa-question" aria-hidden="true"></i><span>FAQ</span></a></li>
-            <li><a href="<?php echo G5_BBS_URL ?>/qalist.php"><i class="fa fa-comments" aria-hidden="true"></i><span>1:1문의</span></a></li>
-            <li><a href="<?php echo G5_BBS_URL ?>/current_connect.php" class="visit"><i class="fa fa-users" aria-hidden="true"></i><span>접속자</span><strong class="visit-num"><?php echo connect('theme/basic'); // 현재 접속자수, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?></strong></a></li>
-            <li><a href="<?php echo G5_BBS_URL ?>/new.php"><i class="fa fa-history" aria-hidden="true"></i><span>새글</span></a></li>
-        </ul>
+
     </div>
-    
+
     <nav id="gnb">
         <h2>메인메뉴</h2>
         <div class="gnb_wrap">
@@ -133,7 +127,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
                 $i = 0;
                 foreach( $menu_datas as $row ){
-                    if( empty($row) ) continue; 
+                    if( empty($row) ) continue;
                 ?>
                 <li class="gnb_1dli" style="z-index:<?php echo $gnb_zindex--; ?>">
                     <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
@@ -141,7 +135,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     $k = 0;
                     foreach( (array) $row['sub'] as $row2 ){
 
-                        if( empty($row2) ) continue; 
+                        if( empty($row2) ) continue;
 
                         if($k == 0)
                             echo '<span class="bg">하위분류</span><ul class="gnb_2dul">'.PHP_EOL;
@@ -167,7 +161,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 <h2>전체메뉴</h2>
                 <ul class="gnb_al_ul">
                     <?php
-                    
+
                     $i = 0;
                     foreach( $menu_datas as $row ){
                     ?>
@@ -201,7 +195,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         </div>
     </nav>
     <script>
-    
+
     $(function(){
         $(".gnb_menu_btn").click(function(){
             $("#gnb_all").show();
@@ -213,15 +207,40 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
     </script>
 </div>
-<!-- } 상단 끝 -->
-
+<!--  상단 끝 -->
 
 <hr>
 
-<!-- 콘텐츠 시작 { -->
-<div id="wrapper">
-    <div id="container_wr">
-   
-    <div id="container">
-        <?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php } ?>
+<!-- 타이틀 시작-->
+<?php if (!defined("_INDEX_")) { ?>
+  <?php if($g5['title']) { // 페이지 타이틀 ?>
+    <div class="at-title">
+      <div class="at-container">
+        <div class="page-title en">
+          <strong<?php echo ($bo_table) ? " class=\"cursor\" onclick=\"go_page('".G5_BBS_URL."/board.php?bo_table=".$bo_table."');\"" : "";?>>
+            <?php echo $g5['title'];?>
+          </strong>
+        </div>
+        <?php if($page_desc) { // 페이지 설명글 ?>
+          <div class="page-desc hidden-xs">
+            <?php echo $g5['title'];?>
+          </div>
+        <?php } ?>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  <?php } ?>
+  <!--
+  <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>">
+    <?php echo get_head_title($g5['title']); ?>
+  </span></h2>
+  -->
+<?php } ?>
 
+<!-- 타이틀 끝 -->
+
+<!-- 콘텐츠 시작  -->
+<div id="wrapper" class="ko">
+    <div id="container_wr">
+
+    <div id="container"<?php if($_POST[side_hidden]) echo "style=\" float: none; margin: 20px auto;\""; ?>>

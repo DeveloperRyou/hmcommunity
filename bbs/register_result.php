@@ -1,5 +1,6 @@
 <?php
 include_once('./_common.php');
+$_POST["side_hidden"]=TRUE;
 
 if (isset($_SESSION['ss_mb_reg']))
     $mb = get_member($_SESSION['ss_mb_reg']);

@@ -28,7 +28,7 @@ header("Expires: 0"); // rfc2616 - Section 14.21
 header("Pragma: no-cache"); // HTTP/1.0
 */
 ?>
-<!doctype html>
+<!Doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
@@ -45,8 +45,15 @@ if (G5_IS_MOBILE) {
 if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
+
 <title><?php echo $g5_head_title; ?></title>
+
+<?php if($_POST["use_bootstrap"]) { ?>
+<link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/bootstrap.css">
+<?php } ?>
+
 <link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/<?php echo G5_IS_MOBILE ? 'mobile' : 'default'; ?>.css?ver=<?php echo G5_CSS_VER; ?>">
+<link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/amina.css?ver=<?php echo G5_CSS_VER; ?>">
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
 <![endif]-->
