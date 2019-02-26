@@ -7,3 +7,7 @@
 #ctt_con {padding:10px 0;line-height:1.6em}
 #ctt_himg img, #ctt_timg img, #ctt_con img {max-width:100%;height:auto}
 .ctt_img {text-align:center}
+.article-title{color: #0083B9;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 10px;}
