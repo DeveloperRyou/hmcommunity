@@ -49,8 +49,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                     <td>회원 탈퇴 시까지</td>
                 </tr>
                 <tr>
-                    <td>고객서비스 이용에 관한 통지,<br>CS대응을 위한 이용자 식별</td>
-                    <td>연락처 (이메일, 휴대전화번호)</td>
+                    <td>이용자 식별 및 사이트 이용에 관한 통지</td>
+                    <td>연락처 (이메일)</td>
                     <td>회원 탈퇴 시까지</td>
                 </tr>
                 </tbody>
@@ -86,7 +86,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 
         return true;
     }
-    
+
     jQuery(function($){
         // 모두선택
         $("input[name=chk_all]").click(function() {
