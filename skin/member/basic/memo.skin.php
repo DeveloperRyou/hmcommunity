@@ -12,9 +12,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     
     <div class="new_win_con">
         <ul class="win_ul">
-            <li class="<?php if ($kind == 'recv') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=recv">받은쪽지</a></li>
-            <li class="<?php if ($kind == 'send') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=send">보낸쪽지</a></li>
-            <li><a href="./memo_form.php">쪽지쓰기</a></li>
+            <li class="<?php if ($kind == 'recv') {  ?>selected<?php }  ?>" ><a href="./memo.php?kind=recv" style="color: white">받은쪽지</a></li>
+            <li class="<?php if ($kind == 'send') {  ?>selected<?php } ?>" ><a href="./memo.php?kind=send" style="color: white">보낸쪽지</a></li>
+            <li ><a href="./memo_form.php" style="color: white">쪽지쓰기</a></li>
         </ul>
         <table class="p_table">
         <thead class="p_head02">
@@ -44,9 +44,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             쪽지 보관일수는 최장 <strong><?php echo $config['cf_memo_del'] ?></strong>일 입니다.
         </p>
 
-        <div class="win_btn">
-            <button type="button" onclick="window.close();" class="btn_close">창닫기</button>
-        </div>
     </div>
 </div>
 

@@ -14,7 +14,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <header>
         <h2 id="bo_v_title">
             <?php if ($category_name) { ?>
-            <span class="bo_v_cate"><?php echo $view['ca_name']; // 분류 출력 끝 ?></span> 
+            <span class="bo_v_cate"><?php echo $view['ca_name']; // 분류 출력 끝 ?></span>
             <?php } ?>
             <span class="bo_v_tit">
             <?php
@@ -25,7 +25,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
     <section id="bo_v_info">
         <h2>페이지 정보</h2>
-        <span class="sound_only">작성자</span> <strong><?php echo $view['name'] ?><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?></strong>
+        <span class="sound_only">작성자</span> <strong><?php echo ($_GET['bo_table']=='anonymous') ? '<span class="sv_member">익명</span>  ' : $view['name'] //익명추가?><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?></strong>
         <span class="sound_only">댓글</span><strong><a href="#bo_vc"> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo number_format($view['wr_comment']) ?>건</a></strong>
         <span class="sound_only">조회</span><strong><i class="fa fa-eye" aria-hidden="true"></i> <?php echo number_format($view['wr_hit']) ?>회</strong>
         <strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo date("y-m-d H:i", strtotime($view['wr_datetime'])) ?></strong>
@@ -91,9 +91,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </section>
 
     <div id="bo_v_share">
-        
 
-        
+
+
     </div>
 
     <?php
@@ -148,7 +148,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             ?>
             <li>
                 <i class="fa fa-link" aria-hidden="true"></i> <a href="<?php echo $view['link_href'][$i] ?>" target="_blank">
-                    
+
                     <strong><?php echo $link ?></strong>
                 </a>
                 <span class="bo_v_link_cnt"><?php echo $view['link_hit'][$i] ?>회 연결</span>
@@ -255,14 +255,14 @@ $(function() {
     //sns공유
     $(".btn_share").click(function(){
         $("#bo_v_sns").fadeIn();
-   
+
     });
 
     $(document).mouseup(function (e) {
         var container = $("#bo_v_sns");
         if (!container.is(e.target) && container.has(e.target).length === 0){
         container.css("display","none");
-        }	
+        }
     });
 });
 

@@ -55,8 +55,8 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 					//} //나중에 회원 사진 수정할때 사용
 				?>
 		    <header style="z-index:<?php echo $cmt_sv; ?>">
-            <h2><?php echo get_text($list[$i]['wr_name']); ?>님의 <?php if ($cmt_depth) { ?><span class="sound_only">댓글의</span><?php } ?> 댓글</h2>
-            <?php echo $list[$i]['name'] ?>
+            <h2><?php echo ($_GET['bo_table']=='anonymous') ? '익명' : get_text($list[$i]['wr_name']); //익명 추가?>님의 <?php if ($cmt_depth) { ?><span class="sound_only">댓글의</span><?php } ?> 댓글</h2>
+            <?php echo ($_GET['bo_table']=='anonymous') ? '<span class="sv_member">익명</span>' : $list[$i]['name']//익명추가?>
             <?php if ($is_ip_view) { ?>
             <span class="sound_only">아이피</span>
             <span>(<?php echo $list[$i]['ip']; ?>)</span>
@@ -67,9 +67,9 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
             include(G5_SNS_PATH.'/view_comment_list.sns.skin.php');
             ?>
 						<span class="bo_vc_act" style="float:right">
-                <?php if ($list[$i]['is_reply']) { ?><li><a href="<?php echo $c_reply_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;" class="btn_b03">답변</a></li><?php } ?>
-                <?php if ($list[$i]['is_edit']) { ?><li><a href="<?php echo $c_edit_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'cu'); return false;" class="btn_b03">수정</a></li><?php } ?>
-                <?php if ($list[$i]['is_del'])  { ?><li><a href="<?php echo $list[$i]['del_link'];  ?>" onclick="return comment_delete();" class="btn_b03">삭제</a></li><?php } ?>
+                <?php if ($list[$i]['is_reply']) { ?><li><a href="<?php echo $c_reply_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;" >답변</a></li><?php } ?>
+                <?php if ($list[$i]['is_edit']) { ?><li><a href="<?php echo $c_edit_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'cu'); return false;" >수정</a></li><?php } ?>
+                <?php if ($list[$i]['is_del'])  { ?><li><a href="<?php echo $list[$i]['del_link'];  ?>" onclick="return comment_delete();" >삭제</a></li><?php } ?>
             </span>
         </header>
 

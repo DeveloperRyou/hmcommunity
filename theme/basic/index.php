@@ -9,17 +9,47 @@ if (G5_IS_MOBILE) {
 
 include_once(G5_THEME_PATH.'/head.php');
 ?>
+<div id="slide">
+  <input type="radio" name="pos" id="pos1" checked>
+  <input type="radio" name="pos" id="pos2">
+  <input type="radio" name="pos" id="pos3">
+  <ul>
+    <li><div> <a href="http://www.hanmin.hs.kr" target="_blank"> <img src="img/main_ad_01.png"> </a> /<div></li>
+    <li><div> <a href="http://my.hanmin.hs.kr/" target="_blank"><img src="img/main_ad_02.png" style="height: 250px;"> </a> </div></li>
+    <li><div> <a href="http://hmcoder.kr" target="_blank"><img src="img/main_ad_03.png"> </a> </div></li>
+  </ul>
+  <p class="pos">
+    <label for="pos1"></label>
+    <label for="pos2"></label>
+    <label for="pos3"></label>
+  </p>
+</div>
+<!--
 <div>
     <a href="http://hmcoder.kr" target="_blank"> <img src="img/main_ad_dark.png" width=100%> </a>
     <br>
     <br>
 </div>
-
+-->
 <h2 class="sound_only">최신글</h2>
 
 <div class="latest_wr">
 <!-- 최신글 시작 { -->
 
+    <div style="float:left;" class="lt_wr">
+    <?php echo latest("theme/basic", "free", 6, 25); ?>
+    </div>
+    <div style="float:left; margin-left:2%;" class="lt_wr">
+    <?php echo latest("theme/basic", "anonymous", 6, 25); ?>
+    </div>
+    <div style="float:left;" class="lt_wr">
+    <?php echo latest("theme/basic", "answer", 6, 25); ?>
+    </div>
+    <div style="float:left; margin-left:2%;" class="lt_wr">
+    <?php echo latest("theme/basic", "share", 6, 25); ?>
+    </div>
+
+    <!-- 수동으로 변경
     <?php
     //  최신글
     $sql = " select bo_table
@@ -45,18 +75,21 @@ include_once(G5_THEME_PATH.'/head.php');
     <?php
     }
     ?>
+    -->
+
+
     <!-- } 최신글 끝 -->
 
 </div>
 
  <div class="latest_wr">
     <!--  사진 최신글2 { -->
-     <?php 
+     <?php
     // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
     // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
     // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
     //echo latest('theme/pic_basic', 'gallery', 5, 23);
-    ?> 
+    ?>
     <!-- } 사진 최신글2 끝 -->
 </div>
 

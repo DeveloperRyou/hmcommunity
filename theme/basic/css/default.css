@@ -10,6 +10,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 ul, dl,dt,dd {margin:0;padding:0;list-style:none}
 legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 label, input, button, select, img {vertical-align:middle;font-size:1em}
+.profile_img img {width: 0px;height: 0px;}/*댓글 프로필 이미지 삭제 코드*/
 input, button {margin:0;padding:0;font-family:'Malgun Gothic', dotum, sans-serif;font-size:1em}
 input[type="submit"]{cursor:pointer}
 button {cursor:pointer}
@@ -73,7 +74,7 @@ border: 1px solid #558ab7 !important;
 #hd_wrapper {position:relative;margin:0 auto;padding:10px 0;height:115px;zoom:1}
 #hd_wrapper:after {display:block;visibility:hidden;clear:both;content:""}
 
-#logo {float:left;padding:30px 0 0}
+#logo {float:left;}
 
 .hd_sch_wr{position:absolute;top:50px;left:85%;width:430px;margin-left:-250px;}
 #hd_sch h3 {position:absolute;font-size:0;line-height:0;overflow:hidden}
@@ -87,7 +88,8 @@ border: 1px solid #558ab7 !important;
 #tnb h3 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 #tnb ul {margin:0 auto;zoom:1}
 #tnb ul:after {display:block;visibility:hidden;clear:both;content:""}
-#tnb li {float:right;border-left:1px solid #ddd;margin-bottom:-1px;font-size:12px}
+#tnb li:nth-child(1){float:right;border-left: 1px solid #ddd;border-right: 1px solid #ddd;margin-bottom:-1px;font-size:12px}
+#tnb li {float:right;border-left: 1px solid #ddd;margin-bottom:-1px;font-size:12px}
 #tnb a {display:inline-block;padding:0 10px;color:#646464;line-height:35px}
 #tnb a:focus, #tnb a:hover {color:#253dbe;background:#fafafa}
 #tnb .tnb_admin a{color:#ff0000;}
@@ -176,9 +178,9 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
 #container_wr:after {display:block;visibility:hidden;clear:both;content:""}
 
 #container_wr {z-index:5;margin:0 auto;height:auto;zoom:1}
-#aside {float:right;width:262px;padding:0;background: #fff;height: 100%;border-top: 0px solid #adbfd2;margin:20px 0 20px 20px}
+#aside {float:right;width:270px;padding:0;background: #fff;height: 100%;border-top: 0px solid #adbfd2;margin:20px 0 0px 0px}
 
-#container {z-index:4;position:relative;float:left;min-height:500px;height:auto !important;margin:20px  0;height:500px;font-size:1em;width:1000px;zoom:1}
+#container {z-index:4;position:relative;float:left;min-height:500px;height:auto !important;margin:20px  0;height:500px;font-size:1em;width:1020px;zoom:1}
 #container:after {display:block;visibility:hidden;clear:both;content:""}
 #container_title {font-size:1.333em;margin:0 auto;font-weight:bold;color:"white"}
 #container_title span{margin:0 auto 10px;display:block;line-height:30px;}
@@ -288,7 +290,6 @@ a.btn_b04:hover, .btn_b04:hover {color:#333;background:#f9f9f9}
 a.btn_admin,.btn_admin {display:inline-block;background:#d13f4a;color:#fff;text-decoration:none;vertical-align:middle} /* 관리자 전용 버튼 */
 .btn_admin:hover, a.btn_admin:hover {background:#ff3746}
 
-
 /*컬러*/
 .color_1 {background:#169dd6}
 .color_2 {background:#14d53d}
@@ -385,9 +386,9 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 .new_win #win_title .sv {font-size:0.75em;line-height:1.2em}
 .new_win .win_ul {border-right:1px solid #dfe6e7; }
 .new_win .win_ul:after {width:100%;display:block;visibility:hidden;clear:both;content:""}
-.new_win .win_ul li{float:left;background:rgb(66, 66, 66);width:33.333%;text-align:center;border:1px solid rgb(66, 66, 66);margin-left:-1px;}
+.new_win .win_ul li{float:left;background:rgb(66, 66, 66);width:33.333%;text-align:center;border:1px solid rgb(66, 66, 66);margin-left:0px;}
 .new_win .win_ul li a{display:block;padding:10px 0}
-.new_win .win_ul .selected{background:rgb(34, 34, 34);border-color:#c0c0c0;position:relative;z-index:5}
+.new_win .win_ul .selected{background:rgb(34, 34, 34);border-color:#c0c0c0;position:relative;z-index:5;color:#ffffff;}
 .new_win .win_ul .selected a{color:#ffffff;font-weight:bold}
 .new_win .win_desc {margin:5px 0;font-size:0.92em;color:#3598db;}
 .new_win .frm_info{font-size:0.92em;color:#3598db}
@@ -453,7 +454,7 @@ box-sizing: content-box;
 
 /* HMCM 자체 CSS(POPUP부분) */
 .popup {text-align: center;}
-.popup .button01{background: #2a2a2a; color: #fff; font-size: 15px; border: none;  height: 20px;}
+.popup .button01{background: rgb(66, 66, 66); border:0px; color: #fff; font-size: 15px;  height: 22px; vertical-align: middle;}
 .new_win .p_table{width:100%; padding: 0px 0px; border-collapse: collapse; }
 .new_win .p_table .p_head{height: 30px;text-align: center; font-size: 12px; color: white; background: rgb(44, 44, 44); }
 .new_win .p_table .p_head02{height: 30px;text-align: center; font-size: 12px; color: rgb(44, 44, 44); background: rgb(228, 225, 225); }
@@ -462,3 +463,23 @@ box-sizing: content-box;
 .new_win .p_table .p_body td{border-bottom: 1px solid #292929;}
 .new_win .p_table .p_foot01 {text-align:center; color:white; background: #2a2a2a;}
 table .bgblack{background: rgb(37, 37, 37); text-align: center;}
+
+#slide{height:auto;overflow: hidden;}
+#slide ul{width:400%;height:250px;transition:1s;}
+#slide ul:after{content:"";display:block;clear:both;}
+#slide li{float:left;width:25%;height:250px;display: flex;justify-content: center;align-items: center;}
+#slide li:nth-child(1){background:#fff;}
+#slide li:nth-child(2){background:#fff;}
+#slide li:nth-child(3){background:#fff;}
+#slide li:nth-child(4){background:#fff;}
+#slide input{display:none;}
+#slide label{display:inline-block;vertical-align:middle;width:10px;height:10px;border:2px solid #666;background:#fff;transition:0.3s;border-radius:50%;cursor:pointer;}
+#slide .pos{width:100%;text-align:center;}
+#slide img{height: 200px; width: auto; display: block; margin: auto;}/*광고이미지 크기 정의*/
+#pos1:checked~ul{margin-left:0%;}
+#pos2:checked~ul{margin-left:-100%;}
+#pos3:checked~ul{margin-left:-200%;}
+#pos4:checked~ul{margin-left:-300%;}
+#pos1:checked~.pos>label:nth-child(1){background:#666;}
+#pos2:checked~.pos>label:nth-child(2){background:#666;}
+#pos3:checked~.pos>label:nth-child(3){background:#666;}#pos4:checked~.pos>label:nth-child(4){background:#666;}

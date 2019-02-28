@@ -35,7 +35,13 @@ if($url){
 
 $url = get_text($url);
 
+$_POST["side_hidden"]=TRUE;
+
+include_once(G5_PATH.'/head.php');
+
 include_once($member_skin_path.'/member_confirm.skin.php');
+
+include_once(G5_PATH.'/tail.php');
 
 include_once('./_tail.sub.php');
 ?>

@@ -72,6 +72,12 @@ if ($is_admin)
     echo '<div class="ctt_admin"><a href="'.G5_ADMIN_URL.'/contentform.php?w=u&amp;co_id='.$co_id.'" class="btn_admin btn">내용 수정</a></div>';
 ?>
 
+<div style="margin-top: 30px;">
+	<header align="center" style="font-size:200%; border-bottom:3px solid #27117D; padding-bottom: 5px; margin-left: 330px; margin-right: 330px;">
+        <?php echo $g5['title'];?>
+    </header>
+</div>
+
 <?php
 if(is_file($skin_file)) {
     $himg = G5_DATA_PATH.'/content/'.$co_id.'_h';
