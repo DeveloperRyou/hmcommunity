@@ -8,3 +8,7 @@ release branch 생성
 
 2019-02-26
 master branch ver 0.1
+
+2019-02-08
+master branch ver 0.2
+오픈베타 시작
