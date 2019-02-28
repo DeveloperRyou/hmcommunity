@@ -37,16 +37,16 @@ include_once(G5_THEME_PATH.'/head.php');
 <!-- 최신글 시작 { -->
 
     <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "free", 6, 25); ?>
+    <?php echo latest("theme/basic", "notice", 6, 25); ?>
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "anonymous", 6, 25); ?>
+    <?php echo latest("theme/basic", "hanminagora", 6, 25); ?>
     </div>
     <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "answer", 6, 25); ?>
+    <?php echo latest("theme/basic", "free_YB", 6, 25); ?>
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "share", 6, 25); ?>
+    <?php echo latest("theme/basic", "free_OB", 6, 25); ?>
     </div>
 
     <!-- 수동으로 변경

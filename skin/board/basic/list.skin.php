@@ -125,7 +125,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 </div>
 
             </td>
-            <td class="td_name sv_use"><?php echo ($_GET['bo_table']=='anonymous') ? '익명' :  $list[$i]['name']; //익명 게시판 기능 추가 ?></td>
+            <td class="td_name sv_use"><?php echo ($gr_id=='anonymous') ? '익명' :  $list[$i]['name']; //익명 게시판 기능 추가 ?></td>
             <td class="td_num"><?php echo $list[$i]['wr_hit'] ?></td>
             <?php if ($is_good) { ?><td class="td_num"><?php echo $list[$i]['wr_good'] ?></td><?php } ?>
             <?php if ($is_nogood) { ?><td class="td_num"><?php echo $list[$i]['wr_nogood'] ?></td><?php } ?>
