@@ -14,9 +14,9 @@ include_once(G5_THEME_PATH.'/head.php');
   <input type="radio" name="pos" id="pos2">
   <input type="radio" name="pos" id="pos3">
   <ul>
-    <li> <a href="http://www.hanmin.hs.kr" target="_blank"> <img src="img/main_ad_01.png" width=100%> </a> </li>
-    <li> <a href="http://my.hanmin.hs.kr/" target="_blank"><img src="img/main_ad_02.png" width=100% title style="height: 300px; width: auto"> </a> </li>
-    <li> <a href="http://hmcoder.kr" target="_blank"><img src="img/main_ad_03.png" width=100%> </a> </li>
+    <li><div> <a href="http://www.hanmin.hs.kr" target="_blank"> <img src="img/main_ad_01.png"> </a> /<div></li>
+    <li><div> <a href="http://my.hanmin.hs.kr/" target="_blank"><img src="img/main_ad_02.png" style="height: 250px;"> </a> </div></li>
+    <li><div> <a href="http://hmcoder.kr" target="_blank"><img src="img/main_ad_03.png"> </a> </div></li>
   </ul>
   <p class="pos">
     <label for="pos1"></label>
