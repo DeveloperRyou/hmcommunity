@@ -14,7 +14,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <header>
         <h2 id="bo_v_title">
             <?php if ($category_name) { ?>
-            <span class="bo_v_cate"><?php echo $view['ca_name']; // 분류 출력 끝 ?></span> 
+            <span class="bo_v_cate"><?php echo $view['ca_name']; // 분류 출력 끝 ?></span>
             <?php } ?>
             <span class="bo_v_tit">
             <?php
@@ -25,7 +25,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
     <section id="bo_v_info">
         <h2>페이지 정보</h2>
-        <span class="sound_only">작성자</span> <strong><?php echo $view['name'] ?><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?></strong>
+        <span class="sound_only">작성자</span> <strong><?php echo ($gr_id=='anonymous') ? '<span class="sv_member">익명</span>  ' : $view['name'] //익명추가?><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?></strong>
         <span class="sound_only">댓글</span><strong><a href="#bo_vc"> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo number_format($view['wr_comment']) ?>건</a></strong>
         <span class="sound_only">조회</span><strong><i class="fa fa-eye" aria-hidden="true"></i> <?php echo number_format($view['wr_hit']) ?>회</strong>
         <strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo date("y-m-d H:i", strtotime($view['wr_datetime'])) ?></strong>
@@ -91,11 +91,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </section>
 
     <div id="bo_v_share">
-        <?php if ($scrap_href) { ?><a href="<?php echo $scrap_href;  ?>" target="_blank" class="btn btn_b03" onclick="win_scrap(this.href); return false;"><i class="fa fa-thumb-tack" aria-hidden="true"></i> 스크랩</a><?php } ?>
 
-        <?php
-        include_once(G5_SNS_PATH."/view.sns.skin.php");
-        ?>
+
+
     </div>
 
     <?php
@@ -135,7 +133,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <!-- } 첨부파일 끝 -->
     <?php } ?>
 
-    <?php if(isset($view['link'][1]) && $view['link'][1]) { ?>
+    <?php if(array_filter($view['link'])) { ?>
     <!-- 관련링크 시작 { -->
     <section id="bo_v_link">
         <h2>관련링크</h2>
@@ -150,7 +148,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             ?>
             <li>
                 <i class="fa fa-link" aria-hidden="true"></i> <a href="<?php echo $view['link_href'][$i] ?>" target="_blank">
-                    
+
                     <strong><?php echo $link ?></strong>
                 </a>
                 <span class="bo_v_link_cnt"><?php echo $view['link_hit'][$i] ?>회 연결</span>
@@ -180,16 +178,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
         <ul class="bo_v_com">
            <li><a href="<?php echo $list_href ?>" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
-            <?php if ($reply_href) { ?><li><a href="<?php echo $reply_href ?>" class="btn_b01 btn"><i class="fa fa-reply" aria-hidden="true"></i> 답변</a></li><?php } ?>
-            <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_b02 btn"><i class="fa fa-pencil" aria-hidden="true"></i> 글쓰기</a></li><?php } ?>
+           <?php if ($scrap_href) { ?><a href="<?php echo $scrap_href;  ?>" target="_blank" class="btn btn_b03" onclick="win_scrap(this.href); return false;"><i class="fa fa-thumb-tack" aria-hidden="true"></i> 스크랩</a><?php } ?>
+           <?php
+            include_once(G5_SNS_PATH."/view.sns.skin.php");
+           ?>
         </ul>
 
-        <?php if ($prev_href || $next_href) { ?>
-        <ul class="bo_v_nb">
-            <?php if ($prev_href) { ?><li class="btn_prv"><span class="nb_tit"><i class="fa fa-caret-up" aria-hidden="true"></i> 이전글</span><a href="<?php echo $prev_href ?>"><?php echo $prev_wr_subject;?></a> <span class="nb_date"><?php echo str_replace('-', '.', substr($prev_wr_date, '2', '8')); ?></span></li><?php } ?>
-            <?php if ($next_href) { ?><li class="btn_next"><span class="nb_tit"><i class="fa fa-caret-down" aria-hidden="true"></i> 다음글</span><a href="<?php echo $next_href ?>"><?php echo $next_wr_subject;?></a>  <span class="nb_date"><?php echo str_replace('-', '.', substr($next_wr_date, '2', '8')); ?></span></li><?php } ?>
-        </ul>
-        <?php } ?>
         <?php
         $link_buttons = ob_get_contents();
         ob_end_flush();
@@ -201,8 +195,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     // 코멘트 입출력
     include_once(G5_BBS_PATH.'/view_comment.php');
      ?>
-
-
+     <?php
+    include_once(G5_BBS_PATH.'/list.php');
+     ?>
 </article>
 <!-- } 게시판 읽기 끝 -->
 
@@ -260,14 +255,14 @@ $(function() {
     //sns공유
     $(".btn_share").click(function(){
         $("#bo_v_sns").fadeIn();
-   
+
     });
 
     $(document).mouseup(function (e) {
         var container = $("#bo_v_sns");
         if (!container.is(e.target) && container.has(e.target).length === 0){
         container.css("display","none");
-        }	
+        }
     });
 });
 

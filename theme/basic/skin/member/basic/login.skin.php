@@ -18,9 +18,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         <input type="text" name="mb_id" id="login_id" required class="frm_input required" size="20" maxLength="20" placeholder="아이디">
         <label for="login_pw" class="sound_only">비밀번호<strong class="sound_only"> 필수</strong></label>
         <input type="password" name="mb_password" id="login_pw" required class="frm_input required" size="20" maxLength="20" placeholder="비밀번호">
-        <input type="submit" value="로그인" class="btn_submit">
-        <input type="checkbox" name="auto_login" id="login_auto_login">
-        <label for="login_auto_login">자동로그인</label>
+        <div>
+            <div id="ol_auto">
+                <input type="checkbox" name="auto_login" id="login_auto_login">
+                <label for="login_auto_login">자동로그인</label>
+            </div>
+            <div id="login_btn">
+                <input type="submit" value="로그인" class="btn_submit">
+            </div>
+        </div>
     </fieldset>
 
     <?php
