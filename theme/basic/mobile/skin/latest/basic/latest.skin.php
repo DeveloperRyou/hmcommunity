@@ -31,8 +31,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
 
             ?>
             <div class="lt_info">
-                <?php echo $list[$i]['name'] ?>
-                <span class="lt_date"><?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?> 
+                <?php
+                $sql="SELECT gr_id FROM `g5_board` WHERE bo_table='".$bo_table."'";
+                $result=sql_query($sql);
+                $result_gr_id=sql_fetch_array($result);
+                echo ($result_gr_id['gr_id']=='anonymous') ? '<strong>익명</strong>' : $list[$i]['name'];
+                ?>
+                <span class="lt_date"><?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?>
                 <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?></span>
             </div>
         </li>
