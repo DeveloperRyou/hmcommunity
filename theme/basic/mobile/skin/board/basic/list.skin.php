@@ -11,7 +11,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 ?>
 
 <?php if ($rss_href || $write_href) { ?>
-<ul class="<?php echo isset($view) ? 'view_is_list btn_top' : 'btn_top top';?>">
+<ul class="<?php echo isset($view) ? 'view_is_list btn_top' : 'btn_top';?>">
     <?php if ($rss_href) { ?><li><a href="<?php echo $rss_href ?>" class="btn_b01"><i class="fa fa-rss" aria-hidden="true"></i><span class="sound_only">RSS</span></a></li><?php } ?>
     <?php if ($admin_href) { ?><li><a href="<?php echo $admin_href ?>" class="btn_admin"><i class="fa fa-user-circle" aria-hidden="true"></i><span class="sound_only">관리자</span></a></li><?php } ?>
     <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_b02"><i class="fa fa-pencil" aria-hidden="true"></i> 글쓰기</a></li><?php } ?>
@@ -73,7 +73,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
                     <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                         <?php echo $list[$i]['icon_reply']; ?>
-                        <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon"><i class="fa fa-volume-up" aria-hidden="true"></i>공지</strong><?php } ?> 
+                        <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon"><i class="fa fa-volume-up" aria-hidden="true"></i>공지</strong><?php } ?>
                         <?php echo $list[$i]['subject'] ?>
                         <?php
                         // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
@@ -89,13 +89,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
                 </div>
                 <div class="bo_info">
-                    <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?>
-                    
+                    <span class="sound_only">작성자</span><?php echo ($gr_id=='anonymous') ? '<strong>익명</strong>' : $list[$i]['name'] ?>
+
 
                     <span class="bo_date"><?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?> <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?></span>
-                
+
                 </div>
-                
+
             </li><?php } ?>
             <?php if (count($list) == 0) { echo '<li class="empty_table">게시물이 없습니다.</li>'; } ?>
         </ul>
