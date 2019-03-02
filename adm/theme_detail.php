@@ -1,10 +1,11 @@
 <?php
 $sub_menu = "100280";
-include_once('./_common.php');
-
+include_once('./_common.php')
+auth_check($auth[$sub_menu], 'r');
+/*
 if ($is_admin != 'super')
     die('최고관리자만 접근 가능합니다.');
-
+*/
 $theme = trim($_POST['theme']);
 $theme_dir = get_theme_dir();
 

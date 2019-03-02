@@ -5,10 +5,10 @@ include_once('./_common.php');
 check_demo();
 
 auth_check($auth[$sub_menu], 'd');
-
+/*
 if ($is_admin != 'super')
     alert('최고관리자만 접근 가능합니다.');
-
+*/
 $year = preg_replace('/[^0-9]/', '', $_POST['year']);
 $month = preg_replace('/[^0-9]/', '', $_POST['month']);
 $method = $_POST['method'];

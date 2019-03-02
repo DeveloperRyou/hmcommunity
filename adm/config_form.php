@@ -3,10 +3,10 @@ $sub_menu = "100100";
 include_once('./_common.php');
 
 auth_check($auth[$sub_menu], 'r');
-
+/*
 if ($is_admin != 'super')
     alert('최고관리자만 접근 가능합니다.');
-
+*/
 if (!isset($config['cf_add_script'])) {
     sql_query(" ALTER TABLE `{$g5['config_table']}`
                     ADD `cf_add_script` TEXT NOT NULL AFTER `cf_admin_email_name` ", true);

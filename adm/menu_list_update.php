@@ -3,10 +3,11 @@ $sub_menu = "100290";
 include_once('./_common.php');
 
 check_demo();
-
+auth_check($auth[$sub_menu], 'r');
+/*
 if ($is_admin != 'super')
     alert('최고관리자만 접근 가능합니다.');
-
+*/
 check_admin_token();
 
 // 이전 메뉴정보 삭제
@@ -24,7 +25,7 @@ for ($i=0; $i<$count; $i++)
     $code    = $_POST['code'][$i];
     $me_name = $_POST['me_name'][$i];
     $me_link = (preg_match('/^javascript/i', $_POST['me_link'][$i]) || preg_match('/script:/i', $_POST['me_link'][$i])) ? G5_URL : strip_tags($_POST['me_link'][$i]);
-    
+
     if(!$code || !$me_name || !$me_link)
         continue;
 

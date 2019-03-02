@@ -1,10 +1,11 @@
 <?php
 $sub_menu = '100920';
 include_once('./_common.php');
-
+auth_check($auth[$sub_menu], 'd');
+/*
 if ($is_admin != 'super')
     alert('최고관리자만 접근 가능합니다.', G5_URL);
-
+*/
 $g5['title'] = '썸네일 일괄삭제';
 include_once('./admin.head.php');
 ?>

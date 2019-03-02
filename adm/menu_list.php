@@ -2,9 +2,11 @@
 $sub_menu = "100290";
 include_once('./_common.php');
 
+auth_check($auth[$sub_menu], 'w');
+/*
 if ($is_admin != 'super')
     alert('최고관리자만 접근 가능합니다.');
-
+*/
 // 메뉴테이블 생성
 if( !isset($g5['menu_table']) ){
     die('<meta charset="utf-8">dbconfig.php 파일에 <strong>$g5[\'menu_table\'] = G5_TABLE_PREFIX.\'menu\';</strong> 를 추가해 주세요.');
@@ -198,12 +200,12 @@ function fmenulist_submit(f)
 {
 
     var me_links = document.getElementsByName('me_link[]');
-    var reg = /^javascript/; 
+    var reg = /^javascript/;
 
 	for (i=0; i<me_links.length; i++){
-        
-	    if( reg.test(me_links[i].value) ){ 
-        
+
+	    if( reg.test(me_links[i].value) ){
+
             alert('링크에 자바스크립트문을 입력할수 없습니다.');
             me_links[i].focus();
             return false;

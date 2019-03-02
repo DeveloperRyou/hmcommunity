@@ -1,10 +1,11 @@
 <?php
 $sub_menu = "100280";
 include_once('./_common.php');
-
+auth_check($auth[$sub_menu], 'r');
+/*
 if ($is_admin != 'super')
     alert('최고관리자만 접근 가능합니다.');
-
+*/
 // 테마 필드 추가
 if(!isset($config['cf_theme'])) {
     sql_query(" ALTER TABLE `{$g5['config_table']}`

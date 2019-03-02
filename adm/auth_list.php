@@ -2,9 +2,11 @@
 $sub_menu = "100200";
 include_once('./_common.php');
 
+auth_check($auth[$sub_menu], 'r');
+/*
 if ($is_admin != 'super')
     alert('최고관리자만 접근 가능합니다.');
-
+*/
 $sql_common = " from {$g5['auth_table']} a left join {$g5['member_table']} b on (a.mb_id=b.mb_id) ";
 
 $sql_search = " where (1) ";

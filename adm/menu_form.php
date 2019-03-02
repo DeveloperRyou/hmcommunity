@@ -2,9 +2,11 @@
 $sub_menu = "100290";
 include_once('./_common.php');
 
+auth_check($auth[$sub_menu], 'r');
+/*
 if ($is_admin != 'super')
     alert_close('최고관리자만 접근 가능합니다.');
-
+*/
 $g5['title'] = '메뉴 추가';
 include_once(G5_PATH.'/head.sub.php');
 
@@ -51,7 +53,7 @@ $(function() {
             $o_link = $(".td_mngsmall input[name='link[]']"),
             hrefs = [],
             menu_exist = false;
-           
+
         if( $links.length ){
             $links.each(function( index ) {
                 hrefs.push( $(this).val() );
@@ -73,7 +75,7 @@ $(function() {
     }
 
     function menu_result_change( type ){
-        
+
         var dfd = new $.Deferred();
 
         $("#menu_result").empty().load(

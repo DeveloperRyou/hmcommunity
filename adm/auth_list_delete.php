@@ -22,7 +22,7 @@ for ($i=0; $i<$count; $i++)
 {
     // 실제 번호를 넘김
     $k = $chk[$i];
-    
+
     $mb_id = preg_replace('/[^a-zA-Z0-9_]/', '', $_POST['mb_id'][$k]);
     $au_menu = preg_replace('/[^a-zA-Z0-9_]/', '', $_POST['au_menu'][$k]);
 

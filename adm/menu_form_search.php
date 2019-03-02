@@ -1,9 +1,11 @@
 <?php
 include_once('./_common.php');
 
+auth_check($auth[$sub_menu], 'w');
+/*
 if ($is_admin != 'super')
     die('최고관리자만 접근 가능합니다.');
-
+*/
 switch($type) {
     case 'group':
         $sql = " select gr_id as id, gr_subject as subject
