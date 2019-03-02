@@ -10,7 +10,7 @@ include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 ?>
 
-<header id="hd">
+<header id="hd" class="top">
     <h1 id="hd_h1"><?php echo $g5['title'] ?></h1>
 
     <div class="to_content"><a href="#container">본문 바로가기</a></div>
@@ -123,7 +123,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 <li class="hd_nb2"><a href="<?php echo G5_BBS_URL ?>/faq.php" id="snb_faq"><i class="fa fa-question-circle" aria-hidden="true"></i><br>FAQ</a></li>
                 <li class="hd_nb3"><a href="<?php echo G5_BBS_URL ?>/current_connect.php" id="snb_cnt"><i class="fa fa-users" aria-hidden="true"></i><br>접속자 <span><?php echo connect('theme/basic'); // 현재 접속자수 ?></span></a></li>
                 <li class="hd_nb4"><a href="<?php echo G5_BBS_URL ?>/new.php" id="snb_new"><i class="fa fa-history" aria-hidden="true"></i><br>새글</a></li>
-                
+
             </ul>
 
             <div id="text_size">
@@ -170,7 +170,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
             $(".btn_gnb_op").click(function(){
                 $(this).toggleClass("btn_gnb_cl").next(".gnb_2dul").slideToggle(300);
-                
+
             });
 
             $(".hd_closer").on("click", function() {
@@ -180,7 +180,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             });
         });
         </script>
-        
+
     </div>
 </header>
 
@@ -189,4 +189,4 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <div id="wrapper">
 
     <div id="container">
-    <?php if (!defined("_INDEX_")) { ?><h2 id="container_title" class="top" title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></h2><?php } ?>
+    <?php if (!defined("_INDEX_")) { ?><h2 id="container_title" title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></h2><?php } ?>

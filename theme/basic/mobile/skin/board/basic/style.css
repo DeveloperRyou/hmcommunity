@@ -49,7 +49,7 @@
 
 #bo_cate h2 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
 #bo_cate ul {margin: 10px;padding-left:1px;zoom:1}
-#bo_cate ul:after {display:block;visibility:hidden;clear:both;content:""} 
+#bo_cate ul:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_cate li{display:inline-block;float:left;margin:3px 5px 3px 0}
 #bo_cate a {display:block;line-height:24px;padding:0 10px;border-radius:13px;background:#fff;}
 #bo_cate #bo_cate_on {background:#4162ff;color:#fff;
@@ -88,7 +88,7 @@ box-shadow: 0 0 8px  rgba(65,98,255,0.8);}
 .bo_subject i{color: #8d96c2;font-size:12px}
 .bo_subject  .fa-heart{color:#ff0000}
 .bo_current {color:#e8180c}
-.bo_info{border-top: 1px solid #eee;margin: 10px 0 0;line-height: 20px;color: #666;position: relative;padding-top: 10px;vertical-align:top}
+.bo_info{border-top: 1px solid #eee;margin: 10px 0 0;line-height: 20px;position: relative;padding-top: 10px;vertical-align:top}
 .bo_info .comment_icon{background:url(./img/icon_comment.png) no-repeat 50% 50% ;display:inline-block;width:20px;height:28px;text-indent:-999px;overflow:hidden;vertical-align:top;background-size:70%;margin:0 0px 0 5px}
 .bo_info .bo_date{position:absolute;top:10px;right:0;font-style: italic;}
 .bo_info .cnt_cmt {display:inline-block;margin: 0 5px 0 3px;}
@@ -134,7 +134,7 @@ box-shadow: 0 0 8px rgba(65,98,255,0.8);}
 
 #bo_v_info {padding:15px 0px 10px;border-bottom:1px solid #eee;text-align:center;color:#666;line-height:20px;}
 #bo_v_info h2 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
-#bo_v_info strong {display:inline-block;font-weight:normal;margin:0 5px}
+#bo_v_info strong {display:inline-block;font-weight:700;margin:0 5px}
 #bo_v_info .profile_img img{border-radius:50%;vertical-align:top}
 #bo_v_info .icon_view{display:inline-block;background:url(./img/icon_view.png) no-repeat 50% 50%;background-size:80%;height:15px;width:20px;overflow:hidden;text-indent:-999px;vertical-align:middle;margin:0 3px 0 5px}
 #bo_v_info .icon_comment{display:inline-block;background:url(./img/icon_comment.png) no-repeat 50% 50%;background-size:70%;height:15px;width:20px;overflow:hidden;text-indent:-999px;vertical-align:middle;margin:0 3px 0 5px}
@@ -276,4 +276,3 @@ box-shadow: 0 0 8px rgba(65,98,255,0.8);}
 #bo_w .bo_w_flie .frm_file{padding-left:50px;}
 #bo_w .bo_w_flie .file_wr{border:1px solid #ccc;background:#fff;color:#000;vertical-align:middle;border-radius:3px;padding:5px;height:40px;margin:0}
 #bo_w .bo_w_flie .frm_input{margin:5px 0 0 }
-
