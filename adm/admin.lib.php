@@ -25,7 +25,7 @@ function get_skin_select($skin_gubun, $id, $name, $selected='', $event='')
         }
     }
 
-    $skins = array_merge($skins, get_skin_dir($skin_gubun));
+    $skins = array_merge($skins, get_skin_dir($skin_gubun, G5_THEME_PATH.'/skin'));
 
     $str = "<select id=\"$id\" name=\"$name\" $event>\n";
     for ($i=0; $i<count($skins); $i++) {
@@ -57,7 +57,7 @@ function get_mobile_skin_select($skin_gubun, $id, $name, $selected='', $event=''
         }
     }
 
-    $skins = array_merge($skins, get_skin_dir($skin_gubun, G5_MOBILE_PATH.'/'.G5_SKIN_DIR));
+    $skins = array_merge($skins, get_skin_dir($skin_gubun, G5_THEME_PATH.'/mobile/skin'));
 
     $str = "<select id=\"$id\" name=\"$name\" $event>\n";
     for ($i=0; $i<count($skins); $i++) {
@@ -75,7 +75,7 @@ function get_mobile_skin_select($skin_gubun, $id, $name, $selected='', $event=''
 
 
 // 스킨경로를 얻는다
-function get_skin_dir($skin, $skin_path=G5_SKIN_PATH)
+function get_skin_dir($skin, $skin_path=G5_THEME_PATH)
 {
     global $g5;
 
@@ -357,7 +357,7 @@ function get_admin_token()
 
 // 관리자가 자동등록방지를 사용해야 할 경우
 function get_admin_captcha_by($type='get'){
-    
+
     $captcha_name = 'ss_admin_use_captcha';
 
     if($type === 'remove'){
@@ -392,7 +392,7 @@ function check_log_folder($log_path){
                 fclose( $handle );
             }
         }
-        
+
         // 아파치 서버인 경우 해당 디렉토리 파일 목록 안보이게 하기
         $index_file = $log_path . '/index.php';
         if ( !file_exists( $index_file ) ) {
@@ -402,11 +402,11 @@ function check_log_folder($log_path){
             }
         }
     }
-    
+
     // txt 파일과 log 파일을 조회하여 30일이 지난 파일은 삭제합니다.
     $txt_files = glob($log_path.'/*.txt');
     $log_files = glob($log_path.'/*.log');
-    
+
     $del_files = array_merge($txt_files, $log_files);
 
     if( $del_files && is_array($del_files) ){
