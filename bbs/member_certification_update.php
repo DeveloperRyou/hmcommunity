@@ -6,10 +6,6 @@ if (!$is_member)//미가입자 접근 불가 설정
 
 
 $g5['title'] = '한민고 학생 인증';
+//스킨 파일에서 form 태그를 이용해 POST방식으로 넘긴 변수와 답 DB를 대조하여 맞으면 회원 권한 3, 틀리면 스킨페이지로 이동
 
-include_once(G5_PATH.'/head.php');
-
-//include_once($member_skin_path.'/member_confirm.skin.php');
-
-include_once(G5_PATH.'/tail.php');
 ?>
