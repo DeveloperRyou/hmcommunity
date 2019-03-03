@@ -4,10 +4,10 @@ include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 
 if ($is_guest)
     alert('회원만 이용하실 수 있습니다.');
-
+/*
 if (!chk_captcha()) {
     alert('자동등록방지 숫자가 틀렸습니다.');
-}
+}*/
 
 $recv_list = explode(',', trim($_POST['me_recv_mb_id']));
 $str_nick_list = '';
