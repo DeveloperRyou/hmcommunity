@@ -16,7 +16,7 @@ include_once(G5_THEME_PATH.'/head.php');
   <ul>
     <li><div> <a href="http://www.hanmin.hs.kr" target="_blank"> <img src="img/main_ad_01.png"> </a> /<div></li>
     <li><div> <a href="http://my.hanmin.hs.kr/" target="_blank"><img src="img/main_ad_02.png" style="height: 250px;"> </a> </div></li>
-    <li><div> <a href="http://hmcoder.kr" target="_blank"><img src="img/main_ad_03.png"> </a> </div></li>
+    <li><div> <a href="http://hmcoder.kr:8080" target="_blank"><img src="img/main_ad_03.png"> </a> </div></li>
   </ul>
   <p class="pos">
     <label for="pos1"></label>
