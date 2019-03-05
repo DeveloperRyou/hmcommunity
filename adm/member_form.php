@@ -442,8 +442,18 @@ this.form.mb_intercept_date.value=this.form.mb_intercept_date.defaultValue; }">
         }   //end if
     }   //end if
     ?>
+    <!--한민고 인증 정보-->
+    <tr>
+        <th scope="row"><label for="mb_1"> 기수</label></th>
+        <td colspan="3"><input type="text" name="mb_1" value="<?php echo $mb['mb_1'] ?>" id="mb_1" class="frm_input" size="30" maxlength="255"></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="mb_2"> 1학년 반</label></th>
+        <td colspan="3"><input type="text" name="mb_2" value="<?php echo $mb['mb_2'] ?>" id="mb_2" class="frm_input" size="30" maxlength="255"></td>
+    </tr>
 
-    <?php for ($i=1; $i<=10; $i++) { ?>
+
+    <?php for ($i=3; $i<=10; $i++) { ?>
     <tr>
         <th scope="row"><label for="mb_<?php echo $i ?>">여분 필드 <?php echo $i ?></label></th>
         <td colspan="3"><input type="text" name="mb_<?php echo $i ?>" value="<?php echo $mb['mb_'.$i] ?>" id="mb_<?php echo $i ?>" class="frm_input" size="30" maxlength="255"></td>
