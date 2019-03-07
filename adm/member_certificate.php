@@ -36,8 +36,9 @@ include_once('./admin.head.php');
     {
         $bg = 'bg'.($i%2);
     ?>
-    <tr class="<?php echo $bg; ?> id_<?php echo $row['qa_id']; ?>">
+    <tr class="<?php echo $bg; ?> qa_list id_<?php echo $row['qa_id']; ?>">
         <td class="td_qa_id">
+            <input type="hidden" name="code[]" value="<?php echo substr($row['qa_id'], 0, 2) ?>">
             <label for="me_id_<?php echo $i; ?>" class="sound_only">번호</label>
             <?php echo $i+1?>
         </td>
@@ -69,45 +70,30 @@ include_once('./admin.head.php');
 
 <script>
 $(function() {
-    $(document).on("click", ".btn_add_submenu", function() {
-        var code = $(this).closest("tr").find("input[name='code[]']").val().substr(0, 2);
-        add_submenu(code);
-    });
-
     $(document).on("click", ".btn_del_menu", function() {
-        if(!confirm("메뉴를 삭제하시겠습니까?"))
+        if(!confirm("문제를 삭제하시겠습니까?"))
             return false;
 
-        var $tr = $(this).closest("tr");
-        if($tr.find("td.sub_menu_class").size() > 0) {
-            $tr.remove();
-        } else {
-            var code = $(this).closest("tr").find("input[name='code[]']").val().substr(0, 2);
-            $("tr.menu_group_"+code).remove();
-        }
+        var code = $(this).closest("tr").find("input[name='code[]']").val().substr(0, 2);
+        $("tr.id_"+code).remove();
 
-        if($("#menulist tr.menu_list").size() < 1) {
-            var list = "<tr id=\"empty_menu_list\"><td colspan=\"<?php echo $colspan; ?>\" class=\"empty_table\">자료가 없습니다.</td></tr>\n";
-            $("#menulist table tbody").append(list);
-        } else {
-            $("#menulist tr.menu_list").each(function(index) {
-                $(this).removeClass("bg0 bg1")
-                    .addClass("bg"+(index % 2));
-            });
-        }
+        $("#menulist tr.qa_list").each(function(index) {
+            $(this).removeClass("bg0 bg1")
+                .addClass("bg"+(index % 2));
+        });
     });
 });
 
 function add_menu()
 {
     var max_code = base_convert(0, 10, 36);
-    $("#menulist tr.menu_list").each(function() {
+    $("#menulist tr.qa_list").each(function() {
         var me_code = $(this).find("input[name='code[]']").val().substr(0, 2);
         if(max_code < me_code)
             max_code = me_code;
     });
 
-    var url = "./menu_form.php?code="+max_code+"&new=new";
+    var url = "./member_certificate_qa_form.php?code="+max_code+"&new=new";
     window.open(url, "add_menu", "left=100,top=100,width=550,height=650,scrollbars=yes,resizable=yes");
     return false;
 }
