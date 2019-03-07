@@ -24,10 +24,13 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
             $str = preg_replace("/\[\<a\s.*href\=\"(http|https|ftp|mms)\:\/\/([^[:space:]]+)\.(mp3|wma|wmv|asf|asx|mpg|mpeg)\".*\<\/a\>\]/i", "<script>doc_write(obj_movie('$1://$2.$3'));</script>", $str);
     ?>
     <article id="c_<?php echo $comment_id ?>" <?php if ($cmt_depth) { ?>style="margin-left:<?php echo $cmt_depth ?>px;border-top-color:#e0e0e0"<?php } ?>>
-        <header>
-            <h2><?php echo get_text($list[$i]['wr_name']); ?>님의 댓글<?php if ($cmt_depth) { ?><span class="sound_only">의 댓글</span><?php } ?></h2>
-            <span class="comment_profile_img"><?php echo get_member_profile_img($list[$i]['mb_id'], 40, 40); ?></span> <?php echo $list[$i]['name'] ?>
-            
+        <header <?php echo($gr_id=='anonymous')?'style=\'padding-left:0px\'':''?>>
+            <h2><?php echo ($gr_id=='anonymous')?'익명': get_text($list[$i]['wr_name']); ?>님의 댓글<?php if ($cmt_depth) { ?><span class="sound_only">의 댓글</span><?php } ?></h2>
+            <?php if($gr_id!='anonymous'){?>
+              <span class="comment_profile_img"><?php echo get_member_profile_img($list[$i]['mb_id'], 40, 40); ?></span>
+            <?php }?>
+            <?php echo ($gr_id=='anonymous')?'<strong>익명</strong>':$list[$i]['name'] ?>
+
             <?php if ($is_ip_view) { ?>
             <span class="sound_only">아이피</span>
             <span class="bo_vc_hdinfo">(<?php echo $list[$i]['ip']; ?>)</span>
@@ -100,7 +103,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         <textarea id="wr_content" name="wr_content" required title="댓글 내용"
         <?php if ($comment_min || $comment_max) { ?>onkeyup="check_byte('wr_content', 'char_count');"<?php } ?> placeholder="댓글내용을 입력해주세요"><?php echo $c_wr_content; ?></textarea>
         <?php if ($comment_min || $comment_max) { ?><script> check_byte('wr_content', 'char_count'); </script><?php } ?>
-                
+
         <div class="bo_vc_w_wr">
             <div class="bo_vc_w_info">
                 <?php if ($is_guest) { ?>
@@ -313,11 +316,11 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         );
 
 
-           
+
     });
     <?php } ?>
 
-    $(function() {            
+    $(function() {
         //댓글열기
         $(".cmt_btn").click(function(){
             $(this).toggleClass("cmt_btn_op");
