@@ -23,7 +23,7 @@ include_once(G5_PATH.'/head.php');
             <p> 한민고등학교 재학생, 졸업생을 인증하는 질문입니다. </p>
             <?php 
                 // DB 끌어와야됨.
-                
+                $sql = "SELECT * FROM `g5_member_certification`";
 
             ?>
             
