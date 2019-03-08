@@ -6,12 +6,12 @@ $begin_time = get_microtime();
 $files = glob(G5_ADMIN_PATH.'/css/admin_extend_*');
 if (is_array($files)) {
     foreach ((array) $files as $k=>$css_file) {
-        
+
         $fileinfo = pathinfo($css_file);
         $ext = $fileinfo['extension'];
-        
+
         if( $ext !== 'css' ) continue;
-        
+
         $css_file = str_replace(G5_ADMIN_PATH, G5_ADMIN_URL, $css_file);
         add_stylesheet('<link rel="stylesheet" href="'.$css_file.'">', $k);
     }
@@ -94,9 +94,7 @@ function imageview(id, w, h)
         selectBoxHidden(id);
 }
 </script>
-
 <div id="to_content"><a href="#container">본문 바로가기</a></div>
-
 <header id="hd">
     <h1><?php echo $config['cf_title'] ?></h1>
     <div id="hd_top">
@@ -164,7 +162,7 @@ jQuery(function($){
     });
 
     $("#btn_gnb").click(function(){
-        
+
         var $this = $(this);
 
         try {

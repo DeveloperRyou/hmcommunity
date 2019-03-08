@@ -31,24 +31,42 @@ include_once('./admin.head.php');
     </tr>
     </thead>
     <tbody>
+    <tr class="qa_list hidden sound_only">
+          <td class="td_qa_id">
+              <input type="hidden" name="new[]" value="new">
+              <label for="qa_id" class="sound_only">번호</label>
+              new
+          </td>
+          <td>
+              <label for="qa_question" class="sound_only">질문<strong class="sound_only"> 필수</strong></label>
+              <input type="text" value="질문" name="qa_content_" required class="required tbl_input full_input">
+          </td>
+          <td class="td_answer">
+              <label for="qa_answer" class="sound_only">답</label>
+              <input type="text" value="답" name="qa_answer_" required class="required tbl_input full_input">
+          </td>
+          <td class="td_mng" style="width:60px;">
+              <button type="button" class="btn_del_menu btn_02">삭제</button>
+          </td>
+    </tr>
     <?php
     for ($i=0; $row=sql_fetch_array($result); $i++)
     {
-        $bg = 'bg'.($i%2);
+        $bg = 'bg'.(-($i%2-1));
     ?>
     <tr class="<?php echo $bg; ?> qa_list id_<?php echo $row['qa_id']; ?>">
         <td class="td_qa_id">
             <input type="hidden" name="code[]" value="<?php echo substr($row['qa_id'], 0, 2) ?>">
-            <label for="me_id_<?php echo $i; ?>" class="sound_only">번호</label>
+            <label for="qa_id_<?php echo $i; ?>" class="sound_only">번호</label>
             <?php echo $i+1?>
         </td>
         <td>
-            <label for="me_question_<?php echo $i; ?>" class="sound_only">질문<strong class="sound_only"> 필수</strong></label>
-            <input type="text" name="me_question[]" value="<?php echo $row['qa_content'] ?>" id="me_question_<?php echo $i; ?>" required class="required tbl_input full_input">
+            <label for="qa_question_<?php echo $i; ?>" class="sound_only">질문<strong class="sound_only"> 필수</strong></label>
+            <input type="text" value="<?php echo $row['qa_content'] ?>" name="qa_content_<?php echo $i; ?>" required class="required tbl_input full_input">
         </td>
         <td class="td_answer">
-            <label for="me_answer_<?php echo $i; ?>" class="sound_only">답</label>
-            <input type="text" name="me_answer[]" value="<?php echo $row['qa_answer'] ?>" id="me_answer_<?php echo $i; ?>" required class="required tbl_input full_input">
+            <label for="qa_answer_<?php echo $i; ?>" class="sound_only">답</label>
+            <input type="text" value="<?php echo $row['qa_answer'] ?>" name="qa_answer_<?php echo $i; ?>" required class="required tbl_input full_input">
         </td>
         <td class="td_mng" style="width:60px;">
             <button type="button" class="btn_del_menu btn_02">삭제</button>
@@ -74,7 +92,10 @@ $(function() {
         if(!confirm("문제를 삭제하시겠습니까?"))
             return false;
 
-        var code = $(this).closest("tr").find("input[name='code[]']").val().substr(0, 2);
+        var code = $(this).closest("tr").find("input[name='code[]']").val();
+        $("tr.id_"+code).remove();
+
+        var code = $(this).closest("tr").find("input[name='new[]']").val();
         $("tr.id_"+code).remove();
 
         $("#menulist tr.qa_list").each(function(index) {
@@ -86,36 +107,30 @@ $(function() {
 
 function add_menu()
 {
-    var max_code = base_convert(0, 10, 36);
-    $("#menulist tr.qa_list").each(function() {
-        var me_code = $(this).find("input[name='code[]']").val().substr(0, 2);
-        if(max_code < me_code)
-            max_code = me_code;
+    var new_num=0;
+    var new_tr=$("tr.hidden").clone();
+    $("tbody").append(new_tr);
+    $("#menulist tr.qa_list").each(function(index) {
+        $(this).removeClass("bg0 bg1")
+            .addClass("bg"+(index % 2));
+
+        if($(this).hasClass("id_new_"+new_num)===true) new_num+=1;
+
+        if(index!=0 && $(this).hasClass("hidden")===true){
+            $(this).removeClass("hidden sound_only")
+            $(this).addClass("id_new_"+new_num);
+            $(this).find("input[name='new[]']").val("new_"+new_num);
+            $(this).find("input[name='qa_content_']").attr("name","qa_content_new_"+new_num);
+            $(this).find("input[name='qa_answer_']").attr("name","qa_answer_new_"+new_num);
+        }
     });
-
-    var url = "./member_certificate_qa_form.php?code="+max_code+"&new=new";
-    window.open(url, "add_menu", "left=100,top=100,width=550,height=650,scrollbars=yes,resizable=yes");
-    return false;
-}
-
-function base_convert(number, frombase, tobase) {
-  //  discuss at: http://phpjs.org/functions/base_convert/
-  // original by: Philippe Baumann
-  // improved by: Rafał Kukawski (http://blog.kukawski.pl)
-  //   example 1: base_convert('A37334', 16, 2);
-  //   returns 1: '101000110111001100110100'
-
-  return parseInt(number + '', frombase | 0)
-    .toString(tobase | 0);
 }
 
 function fmenulist_submit(f)
 {
-
     var me_links = document.getElementsByName('me_link[]');
     var reg = /^javascript/;
-
-	for (i=0; i<me_links.length; i++){
+    for (i=0; i<me_links.length; i++){
 
 	    if( reg.test(me_links[i].value) ){
 
