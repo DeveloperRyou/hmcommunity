@@ -126,7 +126,7 @@ $colspan = 16;
         <th scope="col" id="mb_list_open"><?php echo subject_sort_link('mb_open', '', 'desc') ?>정보공개</a></th>
         <th scope="col" id="mb_list_mailr"><?php echo subject_sort_link('mb_mailling', '', 'desc') ?>메일수신</a></th>
         <th scope="col" id="mb_list_auth">상태</th>
-        <th scope="col" id="mb_list_mobile">휴대폰</th>
+        <th scope="col" id="mb_list_mobile">기수</th>
         <th scope="col" id="mb_list_lastcall"><?php echo subject_sort_link('mb_today_login', '', 'desc') ?>최종접속</a></th>
         <th scope="col" id="mb_list_grp">접근그룹</th>
         <th scope="col" rowspan="2" id="mb_list_mng">관리</th>
@@ -138,7 +138,7 @@ $colspan = 16;
         <th scope="col" id="mb_list_adultc"><?php echo subject_sort_link('mb_adult', '', 'desc') ?>성인인증</a></th>
         <th scope="col" id="mb_list_auth"><?php echo subject_sort_link('mb_intercept_date', '', 'desc') ?>접근차단</a></th>
         <th scope="col" id="mb_list_deny"><?php echo subject_sort_link('mb_level', '', 'desc') ?>권한</a></th>
-        <th scope="col" id="mb_list_tel">전화번호</th>
+        <th scope="col" id="mb_list_tel">1학년 반</th>
         <th scope="col" id="mb_list_join"><?php echo subject_sort_link('mb_datetime', '', 'desc') ?>가입일</a></th>
         <th scope="col" id="mb_list_point"><?php echo subject_sort_link('mb_point', '', 'desc') ?> 포인트</a></th>
     </tr>
@@ -217,14 +217,14 @@ $colspan = 16;
             //소셜계정이 있다면
             if(function_exists('social_login_link_account')){
                 if( $my_social_accounts = social_login_link_account($row['mb_id'], false, 'get_data') ){
-                    
+
                     echo '<div class="member_social_provider sns-wrap-over sns-wrap-32">';
                     foreach( (array) $my_social_accounts as $account){     //반복문
                         if( empty($account) || empty($account['provider']) ) continue;
-                        
+
                         $provider = strtolower($account['provider']);
                         $provider_name = social_get_provider_service_name($provider);
-                        
+
                         echo '<span class="sns-icon sns-'.$provider.'" title="'.$provider_name.'">';
                         echo '<span class="ico"></span>';
                         echo '<span class="txt">'.$provider_name.'</span>';
@@ -256,7 +256,7 @@ $colspan = 16;
             else echo "정상";
             ?>
         </td>
-        <td headers="mb_list_mobile" class="td_tel"><?php echo get_text($row['mb_hp']); ?></td>
+        <td headers="mb_list_age" class="td_certificate"><?php echo get_text($row['mb_1']); ?></td>
         <td headers="mb_list_lastcall" class="td_date"><?php echo substr($row['mb_today_login'],2,8); ?></td>
         <td headers="mb_list_grp" class="td_numsmall"><?php echo $group ?></td>
         <td headers="mb_list_mng" rowspan="2" class="td_mng td_mng_s"><?php echo $s_mod ?><?php echo $s_grp ?></td>
@@ -264,7 +264,7 @@ $colspan = 16;
     <tr class="<?php echo $bg; ?>">
         <td headers="mb_list_name" class="td_mbname"><?php echo get_text($row['mb_name']); ?></td>
         <td headers="mb_list_nick" class="td_name sv_use"><div><?php echo $mb_nick ?></div></td>
-        
+
         <td headers="mb_list_sms">
             <label for="mb_sms_<?php echo $i; ?>" class="sound_only">SMS수신</label>
             <input type="checkbox" name="mb_sms[<?php echo $i; ?>]" <?php echo $row['mb_sms']?'checked':''; ?> value="1" id="mb_sms_<?php echo $i; ?>">
@@ -282,7 +282,7 @@ $colspan = 16;
         <td headers="mb_list_auth" class="td_mbstat">
             <?php echo get_member_level_select("mb_level[$i]", 1, $member['mb_level'], $row['mb_level']) ?>
         </td>
-        <td headers="mb_list_tel" class="td_tel"><?php echo get_text($row['mb_tel']); ?></td>
+        <td headers="mb_list_class" class="td_certificate"><?php echo get_text($row['mb_2']); ?></td>
         <td headers="mb_list_join" class="td_date"><?php echo substr($row['mb_datetime'],2,8); ?></td>
         <td headers="mb_list_point" class="td_num"><a href="point_list.php?sfl=mb_id&amp;stx=<?php echo $row['mb_id'] ?>"><?php echo number_format($row['mb_point']) ?></a></td>
 
