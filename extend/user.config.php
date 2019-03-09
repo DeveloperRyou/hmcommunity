@@ -2,8 +2,10 @@
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 // 최고관리자
-//if ($member['mb_id'] == 'junho0725') $is_admin = 'super';
-//if ($member['mb_id'] == 'b14095') $is_admin = 'super';
+if ($member['mb_id'] == 'junho0725') $is_admin = 'super';
+if ($member['mb_id'] == 'b14095') $is_admin = 'super';
+if ($member['mb_id'] == 'admin') $is_admin = 'super';
+
 
 // 그룹관리자 Type1
 //if ($gr_id == '그룹아이디') {
