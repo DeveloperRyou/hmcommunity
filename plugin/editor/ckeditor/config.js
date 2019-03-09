@@ -8,4 +8,5 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 	config.filebrowserUploadUrl = g5_editor_url+"/imageUpload/upload.php";
+	config.filebrowserUploadMethod = 'form';
 };
