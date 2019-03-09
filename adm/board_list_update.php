@@ -49,8 +49,8 @@ if ($_POST['act_button'] == "선택수정") {
 
 } else if ($_POST['act_button'] == "선택삭제") {
 
-    if ($is_admin != 'super')
-        alert('게시판 삭제는 최고관리자만 가능합니다.');
+//    if ($is_admin != 'super')
+  //      alert('게시판 삭제는 최고관리자만 가능합니다.');
 
     auth_check($auth[$sub_menu], 'd');
 

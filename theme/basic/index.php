@@ -40,7 +40,13 @@ include_once(G5_THEME_PATH.'/head.php');
     <?php echo latest("theme/basic", "notice", 6, 25); ?>
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
+    <?php echo latest("theme/basic", "info_share", 6, 25); ?>
+    </div>
+    <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "hanminagora", 6, 25); ?>
+    </div>
+    <div style="float:left; margin-left:2%;" class="lt_wr">
+    <?php echo latest("theme/basic", "free_anonymous", 6, 25); ?>
     </div>
     <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "free_YB", 6, 25); ?>

@@ -7,10 +7,6 @@ auth_check($auth[$sub_menu], 'r');
 $sql_common = " from {$g5['board_table']} a ";
 $sql_search = " where (1) ";
 
-if ($is_admin != "super") {
-    $sql_common .= " , {$g5['group_table']} b ";
-    $sql_search .= " and (a.gr_id = b.gr_id and b.gr_admin = '{$member['mb_id']}') ";
-}
 
 if ($stx) {
     $sql_search .= " and ( ";
@@ -123,11 +119,7 @@ $colspan = 15;
             <input type="checkbox" name="chk[]" value="<?php echo $i ?>" id="chk_<?php echo $i ?>">
         </td>
         <td>
-            <?php if ($is_admin == 'super'){ ?>
-                <?php echo get_group_select("gr_id[$i]", $row['gr_id']) ?>
-            <?php }else{ ?>
-                <input type="hidden" name="gr_id[<?php echo $i ?>]" value="<?php echo $row['gr_id'] ?>"><?php echo $row['gr_subject'] ?>
-            <?php } ?>
+              <?php echo get_group_select("gr_id[$i]", $row['gr_id']) ?>
         </td>
         <td>
             <input type="hidden" name="board_table[<?php echo $i ?>]" value="<?php echo $row['bo_table'] ?>">
@@ -197,12 +189,8 @@ $colspan = 15;
 
 <div class="btn_fixed_top">
     <input type="submit" name="act_button" value="선택수정" onclick="document.pressed=this.value" class="btn_02 btn">
-    <?php if ($is_admin == 'super') { ?>
     <input type="submit" name="act_button" value="선택삭제" onclick="document.pressed=this.value" class="btn_02 btn">
-    <?php } ?>
-    <?php if ($is_admin == 'super') { ?>
     <a href="./board_form.php" id="bo_add" class="btn_01 btn">게시판 추가</a>
-    <?php } ?>
 </div>
 
 </form>

@@ -16,8 +16,6 @@ if (!isset($group['gr_device'])) {
 $sql_common = " from {$g5['group_table']} ";
 
 $sql_search = " where (1) ";
-if ($is_admin != 'super')
-    $sql_search .= " and (gr_admin = '{$member['mb_id']}') ";
 
 if ($stx) {
     $sql_search .= " and ( ";
@@ -133,12 +131,8 @@ $colspan = 10;
             <input type="text" name="gr_subject[<?php echo $i ?>]" value="<?php echo get_text($row['gr_subject']) ?>" id="gr_subject_<?php echo $i ?>" class="tbl_input">
         </td>
         <td class="td_mng td_input">
-        <?php if ($is_admin == 'super'){ ?>
             <label for="gr_admin_<?php echo $i; ?>" class="sound_only">그룹관리자</label>
             <input type="text" name="gr_admin[<?php echo $i ?>]" value="<?php echo $row['gr_admin'] ?>" id="gr_admin_<?php echo $i ?>" class="tbl_input" size="10" maxlength="20">
-        <?php }else{ ?>
-            <input type="hidden" name="gr_admin[<?php echo $i ?>]" value="<?php echo $row['gr_admin'] ?>"><?php echo $row['gr_admin'] ?>
-        <?php } ?>
         </td>
         <td class="td_num"><a href="./board_list.php?sfl=a.gr_id&amp;stx=<?php echo $row['gr_id'] ?>"><?php echo $row2['cnt'] ?></a></td>
         <td class="td_numsmall">
