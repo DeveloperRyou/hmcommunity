@@ -44,7 +44,7 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
                     $cache_fwrite = true;
                 }
             }
-            
+
             if(!$cache_fwrite) {
                 try{
                     $file_contents = file_get_contents($cache_file);
@@ -61,7 +61,42 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
         }
     }
 
-    if(!G5_USE_CACHE || $cache_fwrite) {
+    if($bo_table=='new'){
+        $sql_common = " FROM {$g5['board_new_table']} a ";
+        $sql_order = " ORDER by a.bn_id desc ";;
+
+        $list = array();
+        $sql = " SELECT a.* {$sql_common} WHERE wr_id=wr_parent {$sql_order} limit {$rows} ";
+        $result = sql_query($sql);
+
+        for ($i=0; $row=sql_fetch_array($result); $i++) {
+            $tmp_write_table = $g5['write_prefix'].$row['bo_table'];
+
+            // 원글
+            $row2 = sql_fetch(" select * from {$tmp_write_table} where wr_id = '{$row['wr_id']}' ");
+            $list[$i] = $row2;
+
+            // 당일인 경우 시간으로 표시함
+            $datetime = substr($row2['wr_datetime'],0,10);
+            $datetime2 = $row2['wr_datetime'];
+            if ($datetime == G5_TIME_YMD) {
+                $datetime2 = substr($datetime2,11,5);
+            } else {
+                $datetime2 = substr($datetime2,5,5);
+            }
+
+            $list[$i]['comment_cnt'] = $row2['wr_comment'];
+
+            $list[$i]['href'] = './board.php?bo_table='.$row['bo_table'].'&wr_id='.$row2['wr_id'];
+            $list[$i]['datetime'] = $datetime;
+            $list[$i]['datetime2'] = $datetime2;
+
+            $list[$i]['subject'] = conv_subject($row2['wr_subject'], $subject_len, '…');
+        }
+    }
+
+
+    else if(!G5_USE_CACHE || $cache_fwrite) {
         $list = array();
 
         $sql = " select * from {$g5['board_table']} where bo_table = '{$bo_table}' ";

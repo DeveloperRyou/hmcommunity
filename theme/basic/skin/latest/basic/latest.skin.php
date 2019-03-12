@@ -6,7 +6,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
 ?>
 
 <div class="lat">
-    <h2 class="lat_title"><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>"><?php echo $bo_subject ?></a></h2>
+    <?php if($bo_table=='new'){?>
+      <h2 class="lat_title"><a href="<?php echo G5_BBS_URL ?>/new.php">최신글</a></h2>
+    <?php } else{?>
+      <h2 class="lat_title"><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>"><?php echo $bo_subject ?></a></h2>
+    <?php }?>
     <ul>
     <?php for ($i=0; $i<count($list); $i++) {  ?>
         <li>
@@ -47,6 +51,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
     <li class="empty_li">게시물이 없습니다.</li>
     <?php }  ?>
     </ul>
-    <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>" class="lt_more"><span class="sound_only"><?php echo $bo_subject ?></span><i class="fa fa-plus" aria-hidden="true"></i><span class="sound_only"> 더보기</span></a>
-
+    <?php if($bo_table=='new'){?>
+      <a href="<?php echo G5_BBS_URL ?>/new.php" class="lt_more"><span class="sound_only">최신글</span><i class="fa fa-plus" aria-hidden="true"></i><span class="sound_only"> 더보기</span></a>
+    <?php } else{?>
+      <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>" class="lt_more"><span class="sound_only"><?php echo $bo_subject ?></span><i class="fa fa-plus" aria-hidden="true"></i><span class="sound_only"> 더보기</span></a>
+    <?php }?>
 </div>
