@@ -76,7 +76,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         </tr>
         </thead>
         <tbody>
-        <?php
+        <?php 
         for ($i=0; $i<count($list); $i++) {
          ?>
         <tr class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>">

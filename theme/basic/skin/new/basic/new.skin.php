@@ -24,7 +24,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
     <label for="mb_id" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
     <input type="text" name="mb_id" value="<?php echo $mb_id ?>" id="mb_id" required class="frm_input" size="40">
     <button type="submit" class="btn_submit"><i class="fa fa-search" aria-hidden="true"></i> 검색</button>
-    <p>회원 아이디만 검색 가능</p>
     </form>
     <script>
     /* 셀렉트 박스에서 자동 이동 해제
@@ -40,6 +39,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
 <!-- } 전체게시물 검색 끝 -->
 
 <!-- 전체게시물 목록 시작 { -->
+<div id="bo_list" style="width:100%">
 <form name="fnewlist" id="fnewlist" method="post" action="#" onsubmit="return fnew_submit(this);">
 <input type="hidden" name="sw"       value="move">
 <input type="hidden" name="view"     value="<?php echo $view; ?>">
@@ -50,7 +50,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
 <input type="hidden" name="pressed"  value="">
 
 <div class="tbl_head01 tbl_wrap">
-    <table>
+    <table style="border-right:0px;border-left:0px;font-size:12px;">
     <thead>
     <tr>
         <?php if ($is_admin) { ?>
@@ -59,11 +59,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
             <input type="checkbox" id="all_chk">
         </th>
         <?php } ?>
-        <th scope="col">그룹</th>
-        <th scope="col">게시판</th>
-        <th scope="col">제목</th>
-        <th scope="col">이름</th>
-        <th scope="col">일시</th>
+        <th scope="col"><strong>그룹</strong></th>
+        <th scope="col"><strong>게시판</strong></th>
+        <th scope="col"><strong>제목</strong></th>
+        <th scope="col"><strong>일시</strong></th>
+        <th scope="col"><strong>글쓴이</strong></th>
     </tr>
     </thead>
     <tbody>
@@ -105,6 +105,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
 </div>
 <?php } ?>
 </form>
+</div>
 
 <?php if ($is_admin) { ?>
 <script>

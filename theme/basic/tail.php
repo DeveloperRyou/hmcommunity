@@ -21,7 +21,7 @@ if (G5_IS_MOBILE) {
             echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
             echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
             //echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
-            echo latest("theme/basic", "new", 15, 8); //최근 게시판
+            echo latest("theme/basic", "new", 11, 12); //최근 게시판
             ?>
             <div id="side_ad">
               <ul>
