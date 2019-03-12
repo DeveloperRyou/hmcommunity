@@ -464,6 +464,12 @@ box-sizing: content-box;
 .new_win .p_table .p_foot01 {text-align:center; color:white; background: #2a2a2a;}
 table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 
+#side_ad{width: 100%;height:auto;overflow: hidden;}
+#side_ad ul{width: 100%; height: auto;}
+#side_ad li{float:right;width:100%;height:auto;}
+#side_ad #ad_img{width:100%;height: 100px;text-align: center;line-height: 100px}
+#side_ad img{height: 100%;vertical-align: middle;}
+
 #slide{height:auto;overflow: hidden;}
 #slide ul{width:400%;height:250px;transition:1s;}
 #slide ul:after{content:"";display:block;clear:both;}

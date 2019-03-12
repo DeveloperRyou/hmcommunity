@@ -31,7 +31,6 @@ header("Pragma: no-cache"); // HTTP/1.0
 <!Doctype html>
 <html lang="ko">
 <head>
-<meta name="한아름" content="한민고등학교 커뮤니티">
 <meta charset="utf-8">
 <?php
 if (G5_IS_MOBILE) {
@@ -42,7 +41,7 @@ if (G5_IS_MOBILE) {
     echo '<meta http-equiv="imagetoolbar" content="no">'.PHP_EOL;
     echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">'.PHP_EOL;
 }
-
+echo '<meta name="한아름" content="한민고등학교 커뮤니티">';
 if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
