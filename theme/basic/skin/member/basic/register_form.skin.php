@@ -271,7 +271,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
       <label class="col-sm-2 control-label" for="reg_mb_mailling"><b>메일링서비스</b></label>
       <div class="col-sm-8">
         <label class="checkbox-inline">
-          <input type="checkbox" name="mb_mailling" value="1" id="reg_mb_mailling" <?php echo ($w=='' || $member['mb_mailling'])?'checked':''; ?>>
+          <input type="checkbox" name="mb_mailling" value="1" id="reg_mb_mailling" checked onclick="return false;" <?php echo ($w=='' || $member['mb_mailling'])?'checked':''; ?>>
           정보 메일을 받겠습니다.
         </label>
       </div>
