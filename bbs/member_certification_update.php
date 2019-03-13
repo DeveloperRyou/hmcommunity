@@ -22,5 +22,13 @@ for ($j=0; $j<=5; $j++)
 	if($re!=0)
 		alert('틀렸습니다 ㅠㅠ 다시 시도해주세요','./member_certification.php');
 }
-alert('인증에 성공했습니다!',G5_URL);
+
+//멤버 DB 접근 및 값 비교
+$mb_id = $member['mb_id'];
+$mb_1 = $_POST['mc_number'];
+$mb_2 = $_POST['mc_fclass'];
+$sql = "UPDATE g5_member SET mb_level=3, mb_1='$mb_1', mb_2='$mb_2' WHERE mb_id='$mb_id' LIMIT 1";
+$result = sql_query($sql);
+alert('인증에 성공했습니다!');
+goto_url(G5_URL);
 ?>
