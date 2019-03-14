@@ -10,9 +10,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <h1 style="width: 340px; margin-top: 30px; margin-bottom: 30px;"><i class="glyphicon glyphicon-lock"></i>  <?php echo $g5['title'] ?></h1>
+    <h1 style="width: 340px; margin-top: 30px; margin-bottom: 30px; padding-right: 40px;"><i class="glyphicon glyphicon-lock"></i>  <?php echo $g5['title'] ?></h1>
 
-    <p style="padding-bottom: 30px; padding-left: 25px; padding-right: 35px; width: 565px;">
+    <p style="padding-bottom: 30px; padding-left: 25px; padding-right: 105px; width: 565px;">
         <strong style="font-size:15px; width: 240px;">비밀번호를 한번 더 입력해주세요.</strong>
         <?php if ($url == 'member_leave.php') { ?>
         비밀번호를 입력하시면 회원탈퇴가 완료됩니다.
