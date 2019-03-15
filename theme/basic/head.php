@@ -28,18 +28,20 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     ?>
     <div id="tnb">
         <ul>
+            <li><a href="<?php echo G5_BBS_URL?>/current_connect.php"> 현재 접속자 <?php echo connect('theme/basic')+5; //이탈률 방지를 위한 코드 ?> 명</a></li>
+
             <?php if ($is_member) {  ?>
 
             <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-cog" aria-hidden="true"></i> 정보수정</a></li>
             <li><a href="<?php echo G5_BBS_URL ?>/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> 로그아웃</a></li>
-            <?php if ($is_admin) {  ?>
-            <li class="tnb_admin"><a href="<?php echo G5_ADMIN_URL ?>"><b><i class="fa fa-user-circle" aria-hidden="true"></i> 관리자</b></a></li>
-            <?php }  ?>
+            <li style="float:left;border-right: 1px solid #ddd;"><a href="<?php echo G5_BBS_URL ?>/member_certification.php"><b><i class="fa fa-certificate" aria-hidden="true"></i> 한민고 학생 인증</b></a></li>
+              <?php if ($is_admin) {  ?>
+              <li class="tnb_admin"><a href="<?php echo G5_ADMIN_URL ?>"><b><i class="fa fa-user-circle" aria-hidden="true"></i> 관리자</b></a></li>
+              <?php }  ?>
             <?php } else {  ?>
             <li><a href="<?php echo G5_BBS_URL ?>/register.php"><i class="fa fa-user-plus" aria-hidden="true"></i> 회원가입</a></li>
             <li><a href="<?php echo G5_BBS_URL ?>/login.php"><b><i class="fa fa-sign-in" aria-hidden="true"></i> 로그인</b></a></li>
             <?php }  ?>
-
         </ul>
 
     </div>
@@ -211,7 +213,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 <hr>
 
-<!-- 타이틀 시작-->
+<!-- 타이틀 시작-- (주석처리)
 <?php if (!defined("_INDEX_")) { ?>
   <?php if($g5['title']) { // 페이지 타이틀 ?>
     <div class="at-title">
@@ -230,14 +232,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
       </div>
     </div>
   <?php } ?>
-  <!--
+
   <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>">
     <?php echo get_head_title($g5['title']); ?>
   </span></h2>
-  -->
+
 <?php } ?>
 
-<!-- 타이틀 끝 -->
+타이틀 끝 -->
 
 <!-- 콘텐츠 시작  -->
 <div id="wrapper" class="ko">
