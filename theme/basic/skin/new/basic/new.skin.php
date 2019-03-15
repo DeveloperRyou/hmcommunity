@@ -62,8 +62,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
         <th scope="col"><strong>그룹</strong></th>
         <th scope="col"><strong>게시판</strong></th>
         <th scope="col"><strong>제목</strong></th>
-        <th scope="col"><strong>일시</strong></th>
         <th scope="col"><strong>글쓴이</strong></th>
+        <th scope="col"><strong>일시</strong></th>
     </tr>
     </thead>
     <tbody>
@@ -73,7 +73,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
         $num = $total_count - ($page - 1) * $config['cf_page_rows'] - $i;
         $gr_subject = cut_str($list[$i]['gr_subject'], 20);
         $bo_subject = cut_str($list[$i]['bo_subject'], 20);
-        $wr_subject = get_text(cut_str($list[$i]['wr_subject'], 80));
+        $wr_subject = get_text(cut_str($list[$i]['wr_subject'], 60));
     ?>
     <tr>
         <?php if ($is_admin) { ?>
@@ -86,8 +86,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
         <?php } ?>
         <td class="td_group"><a href="./new.php?gr_id=<?php echo $list[$i]['gr_id'] ?>"><?php echo $gr_subject ?></a></td>
         <td class="td_board"><a href="./board.php?bo_table=<?php echo $list[$i]['bo_table'] ?>"><?php echo $bo_subject ?></a></td>
-        <td><a href="<?php echo $list[$i]['href'] ?>" class="new_tit"><?php echo $list[$i]['comment'] ?><?php echo $wr_subject ?></a></td>
-        <td class="td_name"><?php echo $list[$i]['name'] ?></td>
+        <td><a href="<?php echo $list[$i]['href'] ?>" class="new_tit"><?php echo ($list[$i]['comment'])? '[댓글] ':'' ?><?php echo $wr_subject ?></a></td>
+        <td class="td_name"><?php echo ($list[$i]['gr_id']=='anonymous')? '익명':$list[$i]['name'] ?></td>
         <td class="td_date"><?php echo $list[$i]['datetime2'] ?></td>
     </tr>
     <?php }  ?>
