@@ -471,21 +471,20 @@ table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 #side_ad img{height: 100%;vertical-align: middle;}
 
 #slide{height:auto;overflow: hidden;}
-#slide ul{width:400%;height:250px;transition:1s;}
+#slide ul{width:400%;height:280px;transition:1s;}
 #slide ul:after{content:"";display:block;clear:both;}
-#slide li{float:left;width:25%;height:250px;display: flex;justify-content: center;align-items: center;}
-#slide li:nth-child(1){background:#fff;}
-#slide li:nth-child(2){background:#fff;}
-#slide li:nth-child(3){background:#fff;}
-#slide li:nth-child(4){background:#fff;}
+#slide li{position: relative;float:left;width:25%;height:280px;display: flex;justify-content: center;align-items: center;}
 #slide input{display:none;}
 #slide label{display:inline-block;vertical-align:middle;width:10px;height:10px;border:2px solid #666;background:#fff;transition:0.3s;border-radius:50%;cursor:pointer;}
 #slide .pos{width:100%;text-align:center;}
-#slide img{height: 200px; width: auto; display: block; margin: auto;}/*광고이미지 크기 정의*/
-#pos1:checked~ul{margin-left:0%;}
-#pos2:checked~ul{margin-left:-100%;}
-#pos3:checked~ul{margin-left:-200%;}
-#pos4:checked~ul{margin-left:-300%;}
-#pos1:checked~.pos>label:nth-child(1){background:#666;}
-#pos2:checked~.pos>label:nth-child(2){background:#666;}
-#pos3:checked~.pos>label:nth-child(3){background:#666;}#pos4:checked~.pos>label:nth-child(4){background:#666;}
+#slide #div_img{z-index: -1;width: 100%;position: absolute;top:-20px}
+#slide img{width: 100%; display: block; margin: auto;}/*광고이미지 크기 정의*/
+
+#pos1.active~ul{margin-left:0%;}
+#pos2.active~ul{margin-left:-100%;}
+#pos3.active~ul{margin-left:-200%;}
+#pos4.active~ul{margin-left:-300%;}
+#pos1.active~.pos>label:nth-child(1){background:#666;}
+#pos2.active~.pos>label:nth-child(2){background:#666;}
+#pos3.active~.pos>label:nth-child(3){background:#666;}
+#pos4.active~.pos>label:nth-child(4){background:#666;}

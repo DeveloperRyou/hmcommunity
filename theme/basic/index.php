@@ -9,14 +9,14 @@ if (G5_IS_MOBILE) {
 
 include_once(G5_THEME_PATH.'/head.php');
 ?>
-<div id="slide">
-  <input type="radio" name="pos" id="pos1" checked>
-  <input type="radio" name="pos" id="pos2">
-  <input type="radio" name="pos" id="pos3">
-  <ul>
-    <li><div> <a href="http://www.hanmin.hs.kr" target="_blank"> <img src="img/main_ad_01.png"> </a> <div></li>
-    <li><div> <a href="http://my.hanmin.hs.kr/" target="_blank"><img src="img/main_ad_02.png" style="height: 250px;"> </a> </div></li>
-    <li><div> <a href="http://hmcoder.kr:8080" target="_blank"><img src="img/main_ad_03.png"> </a> </div></li>
+<div id="slide" class="slider">
+  <input type="radio" name="pos" class="dot" id="pos1">
+  <input type="radio" name="pos" class="dot" id="pos2">
+  <input type="radio" name="pos" class="dot" id="pos3">
+  <ul class="slideshow-container">
+    <li class="mySlides"><div id="div_img"> <a href="http://hanalum.kr/bbs/board.php?bo_table=vietnam" target="_blank"> <img src="img/main_ad_04.png"> </a> <div></li>
+    <li class="mySlides"><div id="div_img"> <a href="http://hanalum.kr/bbs/board.php?bo_table=vietnam" target="_blank"><img src="img/main_ad_04.png"> </a> </div></li>
+    <li class="mySlides"><div id="div_img"> <a href="http://hanalum.kr/bbs/board.php?bo_table=vietnam" target="_blank"><img src="img/main_ad_04.png"> </a> </div></li>
   </ul>
   <p class="pos">
     <label for="pos1"></label>
@@ -24,6 +24,24 @@ include_once(G5_THEME_PATH.'/head.php');
     <label for="pos3"></label>
   </p>
 </div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 3  seconds
+}
+</script>
 <!--
 <div>
     <a href="http://hmcoder.kr" target="_blank"> <img src="img/main_ad_dark.png" width=100%> </a>
