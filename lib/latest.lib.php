@@ -87,7 +87,7 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
 
             $list[$i]['comment_cnt'] = $row2['wr_comment'];
 
-            $list[$i]['href'] = './bbs/board.php?bo_table='.$row['bo_table'].'&wr_id='.$row2['wr_id'];
+            $list[$i]['href'] = G5_URL.'/bbs/board.php?bo_table='.$row['bo_table'].'&wr_id='.$row2['wr_id'];
             $list[$i]['datetime'] = $datetime;
             $list[$i]['datetime2'] = $datetime2;
 
