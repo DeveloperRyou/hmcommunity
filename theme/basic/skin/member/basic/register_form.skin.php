@@ -62,7 +62,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
   <div class="panel-body">
 
     <div class="form-group has-feedback<?php echo ($config['cf_cert_use']) ? ' text-gap' : '';?>">
-      <label class="col-sm-2 control-label" for="reg_mb_name"><b>이름</b><strong class="sound_only">필수</strong></label>
+      <label class="col-sm-2 control-label" for="reg_mb_name"><b>실명</b><strong class="sound_only">필수</strong></label>
       <div class="col-sm-3">
         <input type="text" id="reg_mb_name" name="mb_name" value="<?php echo get_text($member['mb_name']) ?>" <?php echo $required ?> <?php echo $readonly; ?> class="form-control input-sm" size="10">
         <span class="fa fa-check form-control-feedback"></span>
