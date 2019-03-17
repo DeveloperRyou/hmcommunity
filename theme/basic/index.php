@@ -9,14 +9,14 @@ if (G5_IS_MOBILE) {
 
 include_once(G5_THEME_PATH.'/head.php');
 ?>
-<div id="slide" class="slider">
+<div id="slide" class="slider" style="margin-bottom:10px">
   <input type="radio" name="pos" class="dot" id="pos1">
   <input type="radio" name="pos" class="dot" id="pos2">
   <input type="radio" name="pos" class="dot" id="pos3">
   <ul class="slideshow-container">
-    <li class="mySlides"><div id="div_img"> <a href="http://hanalum.kr/bbs/board.php?bo_table=vietnam" target="_blank"> <img src="img/main_ad_04.png"> </a> <div></li>
-    <li class="mySlides"><div id="div_img"> <a href="http://hanalum.kr/bbs/board.php?bo_table=vietnam" target="_blank"><img src="img/main_ad_04.png"> </a> </div></li>
-    <li class="mySlides"><div id="div_img"> <a href="http://hanalum.kr/bbs/board.php?bo_table=vietnam" target="_blank"><img src="img/main_ad_04.png"> </a> </div></li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div> </li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div></li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div></li>
   </ul>
   <p class="pos">
     <label for="pos1"></label>

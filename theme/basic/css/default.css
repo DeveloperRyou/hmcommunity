@@ -473,7 +473,7 @@ table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 #slide{height:auto;overflow: hidden;}
 #slide ul{width:400%;height:280px;transition:1s;}
 #slide ul:after{content:"";display:block;clear:both;}
-#slide li{position: relative;float:left;width:25%;height:280px;display: flex;justify-content: center;align-items: center;}
+#slide li{position: relative;float:left;width:25%;height:280px;justify-content: center;align-items: center;}
 #slide input{display:none;}
 #slide label{display:inline-block;vertical-align:middle;width:10px;height:10px;border:2px solid #666;background:#fff;transition:0.3s;border-radius:50%;cursor:pointer;}
 #slide .pos{width:100%;text-align:center;}
