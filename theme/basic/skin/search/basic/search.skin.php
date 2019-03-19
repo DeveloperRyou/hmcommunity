@@ -73,13 +73,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$search_skin_url.'/style.css">', 
     ?>
     <section id="sch_res_ov">
         <h2><strong><?php echo $stx ?></strong> 전체검색 결과</h2>
-        <dl>
+        <dl style="margin:10px">
             <dt>게시판</dt>
             <dd><strong class="sch_word"><?php echo $board_count ?>개</strong></dd>
             <dt>게시물</dt>
             <dd><strong class="sch_word"><?php echo number_format($total_count) ?>개</strong></dd>
         </dl>
-        <p><?php echo number_format($page) ?>/<?php echo number_format($total_page) ?> 페이지 열람 중</p>
     </section>
     <?php
         }
