@@ -8,6 +8,7 @@ $sql_common = " from {$g5['board_new_table']} a, {$g5['board_table']} b, {$g5['g
 
 $gr_id = isset($_GET['gr_id']) ? substr(preg_replace('#[^a-z0-9_]#i', '', $_GET['gr_id']), 0, 10) : '';
 if ($gr_id) {
+    if($gr_id=='anonymous') alert('익명게시판은 검색하실 수 없습니다.',G5_URL.'/bbs/new.php');
     $sql_common .= " and b.gr_id = '$gr_id' ";
 }
 
@@ -49,8 +50,11 @@ $list = array();
 $sql = " select a.*, b.bo_subject, b.bo_mobile_subject, c.gr_subject, c.gr_id {$sql_common} {$sql_order} limit {$from_record}, {$rows} ";
 $result = sql_query($sql);
 for ($i=0; $row=sql_fetch_array($result); $i++) {
+    if($row['gr_id']=='anonymous'){
+      $i--;
+      continue;
+    }
     $tmp_write_table = $g5['write_prefix'].$row['bo_table'];
-
     if ($row['wr_id'] == $row['wr_parent']) {
 
         // 원글

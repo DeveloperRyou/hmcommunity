@@ -26,8 +26,10 @@ if ($stx) {
     $g5_search['tables'] = Array();
     $g5_search['read_level'] = Array();
     $sql = " select gr_id, bo_table, bo_read_level from {$g5['board_table']} where bo_use_search = 1 and bo_list_level <= '{$member['mb_level']}' ";
-    if ($gr_id)
+    if ($gr_id){
+        if($gr_id=='anonymous') alert('익명게시판은 검색하실 수 없습니다.',G5_URL.'/bbs/search.php');
         $sql .= " and gr_id = '{$gr_id}' ";
+    }
     $onetable = isset($onetable) ? $onetable : "";
     if ($onetable) // 하나의 게시판만 검색한다면
         $sql .= " and bo_table = '{$onetable}' ";
@@ -53,7 +55,7 @@ if ($stx) {
                 }
             }
         }
-        $g5_search['tables'][] = $row['bo_table'];
+        if($row['gr_id']!='anonymous') $g5_search['tables'][] = $row['bo_table']; //익명 게시판 접근 불가
         $g5_search['read_level'][] = $row['bo_read_level'];
     }
 
