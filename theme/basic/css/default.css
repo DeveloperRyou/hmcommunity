@@ -480,6 +480,8 @@ table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 #slide #div_img{z-index: -1;width: 100%;position: absolute;top:-20px}
 #slide img{width: 100%; display: block; margin: auto;}/*광고이미지 크기 정의*/
 
+.latest_wr #div_img{z-index: -1;width: 49%;float: left;}
+
 #pos1.active~ul{margin-left:0%;}
 #pos2.active~ul{margin-left:-100%;}
 #pos3.active~ul{margin-left:-200%;}

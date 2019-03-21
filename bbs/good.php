@@ -67,7 +67,16 @@ if($_POST['js'] == "on") {
             else
                 $status = '비추천';
 
-            $error = "이미 $status 하신 글 입니다.";
+            // 추천(찬성), 비추천(반대) 카운트 증가
+            sql_query(" UPDATE {$g5['write_prefix']}{$bo_table} set wr_{$good} = wr_{$good} - 1 where wr_id = '{$wr_id}' ");
+            // 내역 생성
+            sql_query(" DELETE FROM {$g5['board_good_table']} where bo_table = '{$bo_table}' and wr_id = '{$wr_id}'and mb_id = '{$member['mb_id']}' ");
+
+            $sql = " select wr_{$good} as count from {$g5['write_prefix']}{$bo_table} where wr_id = '$wr_id' ";
+            $row = sql_fetch($sql);
+
+            $count = $row['count'] ;
+            $error = 'cancel';
             print_result($error, $count);
         }
         else

@@ -41,6 +41,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
     $lt_style = "";
     if ($i%2==1) $lt_style = "margin-left:2%";
     else $lt_style = "";
+    if ($gr_id=="thread") $lt_style = "";
 ?>
     <div style="float:left;<?php echo $lt_style ?>"  class="lt_wr">
     <?php

@@ -21,12 +21,13 @@ if (G5_IS_MOBILE) {
             echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
             echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
             //echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
+            echo latest("theme/basic", "notice", 3, 12);
             echo latest("theme/basic", "new", 11, 12); //최근 게시판
             ?>
             <div id="side_ad">
               <ul>
                 <li><div id="ad_img"><a href="http://www.hanmin.hs.kr" target="_blank"> <img src="<?php echo G5_URL?>/img/main_ad_01.png" style="width:100%;height:auto;"></div> </a></li>
-                <li><div id="ad_img"><a href="http://my.hanmin.hs.kr/" target="_blank"><img src="<?php echo G5_URL?>/img/main_ad_02.png"></div> </a></li>
+                <li><div id="ad_img"><a href="http://my.hanmin.hs.kr/" target="_blank"><img src="<?php echo G5_URL?>/img/main_ad_02.png" style="height:80%;"></div> </a></li>
                 <li><div id="ad_img"><a href="http://hmcoder.kr:8080" target="_blank"><img src="<?php echo G5_URL?>/img/main_ad_03.png"></div> </a></li>
               </ul>
             </div>

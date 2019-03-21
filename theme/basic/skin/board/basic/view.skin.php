@@ -34,7 +34,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
     <section id="bo_v_atc">
         <h2 id="bo_v_atc_title">본문</h2>
-
+        <!--파일 출력 주석처리
         <?php
         // 파일 출력
         $v_img_count = count($view['file']);
@@ -51,6 +51,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             echo "</div>\n";
         }
          ?>
+        -->
 
         <!-- 본문 내용 시작 { -->
         <div id="bo_v_con"><?php echo get_view_thumbnail($view['content']); ?></div>
@@ -100,7 +101,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     $cnt = 0;
     if ($view['file']['count']) {
         for ($i=0; $i<count($view['file']); $i++) {
-            if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'] && !$view['file'][$i]['view'])
+            if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'])
                 $cnt++;
         }
     }
@@ -114,7 +115,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <?php
         // 가변 파일
         for ($i=0; $i<count($view['file']); $i++) {
-            if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'] && !$view['file'][$i]['view']) {
+            if (isset($view['file'][$i]['source']) && $view['file'][$i]['source']) {
          ?>
             <li>
                 <i class="fa fa-download" aria-hidden="true"></i>
@@ -273,20 +274,31 @@ function excute_good(href, $el, $tx)
         { js: "on" },
         function(data) {
             if(data.error) {
-                alert(data.error);
-                return false;
-            }
-
-            if(data.count) {
-                $el.find("strong").text(number_format(String(data.count)));
-                if($tx.attr("id").search("nogood") > -1) {
-                    $tx.text("이 글을 비추천하셨습니다.");
-                    $tx.fadeIn(200).delay(2500).fadeOut(200);
-                } else {
-                    $tx.text("이 글을 추천하셨습니다.");
-                    $tx.fadeIn(200).delay(2500).fadeOut(200);
+                if(data.error=="cancel"){
+                  $el.find("strong").text(number_format(String(data.count)));
+                  if($tx.attr("id").search("nogood") > -1) {
+                      $tx.text("비추천을 취소하셨습니다.");
+                      $tx.fadeIn(200).delay(2500).fadeOut(200);
+                  } else {
+                      $tx.text("추천을 취소하셨습니다.");
+                      $tx.fadeIn(200).delay(2500).fadeOut(200);
+                  }
+                }else{
+                  alert(data.error);
+                  return false;
                 }
             }
+
+            else if(data.count) {
+                $el.find("strong").text(number_format(String(data.count)));
+                  if($tx.attr("id").search("nogood") > -1) {
+                      $tx.text("이 글을 비추천하셨습니다.");
+                      $tx.fadeIn(200).delay(2500).fadeOut(200);
+                  } else {
+                      $tx.text("이 글을 추천하셨습니다.");
+                      $tx.fadeIn(200).delay(2500).fadeOut(200);
+                  }
+                }
         }, "json"
     );
 }
