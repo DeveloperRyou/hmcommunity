@@ -34,7 +34,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
     else $lt_style = "";
     if($gr_id) $lt_style="margin-left:2%";
 ?>
-    <?php if($gr_id=="thread"){?>
+    <?php if($row['bo_table']=="vietnam"){?>
       <div id="div_img">
         <img src="<?php echo G5_URL?>/img/main_ad_04.png" style="width:100%">
       </div>
