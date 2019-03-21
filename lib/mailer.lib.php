@@ -9,7 +9,8 @@ function mailer($fname, $fmail, $to, $subject, $content, $type=0, $file="", $cc=
 {
     global $config;
     global $g5;
-
+    $sql = "SELECT * FROM g5_admin_mail";
+    $row = sql_fetch($sql);
     // 메일발송 사용을 하지 않는다면
     if (!$config['cf_email_use']) return;
 
@@ -19,10 +20,16 @@ function mailer($fname, $fmail, $to, $subject, $content, $type=0, $file="", $cc=
     $mail = new PHPMailer(); // defaults to using php "mail()"
     if (defined('G5_SMTP') && G5_SMTP) {
         $mail->IsSMTP(); // telling the class to use SMTP
-        $mail->Host = G5_SMTP; // SMTP server
-        if(defined('G5_SMTP_PORT') && G5_SMTP_PORT)
-            $mail->Port = G5_SMTP_PORT;
+        $mail->SMTPAuth=true;
+        $mail->SMTPSecure="ssl";
+        $mail->Host=G5_SMTP; // SMTP server
+        $mail->Port=G5_SMTP_PORT;
+
+        $mail->Username=$row['email_id'];
+        $mail->Password=$row['email_pw'];
     }
+    $mail->From=$row['email_id'];
+    $mail->FromName='한아름';
     $mail->CharSet = 'UTF-8';
     $mail->From = $fmail;
     $mail->FromName = $fname;
