@@ -56,7 +56,7 @@ if (G5_IS_MOBILE) {
         </div>
         <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo.png" alt="<?php echo G5_VERSION ?>" style="height: 100px"></div>
         <div id="ft_copy"> 한아름 공식 이메일: contacthanmin01@gmail.com </div>
-        <div id="ft_copy">Copyright &copy; <b>hmcoder.kr/hm.</b> All rights reserved.</div>
+        <div id="ft_copy">Copyright &copy; <b>hanalum.kr</b> All rights reserved.</div>
     </div>
 
     <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>

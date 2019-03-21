@@ -9,7 +9,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
     <?php if($bo_table=='new'){?>
       <h2 class="lat_title"><a href="<?php echo G5_BBS_URL ?>/new.php">최신글</a></h2>
     <?php } else{?>
-      <h2 class="lat_title"><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>"><?php echo $bo_subject ?></a></h2>
+      <h2 class="lat_title<?php if($bo_table=='notice') echo "_notice"?>"><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>"><?php echo $bo_subject ?></a></h2>
     <?php }?>
     <ul>
     <?php for ($i=0; $i<count($list); $i++) {  ?>
