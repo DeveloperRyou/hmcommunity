@@ -117,7 +117,7 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
                 $row['file'] = array('count'=>0);
             }
             $list[$i] = get_list($row, $board, $latest_skin_url, $subject_len);
-            $list[$i]['href'] = G5_URL.'/bbs/board.php?bo_table='.$row['bo_table'].'&wr_id='.$row2['wr_id'];
+            $list[$i]['href'] = G5_URL.'/bbs/board.php?bo_table='.$bo_table.'&wr_id='.$row['wr_id'];
         }
 
         if($cache_fwrite) {
