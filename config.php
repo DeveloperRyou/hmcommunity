@@ -67,7 +67,7 @@ if (G5_DOMAIN) {
     if (isset($g5_path['url']))
         define('G5_URL', $g5_path['url']);
     else
-        define('G5_URL', '');
+        define('G5_URL', 'http://hanalum.kr');
 }
 
 if (isset($g5_path['path'])) {

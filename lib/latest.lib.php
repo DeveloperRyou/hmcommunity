@@ -30,37 +30,6 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
         }
     }
 
-    $cache_fwrite = false;
-    if(G5_USE_CACHE) {
-        $cache_file = G5_DATA_PATH."/cache/latest-{$bo_table}-{$skin_dir}-{$rows}-{$subject_len}-serial.php";
-
-        if(!file_exists($cache_file)) {
-            $cache_fwrite = true;
-        } else {
-            if($cache_time > 0) {
-                $filetime = filemtime($cache_file);
-                if($filetime && $filetime < (G5_SERVER_TIME - 3600 * $cache_time)) {
-                    @unlink($cache_file);
-                    $cache_fwrite = true;
-                }
-            }
-
-            if(!$cache_fwrite) {
-                try{
-                    $file_contents = file_get_contents($cache_file);
-                    $file_ex = explode("\n\n", $file_contents);
-                    $caches = unserialize(base64_decode($file_ex[1]));
-
-                    $list = (is_array($caches) && isset($caches['list'])) ? $caches['list'] : array();
-                    $bo_subject = (is_array($caches) && isset($caches['bo_subject'])) ? $caches['bo_subject'] : '';
-                } catch(Exception $e){
-                    $cache_fwrite = true;
-                    $list = array();
-                }
-            }
-        }
-    }
-
     if($bo_table=='new'){
         $sql_common = " FROM {$g5['board_new_table']} a ";
         $sql_order = " ORDER by a.bn_id desc ";;
@@ -118,21 +87,6 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
             }
             $list[$i] = get_list($row, $board, $latest_skin_url, $subject_len);
             $list[$i]['href'] = G5_URL.'/bbs/board.php?bo_table='.$bo_table.'&wr_id='.$row['wr_id'];
-        }
-
-        if($cache_fwrite) {
-            $handle = fopen($cache_file, 'w');
-            $caches = array(
-                'list' => $list,
-                'bo_subject' => sql_escape_string($bo_subject),
-                );
-            $cache_content = "<?php if (!defined('_GNUBOARD_')) exit; ?>\n\n";
-            $cache_content .= base64_encode(serialize($caches));  //serialize
-
-            fwrite($handle, $cache_content);
-            fclose($handle);
-
-            @chmod($cache_file, 0640);
         }
     }
 
