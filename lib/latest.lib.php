@@ -64,10 +64,8 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
         }
     }
 
-
-    else if(!G5_USE_CACHE || $cache_fwrite) {
+    else{
         $list = array();
-
         $sql = " select * from {$g5['board_table']} where bo_table = '{$bo_table}' ";
         $board = sql_fetch($sql);
         $bo_subject = get_text($board['bo_subject']);
