@@ -14,9 +14,9 @@ include_once(G5_THEME_PATH.'/head.php');
   <input type="radio" name="pos" class="dot" id="pos2">
   <input type="radio" name="pos" class="dot" id="pos3">
   <ul class="slideshow-container">
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div> </li>
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div></li>
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div></li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-120px"> <img src="img/main_ad_05.png"> </div> </li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_04.png"> </div></li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-120px"> <img src="img/main_ad_05.png"> </div></li>
   </ul>
   <p class="pos">
     <label for="pos1"></label>

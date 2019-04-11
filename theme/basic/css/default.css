@@ -477,7 +477,7 @@ table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 #slide input{display:none;}
 #slide label{display:inline-block;vertical-align:middle;width:10px;height:10px;border:2px solid #666;background:#fff;transition:0.3s;border-radius:50%;cursor:pointer;}
 #slide .pos{width:100%;text-align:center;}
-#slide #div_img{z-index: -1;width: 100%;position: absolute;top:-20px}
+#slide #div_img{z-index: -1;width: 100%;position: absolute;}
 #slide img{width: 100%; display: block; margin: auto;}/*광고이미지 크기 정의*/
 
 .latest_wr #div_img{z-index: -1;width: 49%;float: left;}
