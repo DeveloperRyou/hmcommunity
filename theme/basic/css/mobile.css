@@ -111,10 +111,11 @@ box-shadow: 0 0 5px rgba(55,55,5,0.4);
 .btn_top li{display:inline-block}
 .btn_top a,.btn_top .btn_submit{line-height:30px;padding: 0 10px;border-radius:3px}
 .btn_top .btn_cancel,.btn_top .btn_b01{border:1px solid #aaa;background:none;color:#666;line-height:28px;background:#fff}
-.fixed {position:fixed;right:0;z-index:999;width:100%;top:0px;}
+.top.fixed {position:fixed;right:0;z-index:999;width:100%;top:0px;}
+.content.fixed {position: relative;top:50px;}
 
 /* 하단 레이아웃 */
-#ft {background:#222;padding:0px 10px 10px}
+#ft {position:relative; top:50px; background:#222;padding:0px 10px 10px}
 #ft h1 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
 #ft p {margin:0;padding:10px 0;line-height:1.8em}
 
