@@ -185,7 +185,7 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
 #container_title {font-size:1.333em;margin:0 auto;font-weight:bold;color:"white"}
 #container_title span{margin:0 auto 10px;display:block;line-height:30px;}
 /*.latest_wr:after {display:block;visibility:hidden;clear:both;content:""}*/
-.lt_wr{width:49%;}
+.lt_wr{width:49%;height: 200px}
 .lt_wr:nth-child(2n+1){clear:both}
 .latest_wr:after {display:block;visibility:hidden;clear:both;content:"";}
 
@@ -480,7 +480,8 @@ table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 #slide #div_img{z-index: -1;width: 100%;position: absolute;}
 #slide img{width: 100%; display: block; margin: auto;}/*광고이미지 크기 정의*/
 
-.latest_wr #div_img{z-index: -1;width: 49%;float: left;}
+.latest_wr #div_img{position: relative;z-index: -1;width: 49%;float: left; line-height: 200px; height: 200px; overflow: hidden;}
+.latest_wr #div_img img{position: absolute;top:0;bottom:0;margin: auto;width: 100%;}
 
 #pos1.active~ul{margin-left:0%;}
 #pos2.active~ul{margin-left:-100%;}

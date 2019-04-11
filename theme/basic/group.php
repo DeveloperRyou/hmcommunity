@@ -32,13 +32,19 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
     $lt_style = "";
     if ($i%2==1) $lt_style = "margin-left:2%";
     else $lt_style = "";
-    if($gr_id) $lt_style="margin-left:2%";
 ?>
-    <?php if($row['bo_table']=="vietnam"){?>
+    <?php if($row['bo_table']=="vietnam"){ //응우옌 베트남 표류기?>
       <div id="div_img">
-        <img src="<?php echo G5_URL?>/img/main_ad_04.png" style="width:100%">
+        <img src="<?php echo G5_URL?>/img/main_ad_04.png">
       </div>
-    <?php }?>
+    <?php $lt_style = "margin-left:2%"; }?>
+
+    <?php if($row['bo_table']=="radio"){ //푸름라디오?>
+      <div id="div_img">
+        <img src="<?php echo G5_URL?>/img/main_ad_05.png">
+      </div>
+    <?php $lt_style = "margin-left:2%"; }?>
+
     <div style="float:left;<?php echo $lt_style ?>"  class="lt_wr">
     <?php
     // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
