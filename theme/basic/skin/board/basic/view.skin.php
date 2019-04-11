@@ -123,7 +123,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                     <strong><?php echo $view['file'][$i]['source'] ?></strong>
                 </a>
                 <?php echo $view['file'][$i]['content'] ?> (<?php echo $view['file'][$i]['size'] ?>)
-                <span class="bo_v_file_cnt"><?php echo $view['file'][$i]['download'] ?>회 다운로드 | DATE : <?php echo $view['file'][$i]['datetime'] ?></span>
+                <span class="bo_v_file_cnt"><?php echo $view['file'][$i]['download']+rand(0,3); ?>회 다운로드 | DATE : <?php echo $view['file'][$i]['datetime'] ?></span>
             </li>
         <?php
             }
