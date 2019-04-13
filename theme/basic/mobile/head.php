@@ -180,8 +180,52 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             });
         });
         </script>
+        <div class="m_menu">
+          <div id="m_container">
+              <ul class=""="m_wrap">
+                  <?php
+                  $sql = " select *
+                              from {$g5['menu_table']}
+                              where me_use = '1'
+                                and length(me_code) = '2'
+                              order by me_order, me_id ";
+                  $result = sql_query($sql, false);
+                  $gnb_zindex = 999; // gnb_1dli z-index 값 설정용
+                  $menu_datas = array();
 
-    </div>
+                  for ($i=0; $row=sql_fetch_array($result); $i++) {
+                      $menu_datas[$i] = $row;
+                  }
+
+                  $i = 0;
+                  foreach( $menu_datas as $row ){
+                      if( empty($row) ) continue;
+                  ?>
+                  <li class="m_list" style="z-index:<?php echo $gnb_zindex--; ?> ">
+                      <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="m_link"><?php echo $row['me_name'] ?></a>
+                  </li>
+                  <?php
+                  $i++;
+                  }   //end foreach $row?>
+              </ul>
+          </div>
+		    </div>
+        <script>
+        $(function(){
+          $('#m_container').draggable({
+            axis:'x',
+            stop:function(event,ui){
+              var right=parseInt($('.m_menu').css("width"))-parseInt($(this).css("width"))-parseInt($('.m_menu').css("padding-left"))*2;
+              if($(this).css("left")<"0px"){
+                $(this).css("left","0px");
+              }
+              else if (parseInt($(this).css("left"))) {
+                $(this).css("left",String(right)+"px");
+              }
+            }
+          });
+        });
+        </script>
 </header>
 
 

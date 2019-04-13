@@ -69,11 +69,13 @@ var g5_sca       = "<?php echo isset($sca)?$sca:''; ?>";
 var g5_editor    = "<?php echo ($config['cf_editor'] && $board['bo_use_dhtml_editor'])?$config['cf_editor']:''; ?>";
 var g5_cookie_domain = "<?php echo G5_COOKIE_DOMAIN ?>";
 </script>
-<script src="<?php echo G5_JS_URL ?>/jquery-1.8.3.min.js"></script>
-<script src="<?php echo G5_JS_URL ?>/jquery.menu.js?ver=<?php echo G5_JS_VER; ?>"></script>
-<script src="<?php echo G5_JS_URL ?>/common.js?ver=<?php echo G5_JS_VER; ?>"></script>
-<script src="<?php echo G5_JS_URL ?>/wrest.js?ver=<?php echo G5_JS_VER; ?>"></script>
-<script src="<?php echo G5_JS_URL ?>/placeholders.min.js"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery-ui.min.js" type="text/javascript"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery.menu.js?ver=<?php echo G5_JS_VER; ?>" type="text/javascript"></script>
+<script src="<?php echo G5_JS_URL ?>/common.js?ver=<?php echo G5_JS_VER; ?>" type="text/javascript"></script>
+<script src="<?php echo G5_JS_URL ?>/wrest.js?ver=<?php echo G5_JS_VER; ?>" type="text/javascript"></script>
+<script src="<?php echo G5_JS_URL ?>/placeholders.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="<?php echo G5_JS_URL ?>/font-awesome/css/font-awesome.min.css">
 <?php
 if(G5_IS_MOBILE) {
