@@ -239,6 +239,8 @@ a.btn_admin:focus, a.btn_admin:hover {}
 /* 기본리스트 */
 .list_01{padding:0px;}
 .list_01 li{background:#fff;line-height: 22px;}
+.list_02{}
+.list_02 li{background: #fff;line-height: 25px;padding: 6px 8px; margin: 0px; border-bottom: 1px solid #eee;}
 
 /* 기본폼 */
 .form_01{margin:10px}
