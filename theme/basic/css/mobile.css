@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 초기화 */
-html {overflow-y:scroll;height:100%;min-width:320px}
+html {overflow-y:scroll;height:100%;min-width:320px;font-family: "Roboto", sans-serif}
 body {margin:0;padding:0;font-size:0.75em;height:100%}
 html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
 h1, h2, h3, h4, h5, h6 {font-size:1em}
@@ -11,7 +11,7 @@ label, input, button, select, img {vertical-align:middle}
 input, button {margin:0;padding:0;font-size:1em}
 button {cursor:pointer}
 input[type=text], input[type=password], input[type=submit], input[type=image], button {font-size:1em;-webkit-appearance:none}
-textarea, select {font-size:1em;font-family:dotum}
+textarea, select {font-size:1em;font-family:"Roboto", sans-serif}
 textarea {border-radius:0;-webkit-appearance:none}
 select {margin:0;background:none}
 p {margin:0;padding:0;word-break:break-all}
@@ -41,7 +41,7 @@ ul{list-style:none;}
 #hd:after {display:block;visibility:hidden;clear:both;content:""}
 #hd_h1 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
 
-#logo {padding:10px 10px;height:50px;text-align:center;border-bottom: 2px solid #ccc;}
+#logo {padding:10px 10px;height:50px;text-align:center;border-bottom: 1.5px solid #ccc;}
 #logo img{vertical-align:middle;max-height:100%;width:auto}
 #gnb_open {position:absolute;top:10px;left:10px;padding:0 10px;height:30px;width:30px;border:0;background-size:70%;background:none; font-size: 16px;}
 #gnb {display:none;background:#262626;position:fixed;top:0;left:0;z-index:99999;height:100%;overflow-y:auto;width:300px;
@@ -90,6 +90,7 @@ box-shadow: 0 0 5px  rgba(55,55,5,0.4);}
 #m_container{display: table;}
 .m_wrap{display: table;}
 .m_list{line-height: 40px;display: table-cell;padding: 0px 10px;white-space: nowrap;}
+.m_list.red>a{font-weight: 700;color: red;}
 .m_list a{font-size: 15px;}
 
 /* 텍스트 크기 조절 */
@@ -112,7 +113,6 @@ box-shadow: 0 0 5px  rgba(100,100,100,0.2);}
 -moz-box-shadow: 0 0 5px rgba(55,55,5,0.4);
 box-shadow: 0 0 5px rgba(55,55,5,0.4);
 }
-.top{position:relative}
 .btn_top{position:absolute;top:0px;right:0px;z-index:999;padding:10px;}
 .btn_top li{display:inline-block}
 .btn_top a,.btn_top .btn_submit{line-height:30px;padding: 0 10px;border-radius:3px}

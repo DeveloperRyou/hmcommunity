@@ -10,7 +10,7 @@ include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 ?>
 
-<header id="hd" class="top">
+<header id="hd" class="top fixed">
     <h1 id="hd_h1"><?php echo $g5['title'] ?></h1>
 
     <div class="to_content"><a href="#container">본문 바로가기</a></div>
@@ -201,7 +201,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                   foreach( $menu_datas as $row ){
                       if( empty($row) ) continue;
                   ?>
-                  <li class="m_list" style="z-index:<?php echo $gnb_zindex--; ?> ">
+                  <li class="m_list <?php if(!defined("_INDEX_")&&$_GET['gr_id']==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
                       <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="m_link"><?php echo $row['me_name'] ?></a>
                   </li>
                   <?php
@@ -216,11 +216,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             axis:'x',
             stop:function(event,ui){
               var right=parseInt($('.m_menu').css("width"))-parseInt($(this).css("width"))-parseInt($('.m_menu').css("padding-left"))*2;
-              if($(this).css("left")<"0px"){
+              if (parseInt($(this).css("left"))>0) {
                 $(this).css("left","0px");
               }
-              else if (parseInt($(this).css("left"))) {
+              else if(parseInt($(this).css("left"))<right){
                 $(this).css("left",String(right)+"px");
+              }
+              if(right>0){
+                $(this).css("left","0px");
               }
             }
           });
@@ -230,7 +233,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 
 
-<div id="wrapper" class="content">
+<div id="wrapper" class="content fixed">
 
     <div id="container">
-    <?php if (!defined("_INDEX_")) { ?><h2 id="container_title" title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></h2><?php } ?>
