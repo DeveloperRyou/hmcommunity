@@ -104,7 +104,7 @@ box-shadow: 0 0 5px  rgba(100,100,100,0.2);}
 .ts_up2 {font-size:1.3em !important}
 
 /* 중간 레이아웃 */
-#wrapper {}
+#wrapper {margin-top: 20px;}
 #wrapper:after {display:block;visibility:hidden;clear:both;content:""}
 #container {position:relative;min-height:300px}
 #container:after {display:block;visibility:hidden;clear:both;content:""}
@@ -237,8 +237,8 @@ a.btn_admin:focus, a.btn_admin:hover {}
 .tbl_head02 td {padding:5px 3px;border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;line-height:1.4em;word-break:break-all}
 
 /* 기본리스트 */
-.list_01{padding:0 10px;}
-.list_01 li{background:#fff;border-radius:3px;margin:10px 0;padding:10px 15px;border-bottom:1px solid #ccc;}
+.list_01{padding:0px;}
+.list_01 li{background:#fff;line-height: 22px;}
 
 /* 기본폼 */
 .form_01{margin:10px}
