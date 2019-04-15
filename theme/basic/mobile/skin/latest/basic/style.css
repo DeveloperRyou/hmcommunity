@@ -10,7 +10,7 @@
 .lt .lt_list {padding: 0px;margin: 0px;}
 .lt .lt_cmt {color: red;font-weight: 700;}
 .lt .cnt_cmt {display:inline-block;margin:0 5px 0 3px;}
-.lt .lt_info{float: right;}
+.lt .lt_info{position: absolute;right:15px}
 .lt .profile_img img{border-radius:50%;vertical-align:top}
 .lt .lt_tit{font-size: 14px;}
 .lt li .fa-download{width:16px;height:16px;line-height:16px;background:#ecaa30;color:#fff;text-align:center;font-size:10px;border-radius:2px}

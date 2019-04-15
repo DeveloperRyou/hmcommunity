@@ -71,7 +71,7 @@ box-shadow: 0 0 8px  rgba(65,98,255,0.8);}
 #bo_list td:nth-of-type(2) {text-align:center}
 
 /* 게시판 목록 공통 */
-.bo_fx {margin-bottom:5px;padding:0 10px}
+.bo_fx {margin:0 5px;padding:0 10px}
 .bo_fx:after {display:block;visibility:hidden;clear:both;content:""}
 .bo_fx ul {margin:0;padding:0;list-style:none}
 #bo_list_total{font-size: 14px;margin-bottom: 10px}
@@ -88,7 +88,7 @@ box-shadow: 0 0 8px  rgba(65,98,255,0.8);}
 .bo_subject i{color: #8d96c2;font-size:12px}
 .bo_subject  .fa-heart{color:#ff0000}
 .bo_current {color:#e8180c}
-.bo_info{float: right;}
+.bo_info{position: absolute;right: 18px;}
 .bo_info .comment_icon{background:url(./img/icon_comment.png) no-repeat 50% 50% ;display:inline-block;width:20px;height:28px;text-indent:-999px;overflow:hidden;vertical-align:top;background-size:70%;margin:0 0px 0 5px}
 .bo_info .bo_date{color:#888;}
 .bo_info .bo_cmt {color: red;font-weight: 700;}
