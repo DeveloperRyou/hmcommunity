@@ -34,17 +34,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                     $expr = ' txt_expired';
             ?>
             <li>
-                <div class="point_wrap01">
+                <div class="point_wrap">
                     <span class="point_log"><?php echo $po_content; ?></span>
-                    <span class="point_date"><?php echo conv_date_format('y-m-d H시', $row['po_datetime']); ?></span>
-                </div>
-                <div class="point_wrap02">
+                    <span class="point_date"><?php echo conv_date_format('y-m-d', $row['po_datetime']); ?></span>
                     <span class="point_inout"><?php if ($point1) echo $point1; else echo $point2; ?></span>
-                    <span class=" point_date point_expdate<?php echo $expr; ?>">
-                        <?php if ($row['po_expired'] == 1) { ?>
-                        만료: <?php echo substr(str_replace('-', '', $row['po_expire_date']), 2); ?>
-                        <?php } else echo $row['po_expire_date'] == '9999-12-31' ? '&nbsp;' : $row['po_expire_date']; ?>
-                    </span>
                 </div>
             </li>
             <?php
