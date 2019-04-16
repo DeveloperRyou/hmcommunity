@@ -13,7 +13,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         <?php if ($url == 'member_leave.php') { ?>
         비밀번호를 입력하시면 회원탈퇴가 완료됩니다.
         <?php }else{ ?>
-        회원님의 정보를 안전하게 보호하기 위해 비밀번호를 한번 더 확인합니다.
+        회원님의 정보를 안전하게 보호하기 위해 <br>비밀번호를 한번 더 확인합니다.
         <?php }  ?>
     </p>
 

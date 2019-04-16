@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* ### 기본 스타일 커스터마이징 시작 ### */
-.mbskin{text-align:center;padding:10px}
+.mbskin{text-align:center;padding:0 10px}
 .mbskin h1{font-size:1.75em;margin:40px 0 25px}
 .mbskin p {padding-bottom:20px;border-bottom:1px solid #c8c8c8}
 .mbskin p strong{color:#4162ff;padding-bottom:5px;display:block;font-size:1.083em}
@@ -29,13 +29,13 @@
 /* 기본테이블 */
 .mbskin .tbl_head01 {}
 .mbskin .tbl_head01 caption {}
-.mbskin .tbl_head01 thead th {}
+.mbskin .tbl_head01 thead th {padding: 7px 0px;font-size: 10px;}
 .mbskin .tbl_head01 thead a {}
 .mbskin .tbl_head01 thead th input {} /* middle 로 하면 게시판 읽기에서 목록 사용시 체크박스 라인 깨짐 */
 .mbskin .tbl_head01 tfoot th {}
 .mbskin .tbl_head01 tfoot td {}
 .mbskin .tbl_head01 tbody th {}
-.mbskin .tbl_head01 td {}
+.mbskin .tbl_head01 td {padding: 7px 0px;font-size: 10px;text-align: center;}
 .mbskin .tbl_head01 a {}
 .mbskin td.empty_table {}
 
@@ -75,18 +75,17 @@
 /* ### 기본 스타일 커스터마이징 끝 ### */
 
 /* 회원가입 약관 */
-#fregister section {background:#fff;margin:10px 0;border:1px solid #dbdbdb;
--webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);
--moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);
-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
-#fregister .chk_all{text-align:left}
+#fregister section {background:#fff;margin: 5px 0;border:1px solid #dbdbdb;box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
+#fregister #fregister_top{padding: 10px 15px;width: 100%;height: auto;display: table;}
+#fregister_top .chk_all{text-align:left;display: table-cell;vertical-align: middle;}
+#fregister_top .btn_top{position: relative;padding: 0;z-index: 1;float: right;display: table-cell;}
 #fregister h2 {text-align:left;border-bottom:1px solid #dbdbdb;padding:10px 15px;line-height:1.7em;font-size:1.167em}
-#fregister textarea {display:block;padding:10px;width:100%;border:0;background:#fff;height:180px;line-height:1.5em;color:#555}
+#fregister textarea {font-size: 10px;display:block;padding:10px 15px;width:100%;border:0;background:#fff;height:180px;line-height:1.5em;color:#555}
 .fregister_agree {border-top:1px solid #dbdbdb;padding:10px 15px;line-height:1.7em;text-align:left;font-size:1.083em}
 .fregister_agree label {display:inline-block;margin-right:5px}
 #fregister p {border:0;padding:0 0 5px;}
 #fregister .btn_confirm {margin:15px 0}
-#fregister_private .tbl_head01 {padding:20px;margin:0}
+#fregister_private .tbl_head01 {padding:10px 15px;margin:0}
 #fregister_private .tbl_head01 caption{position:absolute;font-size:0;line-height:0;overflow:hidden;top:0;color:#fff}
 
 /* 회원가입 입력 */
@@ -132,13 +131,13 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 #mb_login #login_frm div {padding:10px 0 ;text-align:right}
 #mb_login .frm_input {width:100%;margin:5px 0}
 #mb_login .btn_submit {width:100%;border-radius:3px;height:40px;margin:5px 0;font-size:1.083em;font-weight:bold}
-#mb_login .mb_login_join{border-top:1px solid #ddd;margin:20px 0 0 ;padding:10px 0}
+#mb_login .mb_login_join{border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin:20px 0 0 ;padding:10px 0}
 #mb_login .mb_login_join:after {display:block;visibility:hidden;clear:both;content:""}
 #mb_login .mb_login_join h2{position:absolute;font-size:0;line-height:0;overflow:hidden}
 #mb_login .mb_login_join a{display:block;float:left;width:50%;}
 #login_password_lost{border-right:1px solid #cdcdcd;}
 
-#flogin{background:#fff;padding:20px;margin:20px 0;border-bottom:1px solid #ddd;}
+#flogin{background:#fff;padding:20px;margin:20px 0;}
 
 #mb_login_notmb{background:#fff;border-bottom:1px solid #ccc;padding:20px;}
 #mb_login_notmb h2{font-size:1.25em;padding:10px;background:#f3f3f3}
@@ -190,14 +189,13 @@ box-shadow: 0 1px 5px rgba(50,50,50,0.2);}
 #scrap_do label{color:#666}
 
 /* 포인트 */
-#point_ul {;padding:0;border-top:1px solid #e9e9e9;list-style:none}
-#point_ul li {position:relative;}
+#point_ul {padding:10px;border-top:1px solid #e9e9e9;list-style:none}
+#point_ul li {position:relative;padding: 5px 0 ;}
 #point_ul li:after {display:block;visibility:hidden;clear:both;content:""}
-#point_ul .point_wrap01 {float:left}
-#point_ul .point_wrap02 {float:right;text-align:right}
-#point_ul .point_log{display:block;font-weight:bold;margin:0 0 5px;font-size:1.083em}
-#point_ul .point_inout{display:block;font-weight:bold;margin:0 0 5px;color:#4162ff;font-size:1.083em}
-#point_ul .point_date{font-style:italic}
+#point_ul .point_wrap {display: table;width: 100%;line-height: 22px;}
+#point_ul .point_log{display:table-cell;font-weight:bold;margin:0px;font-size:14px;width: 235px;}
+#point_ul .point_inout{position: absolute;right:10px;display:table-cell;font-weight:bold;margin:0px;color:#4162ff;font-size:14px}
+#point_ul .point_date{position: absolute;right: 45px;display: table-cell;}
 
 #point_sum{margin:10px 0 20px}
 #point_sum:after {display:block;visibility:hidden;clear:both;content:''}

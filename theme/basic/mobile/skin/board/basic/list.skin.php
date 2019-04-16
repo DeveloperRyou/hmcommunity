@@ -30,8 +30,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <?php } ?>
 
     <div id="bo_list_total">
-        <span>전체 <?php echo number_format($total_count) ?>건</span>
-        <?php echo $page ?> 페이지
+        <span>Total <b><?php echo number_format($total_count) ?></b> Posts.
+        Now <b><?php echo $page ?></b> Page.
+      </span>
     </div>
 
 
@@ -45,7 +46,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <input type="hidden" name="page" value="<?php echo $page ?>">
     <input type="hidden" name="sw" value="">
 
-    <div class="list_01">
+    <div class="list_02">
         <?php if ($is_checkbox) { ?>
         <div scope="col">
             <input type="checkbox" id="chkall" onclick="if (this.checked) all_checked(true); else all_checked(false);">
@@ -63,8 +64,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                     <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
                 </div><?php } ?>
 
-                <div class="bo_subject">
-
+                <span class="bo_subject">
                     <?php
                     if ($is_category && $list[$i]['ca_name']) {
                     ?>
@@ -73,29 +73,29 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
                     <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                         <?php echo $list[$i]['icon_reply']; ?>
-                        <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon"><i class="fa fa-volume-up" aria-hidden="true"></i>공지</strong><?php } ?>
-                        <?php echo $list[$i]['subject'] ?>
+                        <?php echo conv_subject($list[$i]['subject'], 23, '…') //모바일 글자 자르기?>
                         <?php
                         // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
 
                         if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
                         if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
-                        if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
-                        if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
+                        //if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
+                        //if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
                         if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'];
 
                         ?>
                     </a>
-
-                </div>
-                <div class="bo_info">
-                    <span class="sound_only">작성자</span><?php echo ($gr_id=='anonymous') ? '<strong>익명</strong>' : $list[$i]['name'] ?>
-
-
-                    <span class="bo_date"><?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?> <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?></span>
-
-                </div>
-
+                </span>
+                <span class="bo_info">
+                  <?php if ($list[$i]['comment_cnt']) { ?>
+                    <span class="bo_cmt">
+                    <?php echo "+".$list[$i]['comment_cnt']; ?>
+                    </span>
+                  <?php } ?>
+                    <span class="bo_date">
+                    <?php echo $list[$i]['datetime2'] ?>
+                    </span>
+                </span>
             </li><?php } ?>
             <?php if (count($list) == 0) { echo '<li class="empty_table">게시물이 없습니다.</li>'; } ?>
         </ul>

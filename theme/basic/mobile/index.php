@@ -21,7 +21,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
     // 사용방법
     // latest(스킨, 게시판아이디, 출력라인, 글자수);
     echo $row[0];
-    echo latest('theme/basic', $row['bo_table'], 5, 25);
+    echo latest('theme/basic', $row['bo_table'], 5, 23);
 }
 ?>
 <!-- 메인화면 최신글 끝 -->
