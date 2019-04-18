@@ -2,6 +2,14 @@
 include_once('./_common.php');
 
 define('_INDEX_', true);
+
+//한민캠프와 메인 페이지 세션 구분
+if($_GET['hanmincamp']){
+  $_SESSION['hanmincamp']=True;
+} else{
+    $_SESSION['hanmincamp']=False;
+}
+
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 if(defined('G5_THEME_PATH')) {
