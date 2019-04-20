@@ -1,3 +1,6 @@
+<?php
+if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+?>
 <div id="slide" class="slider" style="margin-bottom:10px">
   <input type="radio" name="pos" class="dot" id="pos1">
   <input type="radio" name="pos" class="dot" id="pos2">
@@ -49,7 +52,7 @@ function showSlides() {
     <div style="float:left; margin-left:2%;" class="lt_wr">
     <?php echo latest("theme/basic", "info_share", 5, 25); ?>
     </div>
-    
+
     <!-- } 최신글 끝 -->
 
 </div>

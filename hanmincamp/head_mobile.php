@@ -188,6 +188,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                               from {$g5['menu_table']}
                               where me_use = '1'
                                 and length(me_code) = '2'
+                                and me_hanmincamp = '1'
                               order by me_order, me_id ";
                   $result = sql_query($sql, false);
                   $gnb_zindex = 999; // gnb_1dli z-index 값 설정용
