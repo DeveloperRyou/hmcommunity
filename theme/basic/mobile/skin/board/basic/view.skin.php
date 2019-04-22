@@ -16,7 +16,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </div>-->
 <article id="bo_v" style="width:<?php echo $width; ?>">
     <header>
-        <!--<h2 id="bo_v_title">
+        <h2 id="bo_v_title">
             <?php if ($category_name) { ?>
             <span class="bo_v_cate"><?php echo $view['ca_name']; // 분류 출력 끝 ?></span>
             <?php } ?>
@@ -24,7 +24,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <?php
             echo cut_str(get_text($view['wr_subject']), 70); // 글제목 출력
             ?></span>
-        </h2>-->
+        </h2>
         <p><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo date("y-m-d H:i", strtotime($view['wr_datetime'])) ?></p>
     </header>
 
@@ -107,7 +107,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         ?>
 
         <div id="bo_v_share">
-            <?php if ($scrap_href) { ?><a href="<?php echo $scrap_href;  ?>" target="_blank" class=" btn_scrap" onclick="win_scrap(this.href); return false;"><i class="fa fa-thumb-tack" aria-hidden="true"></i> 스크랩</a><?php } ?>
+            <?php if ($scrap_href) { ?><a href="<?php echo $scrap_href;  ?>" target="_blank" class=" btn_scrap" onclick="win_scrap(this.href); return false;"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a><?php } ?>
 
             <?php
             include_once(G5_SNS_PATH."/view.sns.skin.php");
