@@ -63,7 +63,8 @@ for ($i=0; $i<$count; $i++)
                     me_target       = '{$_POST['me_target'][$i]}',
                     me_order        = '{$_POST['me_order'][$i]}',
                     me_use          = '{$_POST['me_use'][$i]}',
-                    me_mobile_use   = '{$_POST['me_mobile_use'][$i]}' ";
+                    me_mobile_use   = '{$_POST['me_mobile_use'][$i]}',
+                    me_hanmincamp   = '{$_POST['me_hanmincamp'][$i]}' ";
     sql_query($sql);
 }
 

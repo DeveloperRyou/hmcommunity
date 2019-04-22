@@ -43,7 +43,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     </div>
 
     <div class="form_01">
-        
+
         <h2>개인정보 입력</h2>
         <li class="rgs_name_li">
             <label for="reg_mb_name" class="sound_only">이름<strong>필수</strong></label>
@@ -72,26 +72,25 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                 <strong><?php echo $mb_cert; ?> 본인확인</strong><?php if ($member['mb_adult']) { ?> 및 <strong>성인인증</strong><?php } ?> 완료
             </div>
             <?php } ?>
-            
+
         </li>
         <?php if ($req_nick) { ?>
         <li>
             <label for="reg_mb_nick" class="sound_only">닉네임<strong>필수</strong></label>
-            
+
             <span class="frm_info">
-                공백없이 한글,영문,숫자만 입력 가능 (한글2자, 영문4자 이상)<br>
-                닉네임을 바꾸시면 앞으로 <?php echo (int)$config['cf_nick_modify'] ?>일 이내에는 변경 할 수 없습니다.
+                공백없이 한글,영문,숫자만 입력 가능 <br>(한글2자, 영문4자 이상)<br>
             </span>
             <input type="hidden" name="mb_nick_default" value="<?php echo isset($member['mb_nick'])?get_text($member['mb_nick']):''; ?>">
             <input type="text" name="mb_nick" value="<?php echo isset($member['mb_nick'])?get_text($member['mb_nick']):''; ?>" id="reg_mb_nick" required class="frm_input full_input required nospace" maxlength="20" placeholder="닉네임">
             <span id="msg_mb_nick"></span>
-            
+
         </li>
         <?php } ?>
 
         <li>
             <label for="reg_mb_email" class="sound_only">E-mail<strong>필수</strong></label>
-            
+
                 <?php if ($config['cf_use_email_certify']) {  ?>
                 <span class="frm_info">
                     <?php if ($w=='') { echo "E-mail 로 발송된 내용을 확인한 후 인증하셔야 회원가입이 완료됩니다."; }  ?>
@@ -100,7 +99,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                 <?php }  ?>
                 <input type="hidden" name="old_email" value="<?php echo $member['mb_email'] ?>">
                 <input type="email" name="mb_email" value="<?php echo isset($member['mb_email'])?$member['mb_email']:''; ?>" id="reg_mb_email" required class="frm_input email required" size="50" maxlength="100" placeholder="E-mail">
-            
+
         </li>
 
         <?php if ($config['cf_use_homepage']) { ?>
@@ -120,12 +119,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         <?php if ($config['cf_use_hp'] || $config['cf_cert_hp']) {  ?>
         <li>
             <label for="reg_mb_hp" class="sound_only">휴대폰번호<?php if ($config['cf_req_hp']) { ?><strong>필수</strong><?php } ?></label>
-            
+
             <input type="text" name="mb_hp" value="<?php echo get_text($member['mb_hp']) ?>" id="reg_mb_hp" <?php echo ($config['cf_req_hp'])?"required":""; ?> class="frm_input full_input <?php echo ($config['cf_req_hp'])?"required":""; ?>" maxlength="20" placeholder="휴대폰번호">
             <?php if ($config['cf_cert_use'] && $config['cf_cert_hp']) { ?>
             <input type="hidden" name="old_mb_hp" value="<?php echo get_text($member['mb_hp']) ?>">
             <?php } ?>
-            
+
         </li>
         <?php } ?>
 
@@ -143,13 +142,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             <label for="reg_mb_addr3" class="sound_only">참고항목</label>
             <input type="text" name="mb_addr3" value="<?php echo get_text($member['mb_addr3']) ?>" id="reg_mb_addr3" class="frm_input frm_address" size="50" readonly="readonly" placeholder="참고항목">
             <input type="hidden" name="mb_addr_jibeon" value="<?php echo get_text($member['mb_addr_jibeon']); ?>">
-            
+
         </li>
         <?php } ?>
     </div>
 
     <div class="form_01">
-        
+
         <h2>기타 개인설정</h2>
         <?php if ($config['cf_use_signature']) { ?>
         <li>
@@ -178,7 +177,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             <input type="checkbox" name="del_mb_icon" value="1" id="del_mb_icon">
             <label for="del_mb_icon">삭제</label>
             <?php } ?>
-            
+
         </li>
         <?php } ?>
 
@@ -202,16 +201,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         <li>
             <label for="reg_mb_mailling" class="frm_label">메일링서비스</label>
             <input type="checkbox" name="mb_mailling" value="1" id="reg_mb_mailling" <?php echo ($w=='' || $member['mb_mailling'])?'checked':''; ?>>정보 메일을 받겠습니다.
-            
+
         </li>
 
         <?php if ($config['cf_use_hp']) { ?>
         <li>
             <label for="reg_mb_sms" class="frm_label">SMS 수신여부</label>
-            
+
             <input type="checkbox" name="mb_sms" value="1" id="reg_mb_sms" <?php echo ($w=='' || $member['mb_sms'])?'checked':''; ?>>
                 휴대폰 문자메세지를 받겠습니다.
-            
+
         </li>
         <?php } ?>
 
@@ -220,22 +219,19 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             <label for="reg_mb_open" class="frm_label">정보공개</label>
             <input type="checkbox" name="mb_open" value="1" id="reg_mb_open" <?php echo ($w=='' || $member['mb_open'])?'checked':''; ?>>
             다른분들이 나의 정보를 볼 수 있도록 합니다.
-            <span class="frm_info">
-                정보공개를 바꾸시면 앞으로 <?php echo (int)$config['cf_open_modify'] ?>일 이내에는 변경이 안됩니다.
-            </span>
             <input type="hidden" name="mb_open_default" value="<?php echo $member['mb_open'] ?>">
-            
+
         </li>
         <?php } else { ?>
         <li>
             <span  class="frm_label">정보공개</span>
             <input type="hidden" name="mb_open" value="<?php echo $member['mb_open'] ?>">
-            
+
             <span class="frm_info">
                 정보공개는 수정후 <?php echo (int)$config['cf_open_modify'] ?>일 이내, <?php echo date("Y년 m월 j일", isset($member['mb_open_date']) ? strtotime("{$member['mb_open_date']} 00:00:00")+$config['cf_open_modify']*86400:G5_SERVER_TIME+$config['cf_open_modify']*86400); ?> 까지는 변경이 안됩니다.<br>
                 이렇게 하는 이유는 잦은 정보공개 수정으로 인하여 쪽지를 보낸 후 받지 않는 경우를 막기 위해서 입니다.
             </span>
-            
+
         </li>
         <?php } ?>
 
@@ -253,14 +249,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         </li>
         <?php } ?>
 
-        <li class="is_captcha_use">
-            <span  class="frm_label">자동등록방지</span>
-            <?php echo captcha_html(); ?>
-        </li>
-        
     </div>
 
-    <div class="btn_top top">
+    <div class="btn_top" style="margin-bottom: 20px">
         <a href="<?php echo G5_URL; ?>/" class="btn_cancel">취소</a>
         <input type="submit" value="<?php echo $w==''?'회원가입':'정보수정'; ?>" id="btn_submit" class="btn_submit" accesskey="s">
     </div>
@@ -454,8 +445,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                 return false;
             }
         }
-
-        <?php echo chk_captcha_js(); ?>
 
         document.getElementById("btn_submit").disabled = "disabled";
 

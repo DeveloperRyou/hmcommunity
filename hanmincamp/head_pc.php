@@ -1,11 +1,6 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-if (G5_IS_MOBILE) {
-    include_once(G5_THEME_MOBILE_PATH.'/head.php');
-    return;
-}
-
 include_once(G5_THEME_PATH.'/head.sub.php');
 include_once(G5_LIB_PATH.'/latest.lib.php');
 include_once(G5_LIB_PATH.'/outlogin.lib.php');
@@ -14,11 +9,6 @@ include_once(G5_LIB_PATH.'/visit.lib.php');
 include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 
-//한민캠프 페이지로 이동
-if($_SESSION['hanmincamp']) {
-  include_once(G5_PATH.'/hanmincamp/head_pc.php');
-  return;
-}
 ?>
 
 <!-- 상단 시작 { -->
@@ -114,7 +104,7 @@ if($_SESSION['hanmincamp']) {
                             from {$g5['menu_table']}
                             where me_use = '1'
                               and length(me_code) = '2'
-                              and me_hanmincamp = '0'
+                              and me_hanmincamp = '1'
                             order by me_order, me_id ";
                 $result = sql_query($sql, false);
                 $gnb_zindex = 999; // gnb_1dli z-index 값 설정용

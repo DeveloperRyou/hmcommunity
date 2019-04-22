@@ -1,29 +1,14 @@
 <?php
-define('_INDEX_', true);
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
-
-if (G5_IS_MOBILE) {
-    include_once(G5_THEME_MOBILE_PATH.'/index.php');
-    return;
-}
-
-include_once(G5_THEME_PATH.'/head.php');
-
-//한민캠프 페이지로 이동
-if($_SESSION['hanmincamp']) {
-  include_once(G5_PATH.'/hanmincamp/index_pc.php');
-  return;
-}
-
 ?>
 <div id="slide" class="slider" style="margin-bottom:10px">
   <input type="radio" name="pos" class="dot" id="pos1">
   <input type="radio" name="pos" class="dot" id="pos2">
   <input type="radio" name="pos" class="dot" id="pos3">
   <ul class="slideshow-container">
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-120px"> <img src="img/main_ad_05.png"> </div> </li>
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_04.png"> </div></li>
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-120px"> <img src="img/main_ad_05.png"> </div></li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div> </li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div></li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img"> <img src="img/main_ad_04.png"> </div></li>
   </ul>
   <p class="pos">
     <label for="pos1"></label>
@@ -66,18 +51,6 @@ function showSlides() {
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
     <?php echo latest("theme/basic", "info_share", 5, 25); ?>
-    </div>
-    <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "hanminagora", 5, 25); ?>
-    </div>
-    <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "free_anonymous", 5, 25); ?>
-    </div>
-    <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "free_YB", 5, 25); ?>
-    </div>
-    <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "free_OB", 5, 25); ?>
     </div>
 
     <!-- } 최신글 끝 -->

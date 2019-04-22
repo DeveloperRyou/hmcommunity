@@ -9,11 +9,6 @@ include_once(G5_LIB_PATH.'/visit.lib.php');
 include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 
-//한민캠프 페이지로 이동
-if($_SESSION['hanmincamp']) {
-  include_once(G5_PATH.'/hanmincamp/head_mobile.php');
-  return;
-}
 ?>
 
 <header id="hd" class="top fixed">
@@ -29,7 +24,7 @@ if($_SESSION['hanmincamp']) {
     <div id="hd_wrapper">
 
         <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL."/hanmincamp" ?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
 
         <button type="button" id="gnb_open" class="hd_opener"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only"> 메뉴열기</span></button>
@@ -43,7 +38,7 @@ if($_SESSION['hanmincamp']) {
                         from {$g5['menu_table']}
                         where me_mobile_use = '1'
                           and length(me_code) = '2'
-                          and me_hanmincamp = '0'
+                          and me_hanmincamp = '1'
                         order by me_order, me_id ";
             $result = sql_query($sql, false);
 
@@ -193,7 +188,7 @@ if($_SESSION['hanmincamp']) {
                               from {$g5['menu_table']}
                               where me_use = '1'
                                 and length(me_code) = '2'
-                                and me_hanmincamp = '0'
+                                and me_hanmincamp = '1'
                               order by me_order, me_id ";
                   $result = sql_query($sql, false);
                   $gnb_zindex = 999; // gnb_1dli z-index 값 설정용

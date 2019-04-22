@@ -30,14 +30,15 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
               <span class="comment_profile_img"><?php echo get_member_profile_img($list[$i]['mb_id'], 40, 40); ?></span>
             <?php }?>
             <?php echo ($gr_id=='anonymous')?'<strong>익명</strong>':$list[$i]['name'] ?>
-
+            <ul class="bo_vc_act">
+                <?php if ($list[$i]['is_reply']) { ?><li><a href="<?php echo $c_reply_href; ?>" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;">답변</a></li><?php } ?>
+                <?php if ($list[$i]['is_edit']) { ?><li><a href="<?php echo $c_edit_href; ?>" onclick="comment_box('<?php echo $comment_id ?>', 'cu'); return false;">수정</a></li><?php } ?>
+                <?php if ($list[$i]['is_del'])  { ?><li><a href="<?php echo $list[$i]['del_link']; ?>" onclick="return comment_delete();">삭제</a></li><?php } ?>
+            </ul>
             <?php if ($is_ip_view) { ?>
             <span class="sound_only">아이피</span>
             <span class="bo_vc_hdinfo">(<?php echo $list[$i]['ip']; ?>)</span>
             <?php } ?>
-            <br>
-            <span class="sound_only">작성일</span>
-            <span class="bo_vc_hdinfo"><time datetime="<?php echo date('Y-m-d\TH:i:s+09:00', strtotime($list[$i]['datetime'])) ?>"><?php echo $list[$i]['datetime'] ?></time></span>
             <?php
             include(G5_SNS_PATH."/view_comment_list.sns.skin.php");
             ?>
@@ -63,11 +64,6 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
                 $c_reply_href = './board.php?'.$query_string.'&amp;c_id='.$comment_id.'&amp;w=c#bo_vc_w';
                 $c_edit_href = './board.php?'.$query_string.'&amp;c_id='.$comment_id.'&amp;w=cu#bo_vc_w';
             ?>
-                <ul class="bo_vc_act">
-                    <?php if ($list[$i]['is_reply']) { ?><li><a href="<?php echo $c_reply_href; ?>" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;">답변</a></li><?php } ?>
-                    <?php if ($list[$i]['is_edit']) { ?><li><a href="<?php echo $c_edit_href; ?>" onclick="comment_box('<?php echo $comment_id ?>', 'cu'); return false;">수정</a></li><?php } ?>
-                    <?php if ($list[$i]['is_del'])  { ?><li><a href="<?php echo $list[$i]['del_link']; ?>" onclick="return comment_delete();">삭제</a></li><?php } ?>
-                </ul>
             <?php } ?>
         </div>
             <span id="edit_<?php echo $comment_id ?>"></span><!-- 수정 -->
