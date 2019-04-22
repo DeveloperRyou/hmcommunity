@@ -32,7 +32,7 @@ $result = sql_query($sql);
 $g5['title'] = "메뉴설정";
 include_once('./admin.head.php');
 
-$colspan = 7;
+$colspan = 8;
 ?>
 
 <div class="local_desc01 local_desc">
@@ -56,6 +56,7 @@ $colspan = 7;
         <th scope="col">PC사용</th>
         <th scope="col">모바일사용</th>
         <th scope="col">관리</th>
+        <th scope="col">한민캠프</th>
     </tr>
     </thead>
     <tbody>
@@ -114,6 +115,10 @@ $colspan = 7;
             <button type="button" class="btn_add_submenu btn_03 ">추가</button>
             <?php } ?>
             <button type="button" class="btn_del_menu btn_02">삭제</button>
+        </td>
+        <td class="td_num">
+            <label for="me_hanmincamp_<?php echo $i; ?>" class="sound_only">한민캠프</label>
+            <input type="text" name="me_hanmincamp[]" value="<?php echo $row['me_hanmincamp'] ?>" id="me_hanmincamp_<?php echo $i; ?>" class="tbl_input" size="5">
         </td>
     </tr>
     <?php

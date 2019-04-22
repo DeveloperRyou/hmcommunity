@@ -8,9 +8,10 @@ include_once(G5_LIB_PATH.'/poll.lib.php');
 include_once(G5_LIB_PATH.'/visit.lib.php');
 include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
+
 //한민캠프 페이지로 이동
 if($_SESSION['hanmincamp']) {
-  include_once('/hanmincamp/head_mobile.php');
+  include_once(G5_PATH.'/hanmincamp/head_mobile.php');
   return;
 }
 ?>

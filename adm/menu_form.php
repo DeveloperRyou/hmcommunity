@@ -167,6 +167,10 @@ function add_menu_list(name, link, code)
     <?php } ?>
     list += "<button type=\"button\" class=\"btn_del_menu btn\">삭제</button>";
     list += "</td>";
+    list += "<td class=\"td_numsmall\">";
+    list += "<label for=\"me_hanmincamp_"+ms+"\"  class=\"sound_only\">순서<strong class=\"sound_only\"> 필수</strong></label>";
+    list += "<input type=\"text\" name=\"me_hanmincamp[]\" value=\"0\" id=\"me_hanmincamp_"+ms+"\" required class=\"required frm_input\" size=\"5\">";
+    list += "</td>";
     list += "</tr>";
 
     var $menu_last = null;

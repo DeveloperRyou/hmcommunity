@@ -11,7 +11,7 @@ include_once(G5_THEME_PATH.'/head.php');
 
 //한민캠프 페이지로 이동
 if($_SESSION['hanmincamp']) {
-  include_once('/hanmincamp/index_pc.php');
+  include_once(G5_PATH.'/hanmincamp/index_pc.php');
   return;
 }
 

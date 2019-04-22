@@ -16,7 +16,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 //한민캠프 페이지로 이동
 if($_SESSION['hanmincamp']) {
-  include_once('/hanmincamp/head_pc.php');
+  include_once(G5_PATH.'/hanmincamp/head_pc.php');
   return;
 }
 ?>

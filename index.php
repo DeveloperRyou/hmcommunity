@@ -7,7 +7,7 @@ define('_INDEX_', true);
 if($_GET['hanmincamp']){
   $_SESSION['hanmincamp']=True;
 } else{
-    $_SESSION['hanmincamp']=False;
+  $_SESSION['hanmincamp']=False;
 }
 
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
