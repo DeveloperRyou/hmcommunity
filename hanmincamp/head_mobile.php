@@ -219,7 +219,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                       $now_state=sql_fetch_array($result)['gr_subject'];
                     }
                   ?>
-                  <li class="m_list <?php if($now_state=]==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
+                  <li class="m_list <?php if($now_state==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
                       <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="m_link"><?php echo $row['me_name'] ?></a>
                   </li>
                   <?php
