@@ -202,7 +202,24 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                   foreach( $menu_datas as $row ){
                       if( empty($row) ) continue;
                   ?>
-                  <li class="m_list <?php if(!defined("_INDEX_")&&$_GET['gr_id']==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
+                  <?php
+                    //check
+                    if($_GET['gr_id']){
+                      $sql = "select * FROM `g5_group` WHERE gr_id = '{$_GET['gr_id']}' ";
+                      $result = sql_query($sql);
+                      $now_state=sql_fetch_array($result)['gr_subject'];
+                    }
+                    if($_GET['bo_table']){
+                      $sql = "select * FROM `g5_board` WHERE bo_table = '{$_GET['bo_table']}' ";
+                      $result = sql_query($sql);
+                      $now_gr_id=sql_fetch_array($result)['gr_id'];
+
+                      $sql = "select * FROM `g5_group` WHERE gr_id = '{$now_gr_id}' ";
+                      $result = sql_query($sql);
+                      $now_state=sql_fetch_array($result)['gr_subject'];
+                    }
+                  ?>
+                  <li class="m_list <?php if($now_state=]==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
                       <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="m_link"><?php echo $row['me_name'] ?></a>
                   </li>
                   <?php
