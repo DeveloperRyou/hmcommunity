@@ -1,5 +1,23 @@
 @charset "utf-8";
 
+/* 에디터 */
+
+#cke_19{display: none;}
+#cke_20{display: none;}
+#cke_21{display: none;}
+#cke_22{display: none;}
+#cke_22 + span{display: none}
+#cke_24{display: none;}
+#cke_32{display: none;}
+#cke_37{display: none;}
+#cke_37 + span{display: none;}
+#cke_54{display: none;}
+#cke_55{display: none;}
+#cke_69{display: none;}
+#cke_73{display: none;}
+#cke_81{display: none;}
+#cke_82{display: none;}
+
 /********************************************************
 ■ Basic : 기본
 ********************************************************/
