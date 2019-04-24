@@ -74,7 +74,9 @@ box-shadow: 0 0 8px  rgba(65,98,255,0.8);}
 .bo_fx {margin:0 5px;padding:0 10px}
 .bo_fx:after {display:block;visibility:hidden;clear:both;content:""}
 .bo_fx ul {margin:0;padding:0;list-style:none}
-#bo_list_total{font-size: 14px;margin-bottom: 10px}
+#list_top {display: table;margin-bottom: 10px;width: 100%;}
+#list_top #bo_list_total{font-size: 14px;display: table-cell;}
+#list_top .btn_top{display: table-cell;padding: 0px;text-align: right;}
 #fboardlist{border-top: 1px solid #eee;}
 .btn_bo_user {float:right;margin:0;padding:0;list-style:none}
 .btn_bo_user li {float:left;margin-left:5px}
