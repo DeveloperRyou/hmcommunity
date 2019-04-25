@@ -84,7 +84,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <?php if ($good_href) { ?>
             <span class="bo_v_act_gng">
                 <a href="<?php echo $good_href.'&amp;'.$qstr ?>" id="good_button"  class="bo_v_good"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><br><span class="sound_only">추천</span><strong><?php echo number_format($view['wr_good']) ?></strong></a>
-                <b id="bo_v_act_good">이 글을 추천하셨습니다</b>
+                <b id="bo_v_act_good"></b>
             </span>
             <?php } ?>
             <?php if ($nogood_href) { ?>
@@ -258,11 +258,22 @@ function excute_good(href, $el, $tx)
         { js: "on" },
         function(data) {
             if(data.error) {
+              if(data.error=="cancel"){
+                $el.find("strong").text(number_format(String(data.count)));
+                if($tx.attr("id").search("nogood") > -1) {
+                    $tx.text("비추천을 취소하셨습니다.");
+                    $tx.fadeIn(200).delay(2500).fadeOut(200);
+                } else {
+                    $tx.text("추천을 취소하셨습니다.");
+                    $tx.fadeIn(200).delay(2500).fadeOut(200);
+                }
+              }else{
                 alert(data.error);
                 return false;
+              }
             }
 
-            if(data.count) {
+            else if(data.count) {
                 $el.find("strong").text(number_format(String(data.count)));
                 if($tx.attr("id").search("nogood") > -1) {
                     $tx.text("이 글을 비추천하셨습니다.");

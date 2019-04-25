@@ -66,6 +66,10 @@ if($_POST['js'] == "on") {
                 $status = '추천';
             else
                 $status = '비추천';
+            if ($row['bg_flag'] != $good){
+                $error = "이미 {$status} 하신 글 입니다.";
+                print_result($error, $count);
+            }
 
             // 추천(찬성), 비추천(반대) 카운트 증가
             sql_query(" UPDATE {$g5['write_prefix']}{$bo_table} set wr_{$good} = wr_{$good} - 1 where wr_id = '{$wr_id}' ");
