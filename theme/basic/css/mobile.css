@@ -88,9 +88,10 @@ box-shadow: 0 0 5px  rgba(55,55,5,0.4);}
 
 .m_menu{width: 100%;height: 40px;padding: 0 10px;}
 .m_wrap{display: table;}
-.m_list{line-height: 40px;display: table-cell;padding: 0px 10px;white-space: nowrap;}
-.m_list.red>a{font-weight: 700;color: red;}
-.m_list a{font-size: 15px;display: block;}
+.m_link{font-size: 14px;z-index: 9999;}
+.m_list{line-height: 40px;display: table-cell;padding: 0px 5px;white-space: nowrap;}
+.m_list.red{font-weight: 700;color: red;}
+
 
 /* 텍스트 크기 조절 */
 #text_size {margin:0 0 10px;text-align:center;display:inline-block;padding:7px 20px;background:#e6e7e9;border-radius:25px;height:48px;}
