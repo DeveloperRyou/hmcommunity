@@ -233,6 +233,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <script>
         $(function(){
           $('#m_container').draggable({
+            distance:15,
             axis:'x',
             stop:function(event,ui){
               var right=parseInt($('.m_menu').css("width"))-parseInt($(this).css("width"))-parseInt($('.m_menu').css("padding-left"))*2;
