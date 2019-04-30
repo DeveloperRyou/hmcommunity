@@ -10,7 +10,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <?php //echo visit('theme/basic'); // 방문자수 ?>
 
 
-<div id="ft">
+<div id="ft" class="<?php if(defined('_INDEX_')) echo 'index';?>">
     <div id="ft_copy">
         <div id="ft_company" style="margin-bottom:10px;">
             <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=company">사이트소개</a>

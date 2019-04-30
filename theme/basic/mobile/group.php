@@ -7,6 +7,13 @@ if(!$is_admin && $group['gr_device'] == 'pc')
 include_once(G5_THEME_MOBILE_PATH.'/head.php');
 ?>
 
+<?php
+if($gr_id=='camp'){
+  include_once(G5_PATH.'/hanmincamp/group_camp.php');
+  return;
+}
+?>
+
 <!-- 메인화면 최신글 시작 -->
 <?php
 //  최신글

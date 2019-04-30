@@ -34,7 +34,7 @@ if($_SESSION['hanmincamp']) {
 
         <button type="button" id="gnb_open" class="hd_opener"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only"> 메뉴열기</span></button>
 
-        <div id="gnb" class="hd_div">
+        <div id="gnb" class="hd_div" style="z-index: 9999">
             <button type="button" id="gnb_close" class="hd_closer"><span class="sound_only">메뉴 </span>닫기</button>
 
             <ul id="gnb_1dul">
@@ -120,7 +120,7 @@ if($_SESSION['hanmincamp']) {
         </div>
 
         <button type="button" id="user_btn" class="hd_opener"><i class="fa fa-user" aria-hidden="true"></i><span class="sound_only">사용자메뉴</span></button>
-        <div class="hd_div" id="user_menu">
+        <div class="hd_div" id="user_menu" style="z-index: 9999">
             <button type="button" id="user_close" class="hd_closer"><span class="sound_only">메뉴 </span>닫기</button>
 
             <?php echo outlogin('theme/basic'); // 외부 로그인 ?>
@@ -187,7 +187,7 @@ if($_SESSION['hanmincamp']) {
         </script>
         <div class="m_menu">
           <div id="m_container">
-              <ul class=""="m_wrap">
+              <ul class="m_wrap">
                   <?php
                   $sql = " select *
                               from {$g5['menu_table']}
@@ -255,10 +255,59 @@ if($_SESSION['hanmincamp']) {
           });
         });
       </script>-->
+      <?php if(!defined('_INDEX_')){?>
+      <div class="m_menu_sub">
+        <div id="m_container">
+            <ul class="m_wrap">
+                <?php
+                $sql = " select *
+                            from {$g5['menu_table']}
+                            where me_use = '1'
+                              and length(me_code) = '4'
+                              and me_hanmincamp = '0'
+                            order by me_order, me_id ";
+                $result = sql_query($sql, false);
+                $gnb_zindex = 999; // gnb_1dli z-index 값 설정용
+                $menu_datas = array();
+
+                for ($i=0; $row=sql_fetch_array($result); $i++) {
+                    $menu_datas[$i] = $row;
+                }
+
+                $i = 0;
+                foreach( $menu_datas as $row ){
+                    if( empty($row) ) continue;
+                    $sql = " select *
+                                from {$g5['board_table']}
+                                where bo_subject = '{$row['me_name']}' ";
+                    $result = sql_query($sql, false);
+                    $check = sql_fetch_array($result);
+                    if($check['gr_id']!=$_GET['gr_id']) continue;
+                ?>
+                <?php
+                  //check
+                  if($_GET['bo_table']){
+                    $sql = "select * FROM `g5_board` WHERE bo_table = '{$_GET['bo_table']}' ";
+                    $result = sql_query($sql);
+                    $now_state=sql_fetch_array($result)['bo_subject'];
+                  }
+                ?>
+                <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="m_link">
+                  <li class="m_list <?php if($now_state==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
+                      <?php echo $row['me_name'] ?>
+                    </li>
+                </a>
+                <?php
+                $i++;
+                }   //end foreach $row?>
+            </ul>
+        </div>
+      </div>
+      <?php } ?>
 </header>
 
 
 
-<div id="wrapper" class="content fixed">
+<div id="wrapper" class="content fixed <?php if(defined('_INDEX_')) echo 'index';?>">
 
     <div id="container">
