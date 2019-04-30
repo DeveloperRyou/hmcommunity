@@ -18,6 +18,8 @@ $group_code = null;
 $primary_code = null;
 $count = count($_POST['code']);
 
+$me_gr_id = null;
+
 for ($i=0; $i<$count; $i++)
 {
     $_POST = array_map_deep('trim', $_POST);
@@ -25,6 +27,11 @@ for ($i=0; $i<$count; $i++)
     $code    = $_POST['code'][$i];
     $me_name = $_POST['me_name'][$i];
     $me_link = (preg_match('/^javascript/i', $_POST['me_link'][$i]) || preg_match('/script:/i', $_POST['me_link'][$i])) ? G5_URL : strip_tags($_POST['me_link'][$i]);
+
+    $sql = "select * FROM `g5_group` WHERE gr_subject = '$me_name' ";
+    $result = sql_query($sql);
+    $check_gr_id=sql_fetch_array($result)['gr_id'];
+    if($check_gr_id) $me_gr_id = $check_gr_id;
 
     if(!$code || !$me_name || !$me_link)
         continue;
@@ -63,6 +70,7 @@ for ($i=0; $i<$count; $i++)
                     me_target       = '{$_POST['me_target'][$i]}',
                     me_order        = '{$_POST['me_order'][$i]}',
                     me_use          = '{$_POST['me_use'][$i]}',
+                    me_gr_id        = '$me_gr_id',
                     me_mobile_use   = '{$_POST['me_mobile_use'][$i]}',
                     me_hanmincamp   = '{$_POST['me_hanmincamp'][$i]}' ";
     sql_query($sql);

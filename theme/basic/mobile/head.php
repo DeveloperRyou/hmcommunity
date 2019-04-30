@@ -277,12 +277,7 @@ if($_SESSION['hanmincamp']) {
                 $i = 0;
                 foreach( $menu_datas as $row ){
                     if( empty($row) ) continue;
-                    $sql = " select *
-                                from {$g5['board_table']}
-                                where bo_subject = '{$row['me_name']}' ";
-                    $result = sql_query($sql, false);
-                    $check = sql_fetch_array($result);
-                    if($check['gr_id']!=$_GET['gr_id']) continue;
+                    if($row['me_gr_id']!=$_GET['gr_id']) continue;
                 ?>
                 <?php
                   //check
