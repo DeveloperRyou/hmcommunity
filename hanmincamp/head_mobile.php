@@ -230,6 +230,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
               </ul>
           </div>
 		    </div>
+        <!--
         <script>
         $(function(){
           $('#m_container').draggable({
@@ -249,7 +250,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             }
           });
         });
-        </script>
+        </script>-->
 </header>
 
 

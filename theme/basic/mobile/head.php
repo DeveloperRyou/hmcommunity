@@ -234,7 +234,7 @@ if($_SESSION['hanmincamp']) {
                   }   //end foreach $row?>
               </ul>
           </div>
-		    </div>
+		    </div><!--
         <script>
         $(function(){
           $('#m_container').draggable({
@@ -254,7 +254,7 @@ if($_SESSION['hanmincamp']) {
             }
           });
         });
-        </script>
+      </script>-->
 </header>
 
 
