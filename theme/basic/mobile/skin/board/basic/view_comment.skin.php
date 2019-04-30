@@ -26,9 +26,6 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
     <article id="c_<?php echo $comment_id ?>" <?php if ($cmt_depth) { ?>style="margin-left:<?php echo $cmt_depth ?>px;border-top-color:#e0e0e0"<?php } ?>>
         <header <?php echo($gr_id=='anonymous')?'style=\'padding-left:0px\'':''?>>
             <h2><?php echo ($gr_id=='anonymous')?'익명': get_text($list[$i]['wr_name']); ?>님의 댓글<?php if ($cmt_depth) { ?><span class="sound_only">의 댓글</span><?php } ?></h2>
-            <?php if($gr_id!='anonymous'){?>
-              <span class="comment_profile_img"><?php echo get_member_profile_img($list[$i]['mb_id'], 40, 40); ?></span>
-            <?php }?>
             <?php echo ($gr_id=='anonymous')?'<strong>익명</strong>':$list[$i]['name'] ?>
             <ul class="bo_vc_act">
                 <?php if ($list[$i]['is_reply']) { ?><li><a href="<?php echo $c_reply_href; ?>" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;">답변</a></li><?php } ?>
