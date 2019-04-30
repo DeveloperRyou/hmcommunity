@@ -151,7 +151,7 @@ if($_SESSION['hanmincamp']) {
                         if($k == 0)
                             echo '<span class="bg">하위분류</span><ul class="gnb_2dul">'.PHP_EOL;
                     ?>
-                        <li class="gnb_2dli" <?php if($gnb_zindex==994) echo "style=\"width:180px\""?>><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><?php echo $row2['me_name'] ?></a></li>
+                        <li class="gnb_2dli" <?php if($row['me_name']=='혜음로 765') echo "style=\"width:180px\""; ?>><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><?php echo $row2['me_name'] ?></a></li>
                     <?php
                     $k++;
                     }   //end foreach $row2

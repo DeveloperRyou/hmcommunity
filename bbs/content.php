@@ -65,7 +65,7 @@ if ($is_admin)
 ?>
 
 <div style="margin-top: 30px;">
-	<header align="center" style="font-size:200%; border-bottom:3px solid #27117D; padding-bottom: 5px; margin-left: 330px; margin-right: 330px;">
+	<header align="center" style="font-size:200%; border-bottom:3px solid #27117D; padding-bottom: 5px;">
         <?php echo $g5['title'];?>
     </header>
 </div>
