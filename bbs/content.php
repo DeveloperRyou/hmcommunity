@@ -18,7 +18,17 @@ $g5['title'] = $co['co_subject'];
 
 include_once('./_head.php');
 
-$str = conv_content($co['co_content'], $co['co_html'], $co['co_tag_filter_use']);
+if(preg_match('/(phone|samsung|lgtel|mobile|[^A]skt|nokia|blackberry|BB10|android|sony|SonyEricsson|DoCoMo|JVodafone|SoftBank|MOT-|UP.Browser|KDDI|WILLCOM|SHARP|DDIPOCKET|PSP|SymbianOS|Windows CE|webOS|PalmOS)/i', $_SERVER['HTTP_USER_AGENT']))
+{ // 모바일일때
+    if ($co['co_mobile_content']) {
+        $str = conv_content($co['co_mobile_content'], $co['co_html'], $co['co_tag_filter_use']);
+    } else {
+        $str = conv_content($co['co_content'], $co['co_html'], $co['co_tag_filter_use']);
+    }
+} else { // pc 일때
+    $str = conv_content($co['co_content'], $co['co_html'], $co['co_tag_filter_use']);
+}
+//$str = conv_content($co['co_content'], $co['co_html'], $co['co_tag_filter_use']);
 
 // $src 를 $dst 로 변환
 unset($src);
@@ -63,12 +73,6 @@ $skin_file = $content_skin_path.'/content.skin.php';
 if ($is_admin)
     echo '<div class="ctt_admin"><a href="'.G5_ADMIN_URL.'/contentform.php?w=u&amp;co_id='.$co_id.'" class="btn_admin btn">내용 수정</a></div>';
 ?>
-
-<div style="margin-top: 30px;">
-	<header align="center" style="font-size:200%; border-bottom:3px solid #27117D; padding-bottom: 5px;">
-        <?php echo $g5['title'];?>
-    </header>
-</div>
 
 <?php
 if(is_file($skin_file)) {
