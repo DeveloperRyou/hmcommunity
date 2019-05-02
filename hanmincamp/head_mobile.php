@@ -24,7 +24,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <div id="hd_wrapper">
 
         <div id="logo">
-            <a href="<?php echo G5_URL."/hanmincamp" ?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL."/hanmincamp" ?>"><img src="<?php echo G5_IMG_URL."/hanmincamp" ?>/m_logo_hanmincamp.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
 
         <button type="button" id="gnb_open" class="hd_opener"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only"> 메뉴열기</span></button>
@@ -284,7 +285,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     }
                   ?>
                   <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="m_link">
-                    <li class="m_list <?php if($now_state==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
+                    <li class="m_list <?php if($now_state==$row['me_name']||$g5['title']==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
                         <?php echo $row['me_name'] ?>
                       </li>
                   </a>

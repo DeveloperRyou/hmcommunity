@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 최근게시물 스킨 (latest) */
-.lt {position:relative;min-height: 1px;padding: 0 15px;}
+.lt {position:relative;min-height: 1px;padding: 0 10px;}
 .lt ul {margin:10px 0 0 ;padding:0;list-style:none}
 .lt .lt_title {display:block; margin-bottom: 15px; padding: 0px;border-bottom:1px solid #ccc;}
 .lt .lt_title_name {display: table;padding-bottom: 5px;border-bottom: 2px solid black;font-size: 16px;font-weight: 500;}

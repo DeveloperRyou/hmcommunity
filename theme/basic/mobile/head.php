@@ -288,7 +288,7 @@ if($_SESSION['hanmincamp']) {
                   }
                 ?>
                 <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="m_link">
-                  <li class="m_list <?php if($now_state==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
+                  <li class="m_list <?php if($now_state==$row['me_name']||$g5['title']==$row['me_name']) echo "red"?>" style="z-index:<?php echo $gnb_zindex; ?> ">
                       <?php echo $row['me_name'] ?>
                     </li>
                 </a>
