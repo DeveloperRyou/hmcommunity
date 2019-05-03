@@ -255,7 +255,7 @@ if($_SESSION['hanmincamp']) {
           });
         });
       </script>-->
-      <?php if(!defined('_INDEX_')){?>
+      <?php if(!defined('_INDEX_') && $g5['title']!='새글'){?>
       <div class="m_menu_sub">
         <div id="m_container">
             <ul class="m_wrap">
@@ -277,7 +277,13 @@ if($_SESSION['hanmincamp']) {
                 $i = 0;
                 foreach( $menu_datas as $row ){
                     if( empty($row) ) continue;
-                    if($row['me_gr_id']!=$_GET['gr_id']) continue;
+                    if($_GET['bo_table']){
+                      $sql = "select * FROM `g5_board` WHERE bo_table = '{$_GET['bo_table']}' ";
+                      $result = sql_query($sql);
+                      $now_gr_id=sql_fetch_array($result)['gr_id'];
+                    }
+
+                    if($row['me_gr_id']!=$_GET['gr_id'] && $row['me_gr_id']!=$now_gr_id) continue;
                 ?>
                 <?php
                   //check
