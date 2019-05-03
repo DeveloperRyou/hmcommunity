@@ -18,7 +18,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
             <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=provision">사이트이용약관</a>
             <?php
             if(G5_DEVICE_BUTTON_DISPLAY && G5_IS_MOBILE) { ?>
-              <a href="<?php echo get_device_change_url(); ?>" id="device_change">PC버전</a>
+              <a href="<?php echo get_device_change_url(); ?>">PC버전</a>
             <?php }?>
         </div>
         한아름 공식 이메일: contacthanmin01@gmail.com<br>Copyright &copy; <b>hanalum.kr</b> All rights reserved.<br>
