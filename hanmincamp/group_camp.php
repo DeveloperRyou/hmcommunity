@@ -4,7 +4,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 <div id="container_main" style="margin-bottom:15px;">
 
-<iframe width="100%" height="190px" src="https://www.youtube.com/embed/1w-TzLPYoIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="190px" src="https://www.youtube.com/watch?v=P6brTg_F6bw&t=1s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
 
