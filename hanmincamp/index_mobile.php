@@ -8,11 +8,17 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <div class="big_img" onclick="location.href='bbs/board.php?bo_table=miucamp_06&gr_id=camp';">
  <img src="img/hanmincamp/main_ad_01.jpg">
 </div>
-<div class="small_img left" onclick="location.href='bbs/content.php?co_id=introduce_mce&gr_id=mce';">
- <img src="img/hanmincamp/main_ad_02.jpg">
+<div class="big_img">
+  <div class="small_img left" onclick="location.href='bbs/content.php?co_id=introduce_mce&gr_id=mce';">
+   <img src="img/hanmincamp/main_ad_02.jpg">
+  </div>
+  <div class="small_img right" onclick="location.href='https://www.youtube.com/watch?v=1w-TzLPYoIs';">
+   <img src="img/hanmincamp/main_ad_03.jpg">
+  </div>
 </div>
-<div class="small_img right" onclick="location.href='https://www.youtube.com/watch?v=1w-TzLPYoIs';">
- <img src="img/hanmincamp/main_ad_03.jpg">
+
+<div class="big_img" onclick="location.href='https://pf.kakao.com/_xjjiEd/friend';">
+  <img src="img/hanmincamp/kakao_friend.png">
 </div>
 
 </div>

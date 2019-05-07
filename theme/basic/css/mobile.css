@@ -68,6 +68,9 @@ box-shadow: 0 0 5px  rgba(55,55,5,0.4);}
 #hd_sch #sch_stx {width:100%;height:45px;background:#464646;border:0;padding-left:10px;border-radius:3px 0 0 3px;color:#fff}
 #hd_sch #sch_submit {position:absolute;top:0;right:0;width:40px;height:45px;;border:0;border-radius:0 3px 3px 0;cursor:pointer;color:#fff;background:#464646;font-size:1.25em}
 
+.ad_side {text-align:center;padding: 10px 20px 0px 20px}
+.ad_side img {width: 100%}
+
 #user_btn {position:absolute;top:5px;right:10px;padding:0 10px;height:30px;width:30px;border:0;font-size:16px;background:none;letter-spacing:-0.1em}
 #user_menu{display:none;position:fixed;top:0;right:0;height:100%;;overflow-y:auto;width:320px;z-index:9999;background:#fff;text-align:center;
 -webkit-box-shadow:0 0 5px  rgba(55,55,5,0.4);
@@ -112,7 +115,7 @@ box-shadow: 0 0 5px  rgba(100,100,100,0.2);}
 .small_img.left{padding-right: 1px;}
 .small_img.right{padding-left: 1px;}
 #container .big_img{position: relative;width: 100%;margin-bottom: 2px;}
-#container .small_img{position: relative;width: 50%;margin-bottom: 2px; display: table-cell;}
+#container .small_img{position: relative;width: 50%;display: table-cell;}
 #container .big_img img{width: 100%}
 #container .small_img img{width: 100%}
 #container:after {display:block;visibility:hidden;clear:both;content:""}

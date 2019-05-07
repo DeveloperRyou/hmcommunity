@@ -113,6 +113,9 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 }
                 </script>
             </div>
+            <div class="ad_side" onclick="location.href='https://pf.kakao.com/_xjjiEd/friend';">
+              <img src="img/hanmincamp/kakao_friend_side.png">
+            </div>
         </div>
 
         <button type="button" id="user_btn" class="hd_opener"><i class="fa fa-user" aria-hidden="true"></i><span class="sound_only">사용자메뉴</span></button>
