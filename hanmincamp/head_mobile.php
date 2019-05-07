@@ -24,7 +24,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <div id="hd_wrapper">
 
         <div id="logo">
-            <a href="<?php echo G5_URL?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL."?hanmincamp=false"?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
             <a href="<?php echo G5_URL."/hanmincamp" ?>"><img src="<?php echo G5_IMG_URL."/hanmincamp" ?>/m_logo_hanmincamp.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
 
