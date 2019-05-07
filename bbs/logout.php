@@ -28,11 +28,11 @@ if ($url) {
     }
 
     $link = $url;
-} else if ($bo_table) {
-    $link = G5_BBS_URL.'/board.php?bo_table='.$bo_table;
 } else {
     $link = G5_URL;
 }
+
+if(G5_IS_HANMINCAMP) $link .='/hanmincamp';
 
 goto_url($link);
 ?>

@@ -5,7 +5,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <!-- 메인화면 최신글 시작 -->
 <div id="container_main">
 
-<div class="big_img" onclick="location.href='bbs/group.php?gr_id=camp';">
+<div class="big_img" onclick="location.href='bbs/board.php?bo_table=miucamp_06&gr_id=camp';">
  <img src="img/hanmincamp/main_ad_01.jpg">
 </div>
 <div class="small_img left" onclick="location.href='bbs/content.php?co_id=introduce_mce&gr_id=mce';">
