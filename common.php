@@ -569,10 +569,27 @@ if (G5_IS_MOBILE) {
 // 쿠키에 저장된 값이 한민캠프라면 한민캠프로 실행
 // 그렇지 않다면 GET값에 따라 모바일 결정
 //------------------------------------------------------------------------------
+$check_gr_id_hanmincamp=false;
+
+if($_GET['gr_id']){
+    $check_gr_id_hanmincamp=$_GET['gr_id'];
+}
+else if ($_GET['bo_table']){
+    $sql = "select gr_id from {$g5['board_table']} where bo_table = '{$_GET['bo_table']}' ";
+    $row = sql_fetch($sql);
+    $check_gr_id_hanmincamp=$row['gr_id'];
+}
+
 if ($_GET['hanmincamp']=='true')
     $is_hanmincamp = true;
 else if ($_GET['hanmincamp']=='false')
     $is_hanmincamp = false;
+else if ($check_gr_id_hanmincamp){
+    $sql = "select me_hanmincamp from {$g5['menu_table']} where me_gr_id = '{$check_gr_id_hanmincamp}' ";
+    $row = sql_fetch($sql);
+    if($row['me_hanmincamp']==1) $is_hanmincamp = true;
+    else $is_hanmincamp = false;
+}
 else if (isset($_SESSION['hanmincamp']))
     $is_hanmincamp = $_SESSION['hanmincamp'];
 else $is_hanmincamp = false;
