@@ -10,7 +10,7 @@ if (G5_IS_MOBILE) {
 include_once(G5_THEME_PATH.'/head.php');
 
 //한민캠프 페이지로 이동
-if(G5_IS_HANMINCAMMP) {
+if(G5_IS_HANMINCAMP) {
   include_once(G5_PATH.'/hanmincamp/index_pc.php');
   return;
 }

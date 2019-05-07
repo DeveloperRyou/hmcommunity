@@ -10,7 +10,7 @@ include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 
 //한민캠프 페이지로 이동
-if(G5_IS_HANMINCAMMP) {
+if(G5_IS_HANMINCAMP) {
   include_once(G5_PATH.'/hanmincamp/head_mobile.php');
   return;
 }

@@ -575,9 +575,10 @@ else if ($_GET['hanmincamp']=='false')
     $is_hanmincamp = false;
 else if (isset($_SESSION['hanmincamp']))
     $is_hanmincamp = $_SESSION['hanmincamp'];
+else $is_hanmincamp = false;
 
 $_SESSION['hanmincamp'] = $is_hanmincamp;
-define('G5_IS_HANMINCAMMP', $is_hanmincamp);
+define('G5_IS_HANMINCAMP', $is_hanmincamp);
 //==============================================================================
 
 //==============================================================================
