@@ -4,7 +4,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 include_once(G5_THEME_MOBILE_PATH.'/head.php');
 
 //한민캠프 페이지로 이동
-if($_SESSION['hanmincamp']) {
+if(G5_IS_HANMINCAMMP]) {
   include_once(G5_PATH.'/hanmincamp/index_mobile.php');
   return;
 }
