@@ -27,6 +27,10 @@ ul{list-style:none;}
     box-sizing: border-box;
 }
 
+/* 에디터 */
+#bo_w .cke_sc{display: none}
+#smart_editor2 {min-width: 340px}
+
 /* 팝업레이어 */
 #hd_pop {z-index:1000;position:relative;margin:0 auto;width:100%;height:0}
 #hd_pop h2 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
