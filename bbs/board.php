@@ -45,7 +45,13 @@ if (isset($wr_id) && $wr_id) {
             }
         }
     }
-
+    // 여분필드 접근 금지 그룹 체크
+    if($is_member){
+      $sql = " select mb_10 from {$g5['member_table']} where mb_id = '{$member['mb_id']}' ";
+      $row = sql_fetch($sql);
+      if($row['mb_10'] == $board['gr_id'])
+        alert('글을 읽을 권한이 없습니다.', G5_URL);
+    }
     // 로그인된 회원의 권한이 설정된 읽기 권한보다 작다면
     if ($member['mb_level'] < $board['bo_read_level']) {
         if ($is_member)
@@ -140,6 +146,13 @@ if (isset($wr_id) && $wr_id) {
 
     $g5['title'] = strip_tags(conv_subject($write['wr_subject'], 255))." > ".$g5['board_title'];
 } else {
+    // 여분필드 접근 금지 그룹 체크
+    if($is_member){
+      $sql = " select mb_10 from {$g5['member_table']} where mb_id = '{$member['mb_id']}' ";
+      $row = sql_fetch($sql);
+      if($row['mb_10'] == $board['gr_id']) 
+        alert('목록을 볼 권한이 없습니다.', G5_URL);
+    }
     if ($member['mb_level'] < $board['bo_list_level']) {
         if ($member['mb_id'])
             alert('목록을 볼 권한이 없습니다.', G5_URL);
