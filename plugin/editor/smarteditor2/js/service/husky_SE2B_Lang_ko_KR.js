@@ -1,19 +1,19 @@
 /*
-Copyright (C) NAVER corp.  
+Copyright (C) NAVER corp.
 
-This library is free software; you can redistribute it and/or  
-modify it under the terms of the GNU Lesser General Public  
-License as published by the Free Software Foundation; either  
-version 2.1 of the License, or (at your option) any later version.  
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
 
-This library is distributed in the hope that it will be useful,  
-but WITHOUT ANY WARRANTY; without even the implied warranty of  
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  
-Lesser General Public License for more details.  
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public  
-License along with this library; if not, write to the Free Software  
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA  
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 if(typeof window.nhn=='undefined'){window.nhn = {};}
 /**
@@ -22,6 +22,7 @@ if(typeof window.nhn=='undefined'){window.nhn = {};}
  * @ unescape
  */
 var oMessageMap = {
+	'SE_QuickEditor_Image.exceedMaxSize' : '이미지 크기를 에디터 가로폭(${nEditorWidth}px)보다 크게 조절하실 수 없습니다.',
 	'SE_EditingAreaManager.onExit' : '내용이 변경되었습니다.',
 	'SE_Color.invalidColorCode' : '색상 코드를 올바르게 입력해 주세요. \n\n 예) #000000, #FF0000, #FFFFFF, #ffffff, ffffff',
 	'SE_Hyperlink.invalidURL' : '입력하신 URL이 올바르지 않습니다.',
