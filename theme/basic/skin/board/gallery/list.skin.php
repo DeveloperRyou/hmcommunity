@@ -58,7 +58,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <?php for ($i=0; $i<count($list); $i++) {
 
             $classes = array();
-            
+
             $classes[] = 'gall_li';
             $classes[] = 'col-gn-'.$bo_gallery_cols;
 
@@ -114,26 +114,28 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                         <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link"><?php echo $list[$i]['ca_name'] ?></a>
                         <?php } ?>
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_tit">
+                            <?php
+                            if (isset($list[$i]['icon_hot'])) echo rtrim($list[$i]['icon_hot']);
+                            elseif (isset($list[$i]['icon_new'])) echo rtrim($list[$i]['icon_new']);
+                            ?>
                             <?php echo $list[$i]['subject'] ?>
                             <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><span class="cnt_cmt">+ <?php echo $list[$i]['wr_comment']; ?></span><span class="sound_only">개</span><?php } ?>
                             <?php
                             // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
-
-                            if (isset($list[$i]['icon_new'])) echo rtrim($list[$i]['icon_new']);
-                            if (isset($list[$i]['icon_hot'])) echo rtrim($list[$i]['icon_hot']);
+                            if (isset($list[$i]['icon_file'])) echo rtrim($list[$i]['icon_file']);
                             //if (isset($list[$i]['icon_file'])) echo rtrim($list[$i]['icon_file']);
                             //if (isset($list[$i]['icon_link'])) echo rtrim($list[$i]['icon_link']);
                             if (isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']);
                              ?>
                          </a>
                     </div>
-                    <div class="gall_name">
-                        <span class="sound_only">작성자 </span><span class="profile_img"><?php echo $list[$i]['name'] ?>
-                    </div>
+
                     <div class="gall_info">
                         <span class="sound_only">조회 </span><i class="fa fa-eye" aria-hidden="true"></i> <?php echo $list[$i]['wr_hit'] ?>
                         <?php if ($is_good) { ?><span class="sound_only">추천</span><strong><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <?php echo $list[$i]['wr_good'] ?></strong><?php } ?>
                         <?php if ($is_nogood) { ?><span class="sound_only">비추천</span><strong><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <?php echo $list[$i]['wr_nogood'] ?></strong><?php } ?>
+                        <span class="gall_name"><span class="sound_only">작성자 </span><span class="profile_img"></span><?php echo $list[$i]['name'] ?></span>
+
                         <span class="gall_date"><span class="sound_only">작성일 </span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?></span>
                     </div>
                 </div>
@@ -159,7 +161,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </div>
     <?php } ?>
     </form>
-     
+
        <!-- 게시판 검색 시작 { -->
     <fieldset id="bo_sch">
         <legend>게시물 검색</legend>
@@ -183,7 +185,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <input type="submit" value="검색" class="sch_btn">
         </form>
     </fieldset>
-    <!-- } 게시판 검색 끝 -->   
+    <!-- } 게시판 검색 끝 -->
 </div>
 
 <?php if($is_checkbox) { ?>

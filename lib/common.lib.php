@@ -413,11 +413,11 @@ function get_list($write_row, $board, $skin_url, $subject_len=40)
 
     $list['icon_new'] = '';
     if ($board['bo_new'] && $list['wr_datetime'] >= date("Y-m-d H:i:s", G5_SERVER_TIME - ($board['bo_new'] * 3600)))
-        $list['icon_new'] = '<img src="'.$skin_url.'/img/icon_new.gif" class="title_icon" alt="새글"> ';
+        $list['icon_new'] = '<span class="new_icon">N<span class="sound_only">새글</span></span>';
 
     $list['icon_hot'] = '';
     if ($board['bo_hot'] && $list['wr_hit'] >= $board['bo_hot'])
-        $list['icon_hot'] = '<i class="fa fa-heart" aria-hidden="true"></i> ';
+        $list['icon_hot'] = '<span class="hot_icon">H<span class="sound_only">인기글</span></span>';
 
     $list['icon_secret'] = '';
     if (strstr($list['wr_option'], 'secret'))

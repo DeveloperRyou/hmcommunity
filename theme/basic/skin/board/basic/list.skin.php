@@ -76,7 +76,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         </tr>
         </thead>
         <tbody>
-        <?php 
+        <?php
         for ($i=0; $i<count($list); $i++) {
          ?>
         <tr class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>">
@@ -104,8 +104,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link"><?php echo $list[$i]['ca_name'] ?></a>
                 <?php } ?>
                 <div class="bo_tit">
+                    <?php
+                    if (isset($list[$i]['icon_hot'])) echo rtrim($list[$i]['icon_hot']);
+                    elseif (isset($list[$i]['icon_new'])) echo rtrim($list[$i]['icon_new']);
+                    ?>
 
-                    <?php if (isset($list[$i]['icon_new'])) echo rtrim($list[$i]['icon_new']); ?>
                     <a href="<?php echo $list[$i]['href'] ?>">
                         <?php echo $list[$i]['icon_reply'] ?>
                         <?php
@@ -119,7 +122,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                     if (isset($list[$i]['icon_file'])) echo rtrim($list[$i]['icon_file']);
                     //if (isset($list[$i]['icon_link'])) echo rtrim($list[$i]['icon_link']);
 
-                    if (isset($list[$i]['icon_hot'])) echo rtrim($list[$i]['icon_hot']);
+                    if (isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']);
                     ?>
                     <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><span class="cnt_cmt"> <?php echo $list[$i]['wr_comment']; ?></span><span class="sound_only">개</span><?php } ?>
                 </div>

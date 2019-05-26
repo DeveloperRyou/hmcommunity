@@ -14,7 +14,7 @@
 .lat li a:hover{color:#a22121}
 .lat li .fa-heart{color:#ff0000;}
 .lat li .fa-lock{display: inline-block;line-height: 14px;width: 16px;font-size: 0.833em;color: #4f818c;background: #cbe3e8;text-align: center;border-radius: 2px;font-size: 12px;border:1px solid #a2c6ce}
-.lat li .new_icon{display:inline-block;width: 16px;line-height:16px;font-size:0.833em;color:#ffff00;background:#6db142;text-align:center;border-radius: 2px;}
+.lat li .new_icon{display:inline-block;width: 16px;line-height:16px;font-size:0.833em;color:#fff;background:#6db142;text-align:center;border-radius: 2px;}
 .lat li .hot_icon{display:inline-block;width: 16px;line-height:16px ;font-size:0.833em;color:#fff;background:#e52955;text-align:center;border-radius: 2px;}
 .lat li .fa-caret-right{color:#bbb}
 .lat .lt_date{position:absolute;top:3px;right:0;color:#888}
