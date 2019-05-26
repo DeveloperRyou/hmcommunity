@@ -105,8 +105,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 <?php } ?>
                 <div class="bo_tit">
                     <?php
-                    if (isset($list[$i]['icon_hot'])) echo rtrim($list[$i]['icon_hot']);
-                    elseif (isset($list[$i]['icon_new'])) echo rtrim($list[$i]['icon_new']);
+                    echo rtrim($list[$i]['icon_new']);
+                    echo rtrim($list[$i]['icon_hot']);
+
                     ?>
 
                     <a href="<?php echo $list[$i]['href'] ?>">
