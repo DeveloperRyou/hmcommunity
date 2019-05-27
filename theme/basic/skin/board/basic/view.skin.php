@@ -34,7 +34,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
     <section id="bo_v_atc">
         <h2 id="bo_v_atc_title">본문</h2>
-        <!--파일 출력 주석처리
+
         <?php
         // 파일 출력
         $v_img_count = count($view['file']);
@@ -51,7 +51,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             echo "</div>\n";
         }
          ?>
-        -->
 
         <!-- 본문 내용 시작 { -->
         <div id="bo_v_con"><?php echo get_view_thumbnail($view['content']); ?></div>
