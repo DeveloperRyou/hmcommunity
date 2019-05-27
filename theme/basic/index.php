@@ -62,10 +62,10 @@ function showSlides() {
 <!-- 최신글 시작 { -->
 
     <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "mentor", 5, 25); ?>
+    <?php echo latest("theme/basic", "notice_council", 5, 25); ?>
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "info_share", 5, 25); ?>
+    <?php echo latest("theme/basic", "vietnam", 5, 25); ?>
     </div>
     <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "hanminagora", 5, 25); ?>
