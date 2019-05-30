@@ -39,7 +39,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         // 파일 출력
         $v_img_count = count($view['file']);
         if($v_img_count) {
-            echo "<div id=\"bo_v_img\" style=\"height:300px\">\n";
+            echo "<div id=\"bo_v_img\" >\n";
 
             for ($i=0; $i<=count($view['file']); $i++) {
                 if ($view['file'][$i]['view']) {
