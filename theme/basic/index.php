@@ -21,9 +21,9 @@ if(G5_IS_HANMINCAMP) {
   <input type="radio" name="pos" class="dot" id="pos2">
   <input type="radio" name="pos" class="dot" id="pos3">
   <ul class="slideshow-container">
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=music_90s';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_06.jpg"> </div></li>
     <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-120px"> <img src="img/main_ad_05.png"> </div> </li>
     <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_04.png"> </div></li>
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-120px"> <img src="img/main_ad_05.png"> </div></li>
   </ul>
   <p class="pos">
     <label for="pos1"></label>
@@ -66,6 +66,12 @@ function showSlides() {
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
     <?php echo latest("theme/basic", "vietnam", 5, 25); ?>
+    </div>
+    <div style="float:left;" class="lt_wr">
+    <?php echo latest("theme/basic", "radio", 5, 25); ?>
+    </div>
+    <div style="float:left; margin-left:2%;" class="lt_wr">
+    <?php echo latest("theme/basic", "music_90s", 5, 25); ?>
     </div>
     <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "hanminagora", 5, 25); ?>

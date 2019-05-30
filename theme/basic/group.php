@@ -45,6 +45,12 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
       </div>
     <?php $lt_style = "margin-left:2%"; }?>
 
+    <?php if($row['bo_table']=="music_90s"){ //90s 음악?>
+      <div id="div_img">
+        <img src="<?php echo G5_URL?>/img/main_ad_06.png">
+      </div>
+    <?php $lt_style = "margin-left:2%"; }?>
+
     <div style="float:left;<?php echo $lt_style ?>"  class="lt_wr">
     <?php
     // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
