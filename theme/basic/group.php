@@ -47,7 +47,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 
     <?php if($row['bo_table']=="music_90s"){ //90s 음악?>
       <div id="div_img">
-        <img src="<?php echo G5_URL?>/img/main_ad_06.png">
+        <img src="<?php echo G5_URL?>/img/main_ad_06.jpg">
       </div>
     <?php $lt_style = "margin-left:2%"; }?>
 
