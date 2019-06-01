@@ -87,6 +87,10 @@
 #smart_editor2 .se2_url2 .input_ty1{display:block;width:185px;height:16px;margin:0 5px 5px 0;*margin:-1px 5px 5px 0;padding:5px 2px 0 4px}
 #smart_editor2 .se2_url2 .se2_url_new{width:15px;height:15px;margin:-1px 3px 1px -1px;*margin:-2px 3px 2px -1px;vertical-align:middle}
 #smart_editor2 .se2_url2 label{font-size:11px;line-height:14px;vertical-align:middle}
+#smart_editor2 .se2_url2 p:hover{color: #666;text-decoration: underline;}
+#smart_editor2 .se2_url2 .clicked{font-weight: 700}
+#smart_editor2 .se2_url2 .se2_old{display: table-cell;padding-top: 3px;padding-right: 5px;}
+#smart_editor2 .se2_url2 .se2_new{display: table-cell;padding-top: 3px;padding-right: 5px;}
 #smart_editor2 .se2_url2 .se2_apply{position:absolute;top:13px;right:51px;width:41px;height:24px;margin:-1px 3px 1px 0;background:url("../img/ko_KR/btn_set.png?130306") no-repeat}
 #smart_editor2 .se2_url2 .se2_cancel{position:absolute;top:13px;right:9px;width:39px;height:24px;margin:-1px 3px 1px 0;background:url("../img/ko_KR/btn_set.png?130306") -41px 0 no-repeat}
 /* TEXT_TOOLBAR : SCHARACTER */

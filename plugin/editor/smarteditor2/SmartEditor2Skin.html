@@ -14,7 +14,7 @@
 <script type="text/javascript" src="./js/service/SE2M_Configuration.js" charset="utf-8"></script>	<!-- 설정 파일 -->
 <script type="text/javascript" src="./js/service/hp_SE_QuickEditor_Image.js" charset="utf-8"></script>	<!-- 이미지 크기 수정 파일 -->
 <script type="text/javascript" src="./js/service/SE2BasicCreator.js" charset="utf-8"></script>
-<script type="text/javascript" src="./js/smarteditor2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./js/smarteditor2.js" charset="utf-8"></script>
 <!-- 사진첨부샘플  -->
 <script type="text/javascript" src="photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js?v3" charset="utf-8"></script>
 </head>
@@ -283,10 +283,28 @@
 						<div class="se2_in_layer">
 							<div class="se2_url2">
 								<input type="text" class="input_ty1" value="http://">
-								<button type="button" class="se2_apply"><span>적용</span></button><button type="button" class="se2_cancel"><span>취소</span></button>
+								<button type="button" class="se2_apply"><span>적용</span></button>
+								<button type="button" class="se2_cancel"><span>취소</span></button>
+								<p id="page_old" class="se2_old clicked" onclick="BlankOrSelf(this.id)">기존창으로 열기</p>
+								<p id="page_new" class="se2_new" onclick="BlankOrSelf(this.id)">새창으로 열기</p>
 							</div>
 						</div>
 					</div>
+					<script>
+					var isBlankOrSelf = "_self";
+					function BlankOrSelf(page_clicked){
+						if(page_clicked=="page_old"){
+							isBlankOrSelf = "_self";
+							document.getElementById("page_old").className="se2_old clicked";
+							document.getElementById("page_new").className="se2_new";
+						}
+						else{
+							isBlankOrSelf = "_blank";
+							document.getElementById("page_old").className="se2_old";
+							document.getElementById("page_new").className="se2_new clicked";
+						}
+					}
+					</script>
 					<!-- //링크 -->
 				</li>
 
