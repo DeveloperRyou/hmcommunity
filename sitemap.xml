@@ -1,0 +1,30 @@
+<sitemapindex xmlns="http://hanalum.kr">
+	<sitemap>
+		<loc>http://hanalum.kr/bbs/board.php?bo_table=notice&gr_id=hanalum</loc>
+	</sitemap>
+
+	<sitemap>
+		<loc>http://hanalum.kr/?hanmincamp=true</loc>
+	</sitemap>
+	
+	<sitemap>
+		<loc>http://hanalum.kr/bbs/board.php?bo_table=suggest&gr_id=hanalum</loc>
+	</sitemap>
+
+	<sitemap>
+		<loc>http://hanalum.kr/bbs/board.php?bo_table=free_YB&gr_id=hanminin</loc>
+	</sitemap>
+
+	<sitemap>
+		<loc>http://hanalum.kr/bbs/board.php?bo_table=free_OB&gr_id=hanminin</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://hanalum.kr/bbs/group.php?gr_id=anonymous</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://hanalum.kr/bbs/group.php?gr_id=thread</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://hanalum.kr/?hanmincamp=true</loc>
+	</sitemap>
+	
