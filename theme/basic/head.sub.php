@@ -48,6 +48,8 @@ if($config['cf_add_meta'])
 
 <title><?php echo $g5_head_title; ?></title>
 
+<link rel="canonical" href="http://hanalum.kr/index.php">
+
 <?php if($_POST["use_bootstrap"]) { ?>
 <link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/bootstrap.css">
 <?php } ?>
