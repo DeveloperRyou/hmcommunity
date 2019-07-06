@@ -18,9 +18,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
             <input type="password" name="mb_password" id="ol_pw" required maxlength="20" placeholder="비밀번호">
             <input type="submit" id="ol_submit" value="로그인" class="btn_b02">
         </div>
-        <div class="ol_auto_wr"> 
+        <div class="ol_auto_wr">
             <div id="ol_auto">
-                <input type="checkbox" name="auto_login" value="1" id="auto_login">
+                <input type="checkbox" name="auto_login" value="1" id="auto_login" checked="checked">
                 <label for="auto_login" id="auto_login_label">자동로그인</label>
             </div>
             <div id="ol_svc">

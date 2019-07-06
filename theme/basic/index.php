@@ -65,6 +65,12 @@ function showSlides() {
     <?php echo latest("theme/basic", "notice_council", 5, 25); ?>
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
+    <?php echo latest("theme/basic", "mentor", 5, 25); ?>
+    </div>
+    <div style="float:left;" class="lt_wr">
+    <?php echo latest("theme/basic", "suggest_to_hanmin", 5, 25); ?>
+    </div>
+    <div style="float:left; margin-left:2%;" class="lt_wr">
     <?php echo latest("theme/basic", "vietnam", 5, 25); ?>
     </div>
     <div style="float:left;" class="lt_wr">
