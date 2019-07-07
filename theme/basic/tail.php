@@ -20,7 +20,9 @@ if (G5_IS_MOBILE) {
             //echo latest('theme/notice', 'notice', 4, 13);
             echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
             echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
-            //echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
+
+            echo pointrank('theme/basic', 10); //포인트랭크 뽑을 인원수
+
             echo latest("theme/basic", "notice", 3, 12);
             echo latest("theme/basic", "new", 11, 12); //최근 게시판
             ?>
@@ -33,7 +35,7 @@ if (G5_IS_MOBILE) {
             </div>
             <?php
 
-
+            echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
         echo "</div>";
     }
     ?>

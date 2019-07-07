@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* 방문자 집계 */
+#pointrank {background:#fff;position:relative;margin-top: 10px;}
+#pointrank .btn_admin{position:absolute;top:10px;right:10px;height:25px;line-height:25px;padding:0 5px;border-radius:3px}
+#pointrank h2 {display:block;padding:0 20px;line-height:45px;font-size:1.083em;border-bottom:1px solid #979292;color:#16b3d6}
+
+#pointrank h2 p{color:#16b3d6;display:inline-block;position:relative;margin: 0;}
+#pointrank h2 p:after{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:#16b3d6;content:''}
+
+#pointrank li {width: 100%;margin-top: 5px;line-height: 20px;}
+#pointrank tr {height: 25px}
+
+#pointrank .num {width: 5%;font-size: 11px;display: inline-block;text-align: center;position: relative;left: -1px}
+#pointrank .nick {width: 29%;font-size: 11.5px;display: inline-block;}
+#pointrank .point {display: inline-block;width: 100%;font-weight: 700;color: #FFF;text-align: center;background-color: #1ac3f1;}
+#pointrank .point_back {background-color: #ccc;float: right;width: 62%;display: inline-block;}
