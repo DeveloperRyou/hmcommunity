@@ -91,6 +91,7 @@
 #smart_editor2 .se2_url2 .clicked{font-weight: 700}
 #smart_editor2 .se2_url2 .se2_old{display: table-cell;padding-top: 3px;padding-right: 5px;}
 #smart_editor2 .se2_url2 .se2_new{display: table-cell;padding-top: 3px;padding-right: 5px;}
+#smart_editor2 .se2_url2 .se2_youtube{display: table-cell;padding-top: 3px;padding-right: 5px;}
 #smart_editor2 .se2_url2 .se2_apply{position:absolute;top:13px;right:51px;width:41px;height:24px;margin:-1px 3px 1px 0;background:url("../img/ko_KR/btn_set.png?130306") no-repeat}
 #smart_editor2 .se2_url2 .se2_cancel{position:absolute;top:13px;right:9px;width:39px;height:24px;margin:-1px 3px 1px 0;background:url("../img/ko_KR/btn_set.png?130306") -41px 0 no-repeat}
 /* TEXT_TOOLBAR : SCHARACTER */

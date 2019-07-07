@@ -287,21 +287,30 @@
 								<button type="button" class="se2_cancel"><span>취소</span></button>
 								<p id="page_old" class="se2_old clicked" onclick="BlankOrSelf(this.id)">기존창으로 열기</p>
 								<p id="page_new" class="se2_new" onclick="BlankOrSelf(this.id)">새창으로 열기</p>
+								<p id="page_youtube" class="se2_youtube" onclick="BlankOrSelf(this.id)">유튜브와 연결하기</p>
 							</div>
 						</div>
 					</div>
 					<script>
-					var isBlankOrSelf = "_self";
+					var isClicked = "_self";
 					function BlankOrSelf(page_clicked){
 						if(page_clicked=="page_old"){
-							isBlankOrSelf = "_self";
+							isClicked = "_self";
 							document.getElementById("page_old").className="se2_old clicked";
 							document.getElementById("page_new").className="se2_new";
+							document.getElementById("page_youtube").className="se2_youtube";
 						}
-						else{
-							isBlankOrSelf = "_blank";
+						else if (page_clicked=="page_new") {
+							isClicked = "_blank";
 							document.getElementById("page_old").className="se2_old";
 							document.getElementById("page_new").className="se2_new clicked";
+							document.getElementById("page_youtube").className="se2_youtube";
+						}
+						else{
+							isClicked = "youtube"
+							document.getElementById("page_old").className="se2_old";
+							document.getElementById("page_new").className="se2_new";
+							document.getElementById("page_youtube").className="se2_youtube clicked";
 						}
 					}
 					</script>

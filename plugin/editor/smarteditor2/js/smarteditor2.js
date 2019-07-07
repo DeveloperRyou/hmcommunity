@@ -20586,8 +20586,25 @@ nhn.husky.HuskyCore.mixin(nhn.husky.SE2M_Hyperlink, {
 			// }else{
 			//	sTarget = "_blank";
 			//}
+			if(isClicked=="youtube"){
+				var youtubeRegExp = /h\?v=.*|bed\/.*|\.be\/.*/;
+				var isyoutubeUrl = youtubeRegExp.test(sURL);
+				if(!isyoutubeUrl) {
+						alert(this.oApp.$MSG("SE_Hyperlink.invalidURL"));
+						this.oLinkInput.focus();
+				}
+				var youtubeUrl = youtubeRegExp.exec(sURL)[0];
+				var lenUrl = youtubeUrl.length;
 
-			sTarget = isBlankOrSelf;
+				var cuttedUrl = youtubeUrl.substr(4,lenUrl-4);
+				var str = "<iframe width=\"960\" height=\"540\" src=\"https://www.youtube.com/embed/"+cuttedUrl+"\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>" + sBlank;
+				this.oSelection.pasteHTML(str);
+				sBM = this.oSelection.placeStringBookmark();
+			}
+
+			else{
+
+			sTarget = isClicked;
 
 			this.oApp.exec("RECORD_UNDO_BEFORE_ACTION", ["HYPERLINK", {sSaveTarget:(this.bModify ? "A" : null)}]);
 
@@ -20692,6 +20709,7 @@ nhn.husky.HuskyCore.mixin(nhn.husky.SE2M_Hyperlink, {
 				this.oApp.exec("FOCUS");
 				this.oApp.exec("RECORD_UNDO_AFTER_ACTION", ["HYPERLINK", {sSaveTarget:(this.bModify ? "A" : null)}]);
 			}, this).bind(), 17);
+			}
 		}else{
 			alert(this.oApp.$MSG("SE_Hyperlink.invalidURL"));
 			this.oLinkInput.focus();
