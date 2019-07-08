@@ -12,14 +12,33 @@ add_stylesheet('<link rel="stylesheet" href="'.$pointrank_skin_url.'/style.css">
     <h2><p>포인트 랭킹</p></h2>
     <ul>
       <?php for($i=0;$i<$num_person;$i++) {?>
-        <li>
+        <li id="rank_<?php echo $i+1?>" >
         <div class="num"><?php echo $i+1?></div>
         <div class="nick"><?php echo $mb_nick[$i]?></div>
         <div class="point_back">
-          <div class="point" style="width:<?php echo 100*$mb_point[$i]/$mb_point[0]?>%"><?php echo $mb_point[$i]?></div>
-         </div>
+          <div style="width:<?php echo 100*$mb_point[$i]/$mb_point[0]?>%;display:inline-block"><div class="point"><?php echo $mb_point[$i]?></div></div>
+        </div>
         </li>
       <?php }?>
     </ul>
+
+    <script>
+      var before_rank = <?php echo $num_person?>;
+      var now_rank = 1;
+
+      function showamin(){
+        var before_element = document.getElementById("rank_"+before_rank);
+        before_element.style.display = "none";
+        var now_element = document.getElementById("rank_"+now_rank);
+        now_element.style.display = "inline-block";
+
+        before_rank=now_rank;
+        if(now_rank == <?php echo $num_person?>) now_rank = 1;
+        else now_rank = now_rank+1;
+      }
+      showamin();
+      var amin = setInterval(showamin,2500);
+
+    </script>
 </section>
 <!-- } 접속자집계 끝 -->

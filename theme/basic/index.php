@@ -56,11 +56,11 @@ function showSlides() {
     <br>
 </div>
 -->
+<!--포인트랭킹 시작-->
 <h2 class="sound_only">최신글</h2>
 
 <div class="latest_wr">
 <!-- 최신글 시작 { -->
-
     <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "notice_council", 5, 25); ?>
     </div>
