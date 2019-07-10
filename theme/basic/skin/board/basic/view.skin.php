@@ -273,15 +273,9 @@ function excute_good(href, $el, $tx)
         { js: "on" },
         function(data) {
             if(data.error) {
-                if(data.error=="cancel"){
-                  $el.find("strong").text(number_format(String(data.count)));
-                  if($tx.attr("id").search("nogood") > -1) {
-                      $tx.text("비추천을 취소하셨습니다.");
-                      $tx.fadeIn(200).delay(2500).fadeOut(200);
-                  } else {
-                      $tx.text("추천을 취소하셨습니다.");
-                      $tx.fadeIn(200).delay(2500).fadeOut(200);
-                  }
+                if(data.count=="cancel"){
+                  $tx.text(String(data.error));
+                  $tx.fadeIn(200).delay(2500).fadeOut(200);
                 }else{
                   alert(data.error);
                   return false;
