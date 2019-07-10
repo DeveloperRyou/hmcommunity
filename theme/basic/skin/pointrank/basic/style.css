@@ -14,4 +14,4 @@
 #pointrank .point {display: inline-block;width: 100%;height: 100%;font-weight: 700;color: #000;text-align: center;background-color: #92e2fd;border-radius: 9px;}
 #pointrank .point {animation-name: pointanim;animation-duration: 1s;}
 @keyframes pointanim {from { width:0%; }to { width:100%; }}
-#pointrank .point_back {box-shadow: 0 1px 2px rgba(0,0,0,0.1);background-color: #FFF;float: right;width: 62%;display: inline-block;border: 2px solid #888;padding: 2px; border-radius: 10px; height: 80%;}
+#pointrank .point_back {box-shadow: 0 1px 2px rgba(0,0,0,0.1);background-color: #FFF;float: right;width: 62%;display: inline-block;border: 1.7px solid #888;padding: 2px; border-radius: 10px; height: 80%;}
