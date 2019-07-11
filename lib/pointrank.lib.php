@@ -2,10 +2,9 @@
 if (!defined('_GNUBOARD_')) exit;
 
 // 방문자수 출력
-function pointrank($skin_dir='basic',$num_person)
+function pointrank($skin_dir='basic',$num_person=0)
 {
     global $config, $g5;
-
 
     $sql = "SELECT mb_nick, mb_point FROM `g5_member` WHERE mb_level < 10 ORDER BY `mb_point` DESC LIMIT {$num_person}";
     $result = sql_query($sql);
