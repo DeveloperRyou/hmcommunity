@@ -37,6 +37,11 @@ header("Pragma: no-cache"); // HTTP/1.0
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<meta property="og:type" content="website">
+<meta property="og:title" content="한아름">
+<meta property="og:description" content="한민인의 커뮤니티">
+<meta property="og:image" content="http://hanalum.kr/img/myimg.png">
+<meta property="og:url" content="http://hanalum.kr/">
 <meta charset="utf-8">
 <?php
 if (G5_IS_MOBILE) {
