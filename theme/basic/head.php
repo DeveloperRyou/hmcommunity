@@ -6,7 +6,9 @@ if (G5_IS_MOBILE) {
     return;
 }
 
-include_once(G5_THEME_PATH.'/head.sub.php');
+if(G5_IS_HANMINCAMP)  {include_once(G5_PATH.'/hanmincamp/head.sub.php');}
+else {include_once(G5_THEME_PATH.'/head.sub.php');}
+
 include_once(G5_LIB_PATH.'/latest.lib.php');
 include_once(G5_LIB_PATH.'/outlogin.lib.php');
 include_once(G5_LIB_PATH.'/poll.lib.php');

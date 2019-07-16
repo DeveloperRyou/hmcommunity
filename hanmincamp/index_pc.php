@@ -1,5 +1,6 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+
 ?>
 
 <h2 class="sound_only">최신글</h2>

@@ -9,7 +9,7 @@
 </url>
 
 <url>
-    <loc>http://hanalum.kr/?hanmincamp=true</loc>
+    <loc>http://hanalum.kr/hanmincamp</loc>
     <changefreq>weekly</changefreq>
 </url>
 
@@ -30,6 +30,21 @@
 
 <url>
     <loc>http://hanalum.kr/bbs/group.php?gr_id=thread</loc>
+    <changefreq>weekly</changefreq>
+</url>
+
+<url>
+    <loc>http://hanalum.kr/bbs/content.php?co_id=introduce_mce&gr_id=mce</loc>
+    <changefreq>weekly</changefreq>
+</url>
+
+<url>
+    <loc>http://hanalum.kr/bbs/group.php?gr_id=camp</loc>
+    <changefreq>weekly</changefreq>
+</url>
+
+<url>
+    <loc>http://hanalum.kr/bbs/group.php?gr_id=notice_hmc</loc>
     <changefreq>weekly</changefreq>
 </url>
 

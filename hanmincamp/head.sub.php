@@ -5,12 +5,12 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 $begin_time = get_microtime();
 
 if (!isset($g5['title'])) {
-    $g5['title'] = $config['cf_title'];
+    $g5['title'] = "한민캠프";
     $g5_head_title = $g5['title'];
 }
 else {
     $g5_head_title = $g5['title']; // 상태바에 표시될 제목
-    $g5_head_title .= " | ".$config['cf_title'];
+    $g5_head_title .= " | "."한민캠프";
 }
 
 // 현재 접속자
@@ -41,15 +41,15 @@ if (G5_IS_MOBILE) {
     echo '<meta http-equiv="imagetoolbar" content="no">'.PHP_EOL;
     echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">'.PHP_EOL;
 }
-echo '<meta name="한아름" content="한민인을 위한 커뮤니티, 한아름">';
+echo '<meta name="한민캠프" content="MCE가 주관하는 한민캠프 사이트">';
 if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
-<meta name="description" content="한민인들이 자유롭게 활동할 수 있는 공간입니다.">
+<meta name="description" content="한민캠프의 활동 사진과 진행 사항들을 살펴 보실 수 있습니다.">
 
 <title><?php echo $g5_head_title; ?></title>
 
-<link rel="canonical" href="http://hanalum.kr/index.php">
+<link rel="canonical" href="http://hanalum.kr/hanmincamp/index.php">
 
 <?php if($_POST["use_bootstrap"]) { ?>
 <link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/bootstrap.css">
