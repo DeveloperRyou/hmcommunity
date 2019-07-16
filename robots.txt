@@ -1,2 +1,3 @@
 User-agent: *
 Allow:/
+Sitemap : http://hanalum.kr/sitemap.xml

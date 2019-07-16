@@ -470,13 +470,18 @@ table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 #side_ad #ad_img{width:100%;height: 100px;text-align: center;line-height: 100px}
 #side_ad img{height: 100%;vertical-align: middle;}
 
-#slide{height:auto;overflow: hidden;}
-#slide ul{width:400%;height:280px;transition:1s;}
+#advertise {height: 300px;margin-bottom: 20px;}
+#left_ad {width: 300px;height: 100%;margin-right: 15px;display: inline-block;}
+#left_ad #div_img{z-index: -1;width: 100%;position: relative;}
+#left_ad img {width: 100%;display: block;margin: auto;}
+
+#slide{width: 700px;display: inline-block;height:300px;overflow: hidden;}
+#slide ul{width:400%;height:300px;transition:1s;}
 #slide ul:after{content:"";display:block;clear:both;}
 #slide li{position: relative;float:left;width:25%;height:280px;justify-content: center;align-items: center;}
 #slide input{display:none;}
 #slide label{display:inline-block;vertical-align:middle;width:10px;height:10px;border:2px solid #666;background:#fff;transition:0.3s;border-radius:50%;cursor:pointer;}
-#slide .pos{width:100%;text-align:center;}
+#slide .pos{width:100%;text-align:center;top: -45px;position: relative;}
 #slide #div_img{z-index: -1;width: 100%;position: absolute;}
 #slide img{width: 100%; display: block; margin: auto;}/*광고이미지 크기 정의*/
 
