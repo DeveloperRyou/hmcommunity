@@ -79,6 +79,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
           </div>
         </div>
       <?php } ?>
+      <label class="col-sm-2 control-label" for="reg_mb_name"><b>구분</b><strong class="sound_only">필수</strong></label>
+      <style>
+        #col-mb_type #reg_mb_type{width: 40%;display: inline-block;}
+        #col-mb_type p{width: 50%;display: inline-block;font-weight: 700;margin-bottom: 0px;text-align: right;}
+      </style>
+      <div class="col-sm-5" id="col-mb_type">
+        <input type="radio" id="reg_mb_type" name="mb_type" value="hanminin" <?php echo $required ?> <?php echo $readonly; ?> class="form-control input-sm"> <p>한민인 (재학생, 졸업생, 교직원)</p>
+        <input type="radio" id="reg_mb_type" name="mb_type" value="non_hanminin" <?php echo $required ?> <?php echo $readonly; ?> class="form-control input-sm"> <p>외부인 (학부모, 예비 한민인)</p>
+      </div>
     </div>
 
     <?php if($config['cf_cert_use']) { ?>

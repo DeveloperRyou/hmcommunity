@@ -35,6 +35,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 
     <p>
         회원 탈퇴는 언제든지 가능하며 일정기간이 지난 후, 회원님의 정보는 삭제하고 있습니다.<br>
+        다만, 운영과정에 있어 필요 시 정보를 지속하여 보관할 수 있습니다.
+    </p>
+
+    <p>
+        또한 한민인으로 회원가입 하신 경우, 좌측 상단의 한민인 인증 페이지에서 한민인 임을 인증해 주시기 바랍니다.<br>
+        <a href="<?php echo G5_URL ?>/bbs/member_certification.php" class="btn_submit" style="height:25px;line-height:25px;">한민인 인증 페이지 바로가기</a><br><br>
         감사합니다.
     </p>
 
