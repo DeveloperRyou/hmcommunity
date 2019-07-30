@@ -7,13 +7,13 @@ auth_check($auth[$sub_menu], 'r');
 $sql = "SELECT * FROM g5_member_certification";
 $result = sql_query($sql);
 
-$g5['title'] = "한민고 인증 QA";
+$g5['title'] = "한민인 인증 학생 명단";
 include_once('./admin.head.php');
 
 ?>
 
 <div class="local_desc01 local_desc">
-    <p><strong>주의!</strong> QA 수정 작업 후 반드시 <strong>확인</strong>을 누르셔야 저장됩니다.</p>
+    <p><strong>주의!</strong> 수정 작업 후 반드시 <strong>확인</strong>을 누르셔야 저장됩니다.</p>
 </div>
 
 <form name="fmenulist" id="fmenulist" method="post" action="./member_certificate_update.php" onsubmit="return fmenulist_submit(this);">
@@ -25,25 +25,30 @@ include_once('./admin.head.php');
     <thead>
     <tr>
         <th scope="col">번호</th>
-        <th scope="col">문제</th>
-        <th scope="col">답</th>
+        <th scope="col">기수</th>
+        <th scope="col">반</th>
+        <th scope="col">이름</th>
         <th scope="col">관리</th>
     </tr>
     </thead>
     <tbody>
     <tr class="qa_list hidden sound_only">
-          <td class="td_qa_id">
+          <td class="td_id">
               <input type="hidden" name="new[]" value="new">
-              <label for="qa_id" class="sound_only">번호</label>
+              <label for="mc_id" class="sound_only">번호</label>
               new
           </td>
           <td>
-              <label for="qa_question" class="sound_only">질문<strong class="sound_only"> 필수</strong></label>
-              <input type="text" value="질문" name="qa_content_" required class="required tbl_input full_input">
+              <label for="mc_number" class="sound_only">기수<strong class="sound_only"> 필수</strong></label>
+              <input type="number" value="0" name="mc_number_" required class="required tbl_input full_input">
           </td>
-          <td class="td_answer">
-              <label for="qa_answer" class="sound_only">답</label>
-              <input type="text" value="답" name="qa_answer_" required class="required tbl_input full_input">
+          <td class="td_fclass">
+              <label for="mc_fclass" class="sound_only">반</label>
+              <input type="number" value="0" name="mc_fclass_" required class="required tbl_input full_input">
+          </td>
+          <td class="td_name"  style="width:600px;">
+              <label for="mc_name" class="sound_only">이름</label>
+              <input type="text" value="이름" name="mc_name_" required class="required tbl_input full_input">
           </td>
           <td class="td_mng" style="width:60px;">
               <button type="button" class="btn_del_menu btn_02">삭제</button>
@@ -54,19 +59,23 @@ include_once('./admin.head.php');
     {
         $bg = 'bg'.(-($i%2-1));
     ?>
-    <tr class="<?php echo $bg; ?> qa_list id_<?php echo $row['qa_id']; ?>">
-        <td class="td_qa_id">
-            <input type="hidden" name="code[]" value="<?php echo substr($row['qa_id'], 0, 2) ?>">
-            <label for="qa_id_<?php echo $i; ?>" class="sound_only">번호</label>
+    <tr class="<?php echo $bg; ?> qa_list id_<?php echo $row['mc_id']; ?>">
+        <td class="td_id">
+            <input type="hidden" name="code[]" value="<?php echo substr($row['mc_id'], 0, 2) ?>">
+            <label for="mc_id_<?php echo $i; ?>" class="sound_only">번호</label>
             <?php echo $i+1?>
         </td>
         <td>
-            <label for="qa_question_<?php echo $i; ?>" class="sound_only">질문<strong class="sound_only"> 필수</strong></label>
-            <input type="text" value="<?php echo $row['qa_content'] ?>" name="qa_content_<?php echo $i; ?>" required class="required tbl_input full_input">
+            <label for="mc_number_<?php echo $i; ?>" class="sound_only">기수<strong class="sound_only"> 필수</strong></label>
+            <input type="number" value="<?php echo $row['mc_number'] ?>" name="mc_number_<?php echo $i; ?>" required class="required tbl_input full_input">
         </td>
-        <td class="td_answer">
-            <label for="qa_answer_<?php echo $i; ?>" class="sound_only">답</label>
-            <input type="text" value="<?php echo $row['qa_answer'] ?>" name="qa_answer_<?php echo $i; ?>" required class="required tbl_input full_input">
+        <td class="td_fclass">
+            <label for="mc_fclass_<?php echo $i; ?>" class="sound_only">반</label>
+            <input type="number" value="<?php echo $row['mc_fclass'] ?>" name="mc_fclass_<?php echo $i; ?>" required class="required tbl_input full_input">
+        </td>
+        <td class="td_name"  style="width:600px;">
+            <label for="mc_name_<?php echo $i; ?>" class="sound_only">이름</label>
+            <input type="text" value="<?php echo $row['mc_name'] ?>" name="mc_name_<?php echo $i; ?>" required class="required tbl_input full_input">
         </td>
         <td class="td_mng" style="width:60px;">
             <button type="button" class="btn_del_menu btn_02">삭제</button>
@@ -120,8 +129,9 @@ function add_menu()
             $(this).removeClass("hidden sound_only")
             $(this).addClass("id_new_"+new_num);
             $(this).find("input[name='new[]']").val("new_"+new_num);
-            $(this).find("input[name='qa_content_']").attr("name","qa_content_new_"+new_num);
-            $(this).find("input[name='qa_answer_']").attr("name","qa_answer_new_"+new_num);
+            $(this).find("input[name='mc_number_']").attr("name","mc_number_new_"+new_num);
+            $(this).find("input[name='mc_fclass_']").attr("name","mc_fclass_new_"+new_num);
+            $(this).find("input[name='mc_name_']").attr("name","mc_name_new_"+new_num);
         }
     });
 }

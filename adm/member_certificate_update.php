@@ -13,21 +13,25 @@ check_admin_token();
 $sql = "DELETE from g5_member_certification";
 sql_query($sql);
 
-// 기존 QA 입력
+// 기존 명단 입력
 $count = count($_POST['code']);
 
 $idx=0;
 $check_delete=0;
 for ($i=0;$i<$count; $i++)
 {
-    $now_content=$_POST['qa_content_'.(string)$i];
-    $now_answer=$_POST['qa_answer_'.(string)$i];
-    if($now_content){
+    $now_number=$_POST['mc_number_'.(string)$i];
+    $now_fclass=$_POST['mc_fclass_'.(string)$i];
+    $now_name=$_POST['mc_name_'.(string)$i];
+    if($now_name){
       //문제 등록
+      $now_id = $i-$check_delete;
       $sql = " INSERT into g5_member_certification
-                  set qa_id  = '$i-$check_delete',
-                      qa_content  = '$now_content',
-                      qa_answer   = '$now_answer' ";
+                  set mc_id  = '$now_id',
+                      mc_number  = '$now_number',
+                      mc_fclass  = '$now_fclass',
+                      mc_name   = '$now_name' ";
+
       sql_query($sql);
     }
     else{
@@ -43,15 +47,19 @@ $count = count($_POST['new'])-1;
 $check_delete=0;
 for ($new_i=0;$new_i<$count; $new_i++)
 {
-    $now_content=$_POST['qa_content_new_'.(string)$new_i];
-    $now_answer=$_POST['qa_answer_new_'.(string)$new_i];
+  $now_number=$_POST['mc_number_new_'.(string)$new_i];
+  $now_fclass=$_POST['mc_fclass_new_'.(string)$new_i];
+  $now_name=$_POST['mc_name_new_'.(string)$new_i];
 
-    if($now_content){
+    if($now_name){
       //문제 등록
+      $now_id=$new_i+$idx-$check_delete;
       $sql = " INSERT into g5_member_certification
-                  set qa_id  = '$new_i+$idx-$check_delete',
-                      qa_content  = '$now_content',
-                      qa_answer   = '$now_answer' ";
+                  set mc_id  = '$now_id',
+                      mc_number  = '$now_number',
+                      mc_fclass  = '$now_fclass',
+                      mc_name   = '$now_name' ";
+
       sql_query($sql);
     }
     else{
