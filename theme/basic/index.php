@@ -54,7 +54,7 @@ function showSlides() {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 3000); // Change image every 3  seconds
+    setTimeout(showSlides, 4000); // Change image every 3  seconds
 }
 </script>
 <!--
