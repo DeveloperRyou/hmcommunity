@@ -26,7 +26,7 @@ if(G5_IS_HANMINCAMP) {
   <input type="radio" name="pos" class="dot" id="pos3">
   <input type="radio" name="pos" class="dot" id="pos4">
   <ul class="slideshow-container">
-    <li class="mySlides" ><div id="div_img"> <img src="img/main_ad_08.jpg"> </div></li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=notice&wr_id=33';"><div id="div_img"> <img src="img/main_ad_08.jpg"> </div></li>
     <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=music_90s';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_06.jpg"> </div></li>
     <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_05.png"> </div> </li>
     <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img" > <img src="img/main_ad_04.png"> </div></li>
@@ -42,19 +42,60 @@ if(G5_IS_HANMINCAMP) {
 
 <script>
 var slideIndex = 0;
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");    
+
 showSlides();
+
+$('.dot#pos1').change(function(){
+  slideIndex=1;
+  var i;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex-1].className += " active";
+  setTimeout(function(){},4000);
+});
+
+$('.dot#pos2').change(function(){
+  slideIndex=2;
+  var i;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex-1].className += " active";
+  setTimeout(function(){},4000);
+});
+
+$('.dot#pos3').change(function(){
+  slideIndex=3;
+  var i;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex-1].className += " active";
+  setTimeout(function(){},4000);
+});
+
+$('.dot#pos4').change(function(){
+  slideIndex=4;
+  var i;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex-1].className += " active";
+  setTimeout(function(){},4000);
+});
 
 function showSlides() {
     var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 4000); // Change image every 4  seconds
+    setTimeout(showSlides,4000); // Change image every 4  seconds
 }
 </script>
 <!--
