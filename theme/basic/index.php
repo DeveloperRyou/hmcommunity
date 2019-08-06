@@ -26,7 +26,7 @@ if(G5_IS_HANMINCAMP) {
   <input type="radio" name="pos" class="dot" id="pos3">
   <input type="radio" name="pos" class="dot" id="pos4">
   <ul class="slideshow-container">
-    <li class="mySlides" ><div id="div_img"> <img src="img/main_ad_08.jpg"> </div></li>
+    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=notice&wr_id=33';"><div id="div_img"> <img src="img/main_ad_08.jpg"> </div></li>
     <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=music_90s';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_06.jpg"> </div></li>
     <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_05.png"> </div> </li>
     <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img" > <img src="img/main_ad_04.png"> </div></li>
