@@ -42,19 +42,60 @@ if(G5_IS_HANMINCAMP) {
 
 <script>
 var slideIndex = 0;
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");    
+
 showSlides();
+
+$('.dot#pos1').change(function(){
+  slideIndex=1;
+  var i;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex-1].className += " active";
+  setTimeout(function(){},4000);
+});
+
+$('.dot#pos2').change(function(){
+  slideIndex=2;
+  var i;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex-1].className += " active";
+  setTimeout(function(){},4000);
+});
+
+$('.dot#pos3').change(function(){
+  slideIndex=3;
+  var i;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex-1].className += " active";
+  setTimeout(function(){},4000);
+});
+
+$('.dot#pos4').change(function(){
+  slideIndex=4;
+  var i;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex-1].className += " active";
+  setTimeout(function(){},4000);
+});
 
 function showSlides() {
     var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 4000); // Change image every 4  seconds
+    setTimeout(showSlides,4000); // Change image every 4  seconds
 }
 </script>
 <!--
