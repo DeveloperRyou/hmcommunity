@@ -25,7 +25,7 @@
 #ol_auto input {width:13px;height:13px}
 .ol_auto_wr:after {display:block;visibility:hidden;clear:both;content:""}
 
-#ol_after {background:#fff;border: 0px solid #d2d9e6; border-bottom: 0px solid #c1ccda;}
+#ol_after {background:#fff;border: 1px solid #bbb; padding: 2px; border-radius: 5px;}
 #ol_after_hd {position:relative;margin:0 0 10px;padding:10px;padding-left:80px;height:72px;}
 #ol_after_hd strong{display:block;margin:5px 0}
 #ol_after_hd .profile_img{position:absolute;top:15px;left:15px;display:inline-block;}
