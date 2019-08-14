@@ -17,27 +17,31 @@ if(G5_IS_HANMINCAMP) {
 
 ?>
 <div id="advertise">
-<div id="left_ad">
-  <div id="div_img"> <img src="img/main_ad_07.jpg"> </div></a>
-</div>
-<div id="slide" class="slider">
-  <input type="radio" name="pos" class="dot" id="pos1">
-  <input type="radio" name="pos" class="dot" id="pos2">
-  <input type="radio" name="pos" class="dot" id="pos3">
-  <input type="radio" name="pos" class="dot" id="pos4">
-  <ul class="slideshow-container">
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=notice&wr_id=33';"><div id="div_img"> <img src="img/main_ad_08.jpg"> </div></li>
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=music_90s';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_06.jpg"> </div></li>
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_05.png"> </div> </li>
-    <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img" > <img src="img/main_ad_04.png"> </div></li>
-  </ul>
-  <p class="pos">
-    <label for="pos1"></label>
-    <label for="pos2"></label>
-    <label for="pos3"></label>
-    <label for="pos4"></label>
-  </p>
-</div>
+  <div id="left_ad">
+    <a href = "http://hanalum.kr/bbs/board.php?bo_table=mentor&wr_id=10">
+      <div id="div_img">
+          <img src="img/main_ad_07.jpg">
+      </div>
+    </a> 
+  </div>
+  <div id="slide" class="slider">
+    <input type="radio" name="pos" class="dot" id="pos1">
+    <input type="radio" name="pos" class="dot" id="pos2">
+    <input type="radio" name="pos" class="dot" id="pos3">
+    <input type="radio" name="pos" class="dot" id="pos4">
+    <ul class="slideshow-container">
+      <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=notice&wr_id=33';"><div id="div_img"> <img src="img/main_ad_08.jpg"> </div></li>
+      <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=music_90s';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_06.jpg"> </div></li>
+      <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=radio';"><div id="div_img" style="top:-20px"> <img src="img/main_ad_05.png"> </div> </li>
+      <li class="mySlides" onclick="location.href='http://hanalum.kr/bbs/board.php?bo_table=vietnam';"><div id="div_img" > <img src="img/main_ad_04.png"> </div></li>
+    </ul>
+    <p class="pos">
+      <label for="pos1"></label>
+      <label for="pos2"></label>
+      <label for="pos3"></label>
+      <label for="pos4"></label>
+    </p>
+  </div>
 </div>
 
 <script>
