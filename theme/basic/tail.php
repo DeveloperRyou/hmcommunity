@@ -35,7 +35,7 @@ if (G5_IS_MOBILE) {
             </div>
             <?php
 
-            echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
+            //echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
         echo "</div>";
     }
     ?>
