@@ -90,8 +90,8 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     <nav id="gnb">
         <h2>메인메뉴</h2>
         <div class="gnb_wrap">
-            <ul id="gnb_1dul">
-                <li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only">전체메뉴열기</span></button></li>
+            <ul id="gnb_1dul" style="background: #6751c6;">
+                <li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn" style="background: #a59df1;"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only">전체메뉴열기</span></button></li>
                 <?php
                 $sql = " select *
                             from {$g5['menu_table']}
