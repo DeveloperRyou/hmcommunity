@@ -60,7 +60,7 @@ if(G5_IS_HANMINCAMP) {
     <div id="hd_wrapper">
 
         <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>" title style="height:100px"></a>
+            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo_chuseok.png" alt="<?php echo $config['cf_title']; ?>" title style="height:100px"></a>
         </div>
 
         <div class="hd_sch_wr">
