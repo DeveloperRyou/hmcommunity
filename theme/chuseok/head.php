@@ -36,10 +36,22 @@ if(G5_IS_HANMINCAMP) {
     }
     ?>
     <div id="tnb">
+      <?php
+      $nDate = date("Y-m-d",time()); // 오늘 날짜를 출력하겠지요?
+      $valDate = '2019-11-14'; // 폼에서 POST로 넘어온 value 값('yyyy-mm-dd' 형식)
+      $d_day = intval((strtotime($nDate)-strtotime($valDate)) / 86400); // 나머지 날짜값이 나옵니다.
+      if(strcmp($d_day,'0')==0)
+          $d_day = ' Day';
+      $al = '2020 대수능 D';
+      $print = $al.$d_day;
+      ?>
         <ul>
             <!--
             <li><a href="<?php echo G5_BBS_URL?>/current_connect.php"> 현재 접속자 <?php echo connect('theme/basic')+5; //이탈률 방지를 위한 코드 ?> 명</a></li>
             -->
+            <li>
+                <a><?php echo $print ?></a>
+            </li>
             <?php if ($is_member) {  ?>
 
             <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-cog" aria-hidden="true"></i> 정보수정</a></li>
