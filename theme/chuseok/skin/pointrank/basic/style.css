@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* 방문자 집계 */
+#pointrank {background:#fff;position:relative;margin-top: 10px;font: Roboto, sans-serif;}
+#pointrank h2 {display:block;padding:0 20px;line-height:45px;font-size:1.083em;border-bottom:1px solid #979292;color:#ffb528}
+
+#pointrank h2 p{color:#ffb528;display:inline-block;position:relative;margin: 0;}
+#pointrank h2 p:after{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:#ecc42b;content:''}
+
+#pointrank ul {width: 100%;font-family: Roboto, sans-serif;}
+#pointrank li {width: 100%;margin-top: 5px;line-height: 20px;display:none;}
+
+#pointrank .num {position: relative; top: 3px;width: 5%;font-size: 11px;font-weight: 800;display: inline-block;text-align: center;position: relative;left: -1px; color: #ff8518}
+#pointrank .nick {position: relative; top: 3px;width: 29%;font-size: 11.5px;display: inline-block;}
+#pointrank .point {display: inline-block;width: 100%;height: 100%;font-weight: 700;color: #000;text-align: center;background-color: #fda592;border-radius: 9px;}
+#pointrank .point {animation-name: pointanim;animation-duration: 1s;}
+@keyframes pointanim {from { width:0%; }to { width:100%; }}
+#pointrank .point_back {box-shadow: 0 1px 2px rgba(0,0,0,0.1);background-color: #FFF;float: right;width: 62%;display: inline-block;border: 1.7px solid #888;padding: 2px; border-radius: 10px; height: 80%;}
+
+#pointrank_page {background:#fff;position:relative;margin-top: 10px;font: Roboto, sans-serif;}
+#pointrank_page h2 {display:block;padding:0 20px;line-height:45px;font-size:1.083em;border-bottom:1px solid #979292;color:#16b3d6}
+
+#pointrank_page h2 p{color:#16b3d6;display:inline-block;position:relative;margin: 0;}
+#pointrank_page h2 p:after{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:#16b3d6;content:''}
+
+#pointrank_page ul {width: 100%;font-family: Roboto, sans-serif;}
+#pointrank_page li {width: 100%;margin-top: 10px;line-height: 30px;}
+
+#pointrank_page .num {width: 5%;font-size: 11px;font-weight: 800;display: inline-block;text-align: center;position: relative;left: -1px; color: #253dbe}
+#pointrank_page .nick {width: 18%;font-size: 11.5px;display: inline-block;}
+#pointrank_page .point {display: inline-block;width: 100%;height: 100%;font-weight: 700;color: #000;text-align: center;background-color: #92e2fd;border-radius: 9px;}
+#pointrank_page .point {animation-name: pointanim;animation-duration: 1s;}
+@keyframes pointanim {from { width:0%; }to { width:100%; }}
+#pointrank_page .point_back {box-shadow: 0 1px 2px rgba(0,0,0,0.1);background-color: #FFF;width: 75%;display: inline-block;border: 1.7px solid #888;padding: 2px; border-radius: 10px; height: 80%;}
