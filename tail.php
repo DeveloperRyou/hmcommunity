@@ -42,13 +42,13 @@ if (G5_IS_MOBILE) {
             <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=provision">서비스이용약관</a>
             <a href="<?php echo get_device_change_url(); ?>">모바일버전</a>
         </div>
-        <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo.png" alt="<?php echo G5_VERSION ?>"></div>
+        <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo_chuseok.png" alt="<?php echo G5_VERSION ?>"></div>
         <div id="ft_copy">Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.</div>
     </div>
-    
+
     <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
         <script>
-        
+
         $(function() {
             $("#top_btn").on("click", function() {
                 $("html, body").animate({scrollTop:0}, '500');

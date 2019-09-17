@@ -46,14 +46,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <?php }  ?>
 
         </ul>
-  
+
     </div>
     <div id="hd_wrapper">
 
         <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo_chuseok.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
-    
+
         <div class="hd_sch_wr">
             <fieldset id="hd_sch" >
                 <legend>사이트 내 전체검색</legend>
@@ -94,12 +94,12 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 </script>
 
             </fieldset>
-                
+
             <?php echo popular(); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
         </div>
 
     </div>
-    
+
     <nav id="gnb">
         <h2>메인메뉴</h2>
         <div class="gnb_wrap">
@@ -133,7 +133,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
                 $i = 0;
                 foreach( $menu_datas as $row ){
-                    if( empty($row) ) continue; 
+                    if( empty($row) ) continue;
                 ?>
                 <li class="gnb_1dli" style="z-index:<?php echo $gnb_zindex--; ?>">
                     <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
@@ -141,7 +141,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     $k = 0;
                     foreach( (array) $row['sub'] as $row2 ){
 
-                        if( empty($row2) ) continue; 
+                        if( empty($row2) ) continue;
 
                         if($k == 0)
                             echo '<span class="bg">하위분류</span><ul class="gnb_2dul">'.PHP_EOL;
@@ -167,7 +167,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 <h2>전체메뉴</h2>
                 <ul class="gnb_al_ul">
                     <?php
-                    
+
                     $i = 0;
                     foreach( $menu_datas as $row ){
                     ?>
@@ -195,13 +195,13 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     if ($i == 0) {  ?>
                         <li class="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.<?php } ?></li>
                     <?php } ?>
-                </ul> 
+                </ul>
                 <button type="button" class="gnb_close_btn"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
         </div>
     </nav>
     <script>
-    
+
     $(function(){
         $(".gnb_menu_btn").click(function(){
             $("#gnb_all").show();
@@ -221,7 +221,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <!-- 콘텐츠 시작 { -->
 <div id="wrapper">
     <div id="container_wr">
-   
+
     <div id="container">
         <?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php } ?>
-
