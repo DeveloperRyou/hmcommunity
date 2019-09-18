@@ -56,7 +56,7 @@ if (G5_IS_MOBILE) {
             <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=provision">사이트이용약관</a>
             <a href="<?php echo get_device_change_url(); ?>">모바일버전</a>
         </div>
-        <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo.png" alt="<?php echo G5_VERSION ?>" style="height: 100px"></div>
+        <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo_chuseok.png" alt="<?php echo G5_VERSION ?>" style="height: 100px"></div>
         <div id="ft_copy"> 한아름 공식 이메일: hanalumcoop@gmail.com </div>
         <div id="ft_copy">Copyright &copy; <b>hanalum.kr</b> All rights reserved.</div>
     </div>
