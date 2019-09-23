@@ -20,9 +20,9 @@ if(G5_IS_HANMINCAMP) {
   <div id="left_ad">
     <a href = "http://hanalum.kr/bbs/board.php?bo_table=mentor&wr_id=10">
       <div id="div_img">
-          <img src="img/main_ad_07.jpg">
+          <img src="img/main_ad_09.jpg">
       </div>
-    </a> 
+    </a>
   </div>
   <div id="slide" class="slider">
     <input type="radio" name="pos" class="dot" id="pos1">
@@ -31,30 +31,30 @@ if(G5_IS_HANMINCAMP) {
     <input type="radio" name="pos" class="dot" id="pos4">
     <ul class="slideshow-container">
       <a href = "http://hanalum.kr/bbs/board.php?bo_table=notice&wr_id=33">
-        <li class="mySlides">        
-          <div id="div_img"> 
-            <img src="img/main_ad_08.jpg"> 
+        <li class="mySlides">
+          <div id="div_img">
+            <img src="img/main_ad_08.jpg">
           </div>
         </li>
       </a>
-      <a href = "http://hanalum.kr/bbs/board.php?bo_table=music_90s"> 
-        <li class="mySlides"> 
-          <div id="div_img" style="top:-20px"> 
-            <img src="img/main_ad_06.jpg"> 
+      <a href = "http://hanalum.kr/bbs/board.php?bo_table=music_90s">
+        <li class="mySlides">
+          <div id="div_img" style="top:-20px">
+            <img src="img/main_ad_06.jpg">
           </div>
         </li>
       </a>
       <a href ="http://hanalum.kr/bbs/board.php?bo_table=radio">
-        <li class="mySlides"> 
-          <div id="div_img" style="top:-20px"> 
-            <img src="img/main_ad_05.png"> 
-          </div> 
+        <li class="mySlides">
+          <div id="div_img" style="top:-20px">
+            <img src="img/main_ad_05.png">
+          </div>
         </li>
       </a>
       <a href = "http://hanalum.kr/bbs/board.php?bo_table=vietnam">
         <li class="mySlides">
-          <div id="div_img" > 
-            <img src="img/main_ad_04.png"> 
+          <div id="div_img" >
+            <img src="img/main_ad_04.png">
           </div>
         </li>
       </a>
@@ -71,7 +71,7 @@ if(G5_IS_HANMINCAMP) {
 <script>
 var slideIndex = 0;
 var slides = document.getElementsByClassName("mySlides");
-var dots = document.getElementsByClassName("dot");    
+var dots = document.getElementsByClassName("dot");
 
 showSlides();
 
