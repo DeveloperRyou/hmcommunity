@@ -9,7 +9,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$pointrank_skin_url.'/style.css">
 <div id="pointrank_page">
     <h2><a href="<?php echo G5_BBS_URL ?>/pointrank.php"><p>포인트 랭킹</p></a></h2>
     <ul>
-      <?php for($i=0+$page_rows*($page-1);$i<20+$page_rows*($page-1);$i++) {?>
+      <?php for($i=0;$i<20;$i++) {?>
         <li id="page_rank_<?php echo $i+1?>" >
         <div class="num"><?php echo $i+1?></div>
         <div class="nick"><?php echo $mb_nick[$i]?></div>
@@ -19,6 +19,5 @@ add_stylesheet('<link rel="stylesheet" href="'.$pointrank_skin_url.'/style.css">
         </li>
       <?php }?>
     </ul>
-    <?php echo $write_pages;  ?>
 </div>
 <!-- 포인트 랭킹 끝 -->
