@@ -17,14 +17,14 @@ if(G5_IS_HANMINCAMP) {
 
 ?>
 <div id="advertise">
-  <div id="left_ad">
-    <!--    <a href = "http://hanalum.kr/bbs/board.php?bo_table=mentor&wr_id=10">   -->
-      <div id="div_img">
-          <img src="img/main_ad_09.jpg">
-      </div>
-    <!--    </a>    -->
-  </div>
-  <div id="slide" class="slider">
+    <div id="left_ad">
+        <a href = "http://hanalum.kr/bbs/board.php?bo_table=mentor&wr_id=24">
+            <div id="div_img">
+                <img src="img/main_ad_09.jpg">
+            </div>
+        </a>
+    </div>
+    <div id="slide" class="slider">
     <input type="radio" name="pos" class="dot" id="pos1">
     <input type="radio" name="pos" class="dot" id="pos2">
     <input type="radio" name="pos" class="dot" id="pos3">
