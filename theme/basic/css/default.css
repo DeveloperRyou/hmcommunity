@@ -473,7 +473,7 @@ table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 #advertise {height: 300px;margin-bottom: 20px;}
 #left_ad {width: 300px;height: 100%;margin-right: 15px;display: inline-block;}
 #left_ad #div_img{z-index: -1;width: 100%;position: relative;}
-#left_ad img {width: 100%;display: block;margin: auto;border-radius: 10px;}
+#left_ad img {width: 100%;display: block;margin: auto;border-radius: 15px;}
 
 #slide{width: 700px;display: inline-block;height:300px;overflow: hidden;border-radius: 10px;}
 #slide ul{width:400%;height:300px;transition:1s;}

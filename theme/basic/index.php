@@ -18,9 +18,9 @@ if(G5_IS_HANMINCAMP) {
 ?>
 <div id="advertise">
     <div id="left_ad">
-        <a href = "http://hanalum.kr/bbs/board.php?bo_table=mentor&wr_id=24">
+        <a href = "http://www.hanalum.kr/bbs/board.php?bo_table=notice&wr_id=36">
             <div id="div_img">
-                <img src="img/main_ad_09.jpg">
+                <img src="img/main_ad_10.png">
             </div>
         </a>
     </div>
