@@ -16,6 +16,9 @@ if(G5_IS_HANMINCAMP) {
 }
 
 ?>
+<div id="achivement">
+  <?php echo topsuggest("theme/basic", 3, 50); ?>
+</div>
 <div id="advertise">
     <div id="left_ad">
         <a href = "http://www.hanalum.kr/bbs/board.php?bo_table=notice&wr_id=36">
