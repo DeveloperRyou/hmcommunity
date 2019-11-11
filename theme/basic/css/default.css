@@ -490,6 +490,8 @@ table .bgblack{background: rgb(37, 37, 37); text-align: center;}
 #side_ad #ad_img{width:100%;height: 100px;text-align: center;line-height: 100px}
 #side_ad img{height: 100%;vertical-align: middle;}
 
+#achivement {width: 100%;height: 50px;margin-bottom: 10px;}
+
 #advertise {height: 300px;margin-bottom: 20px;}
 #left_ad {width: 300px;height: 100%;margin-right: 15px;display: inline-block;}
 #left_ad #div_img{z-index: -1;width: 100%;position: relative;}
