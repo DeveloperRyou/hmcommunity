@@ -137,30 +137,23 @@ function showSlides() {
 <h2 class="sound_only">최신글</h2>
 
 <div class="latest_wr">
+<?php echo latest('theme/pic_basic', 'tradesunun', 4, 20); ?>
+</div>
+
+<div class="latest_wr">
 <!-- 최신글 시작 { -->
-    <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "notice_council", 5, 30); ?>
-    </div>
-    <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "mentor", 5, 30); ?>
-    </div>
-    <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "suggest_to_hanmin", 5, 30); ?>
-    </div>
-    <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "vietnam", 5, 30); ?>
-    </div>
-    <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "radio", 5, 30); ?>
-    </div>
-    <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "music_90s", 5, 30); ?>
-    </div>
+
     <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "hanminagora", 5, 30); ?>
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
     <?php echo latest("theme/basic", "free_anonymous", 5, 30); ?>
+    </div>
+    <div style="float:left;" class="lt_wr">
+    <?php echo latest("theme/basic", "vietnam", 5, 30); ?>
+    </div>
+    <div style="float:left; margin-left:2%;" class="lt_wr">
+    <?php echo latest("theme/basic", "music_90s", 5, 30); ?>
     </div>
     <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "free_YB", 5, 30); ?>
