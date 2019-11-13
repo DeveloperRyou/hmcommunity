@@ -23,8 +23,8 @@ if (G5_IS_MOBILE) {
 
             echo pointrank('theme/basic', 10, "side"); //포인트랭크 뽑을 인원수
 
-            echo latest("theme/basic", "notice", 3, 12);
-            echo latest("theme/basic", "new", 11, 12); //최근 게시판
+            echo latest("theme/basic", "notice", 3, 15);
+            echo latest("theme/basic", "new", 10, 18); //최근 게시판
             ?>
             <div id="side_ad">
               <ul>
