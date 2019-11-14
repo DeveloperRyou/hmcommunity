@@ -21,9 +21,9 @@ if(G5_IS_HANMINCAMP) {
 </div>
 <div id="advertise">
     <div id="left_ad">
-        <a href = "http://www.hanalum.kr/bbs/board.php?bo_table=notice&wr_id=36">
+        <a href = "http://hanalum.kr/bbs/board.php?bo_table=tradesunun">
             <div id="div_img">
-                <img src="img/main_ad_10.png">
+                <img src="img/main_ad_11.png">
             </div>
         </a>
     </div>
@@ -147,27 +147,17 @@ function showSlides() {
 <!-- 최신글 시작 { -->
 
     <div style="float:left;" class="lt_wr">
-    <?php echo latest("theme/basic", "notice_council", 5, 30); ?>
+    <?php echo latest("theme/basic", "hanminagora", 5, 30); ?>
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "mentor", 5, 30); ?>
+    <?php echo latest("theme/basic", "free_anonymous", 5, 30); ?>
     </div>
     <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "vietnam", 5, 30); ?>
     </div>
     <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "radio", 5, 30); ?>
-    </div>
-    <div style="float:left; " class="lt_wr">
     <?php echo latest("theme/basic", "music_90s", 5, 30); ?>
     </div>
-    <div style="float:left;margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "hanminagora", 5, 30); ?>
-    </div>
-    <!--
-    <div style="float:left; margin-left:2%;" class="lt_wr">
-    <?php echo latest("theme/basic", "free_anonymous", 5, 30); ?>
-    </div>-->
     <div style="float:left;" class="lt_wr">
     <?php echo latest("theme/basic", "free_YB", 5, 30); ?>
     </div>

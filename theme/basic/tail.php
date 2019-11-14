@@ -23,8 +23,8 @@ if (G5_IS_MOBILE) {
 
             echo pointrank('theme/basic', 10, "side"); //포인트랭크 뽑을 인원수
 
-            echo latest("theme/basic", "notice", 3, 12);
-            echo latest("theme/basic", "new", 11, 12); //최근 게시판
+            echo latest("theme/basic", "notice", 3, 15);
+            echo latest("theme/basic", "new", 10, 18); //최근 게시판
             ?>
             <div id="side_ad">
               <ul>
@@ -51,7 +51,7 @@ if (G5_IS_MOBILE) {
 
     <div id="ft_wr">
         <div id="ft_link">
-            <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=company">사이트소개</a>
+            <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=company">한아름소개</a>
             <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=privacy">개인정보처리방침</a>
             <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=provision">사이트이용약관</a>
             <a href="<?php echo get_device_change_url(); ?>">모바일버전</a>
