@@ -5,7 +5,6 @@ if (!defined('_GNUBOARD_')) exit;
 function topsuggest($skin_dir='basic',$num_person=3,$max_achivement=50)
 {
     global $config, $g5;
-
     $sql = "SELECT  wr_good, wr_nogood, wr_name, wr_subject FROM `g5_write_suggest_to_hanmin` ORDER BY `wr_good` - `wr_nogood` DESC LIMIT {$num_person}";
     $result = sql_query($sql);
     for ($i=0; $row=sql_fetch_array($result); $i++) {
@@ -13,7 +12,6 @@ function topsuggest($skin_dir='basic',$num_person=3,$max_achivement=50)
         $wr_subject[$i] = $row['wr_subject'];
         $now_achivement[$i] = $row['wr_good'] - $row['wr_nogood'];
     }
-
 
     if(preg_match('#^theme/(.+)$#', $skin_dir, $match)) {
         if (G5_IS_MOBILE) {
@@ -35,7 +33,6 @@ function topsuggest($skin_dir='basic',$num_person=3,$max_achivement=50)
             $topsuggest_skin_url = G5_SKIN_URL.'/topsuggest/'.$skin_dir;
         }
     }
-
     ob_start();
     include_once ($topsuggest_skin_path.'/topsuggest.skin.php');
     $content = ob_get_contents();
