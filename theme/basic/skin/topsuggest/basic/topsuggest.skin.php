@@ -9,36 +9,22 @@ add_stylesheet('<link rel="stylesheet" href="'.$topsuggest_skin_url.'/style.css"
 
 <!-- 포인트 랭킹 시작 { -->
 <section id="topsuggest">
-    <h2><a href="<?php echo G5_BBS_URL ?>/topsuggest.php"><p>청원게시판</p></a></h2>
+    <!--<h2><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=suggest_to_hanmin"><p>청원게시판</p></a></h2>-->
     <ul>
       <?php for($i=0;$i<$num_person;$i++) {?>
         <li id="top_<?php echo $i+1?>" >
         <div class="nick"><?php echo $wr_name[$i]?></div>
-        <div class="subject"><?php echo $wr_subject[]$i]?></div>
         <div class="achive">
-          <div style="width:<?php echo 100*$now_achivement[$i]/$max_achivement?>%;display:inline-block"><div class="score"><?php echo $now_achivement[$i]?></div></div>
+          <div style="width:<?php echo 100*$now_achivement[$i]/$max_achivement?>%;display:inline-block" class="score">
+          </div>
+          <div class="subject"><?php echo $wr_subject[$i]?></div>
+        </div>
+        <div class="percentage">
+          <?php echo 100*$now_achivement[$i]/$max_achivement?>%
         </div>
         </li>
       <?php }?>
     </ul>
 
-    <script>
-      var before_rank = <?php echo $num_person?>;
-      var now_rank = 1;
-
-      function showamin(){
-        var before_element = document.getElementById("rank_"+before_rank);
-        before_element.style.display = "none";
-        var now_element = document.getElementById("rank_"+now_rank);
-        now_element.style.display = "inline-block";
-
-        before_rank=now_rank;
-        if(now_rank == <?php echo $num_person?>) now_rank = 1;
-        else now_rank = now_rank+1;
-      }
-      showamin();
-      var amin = setInterval(showamin,2500);
-
-    </script>
 </section>
 <!-- 포인트 랭킹 끝 -->
