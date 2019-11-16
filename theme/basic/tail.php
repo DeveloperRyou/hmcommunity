@@ -17,10 +17,9 @@ if (G5_IS_MOBILE) {
             // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
             // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
 
-            //echo latest('theme/notice', 'notice', 4, 13);
             echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
             echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정
-
+            echo weather('theme/basic');
             echo pointrank('theme/basic', 10, "side"); //포인트랭크 뽑을 인원수
 
             echo latest("theme/basic", "notice", 3, 15);

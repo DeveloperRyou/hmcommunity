@@ -1,9 +1,8 @@
 <?php
-//if (!defined('_GNUBOARD_')) exit;
-
+if (!defined('_GNUBOARD_')) exit;
 
 // 방문자수 출력
-function weather($skin_dir='basic',$days=1)
+function weather($skin_dir='basic')
 {
     date_default_timezone_set("Asia/Seoul");
     $timestamp = new DateTime();
@@ -13,13 +12,11 @@ function weather($skin_dir='basic',$days=1)
 
     global $config, $g5;
 
-    $sql = "SELECT api_txt1,api_txt2,api_txt3 FROM `g5_apis` WHERE api_id='weatherforecast' ";
-    $result = sql_query($sql);
-    for ($i=0; $row=sql_fetch_array($result); $i++) {
+    $sql = "SELECT api_txt1,api_txt2,api_txt3 FROM `g5_apis` WHERE api_id='weather' ";
+    $row = sql_fetch($sql);
         $db_today = $row['api_txt1'];
         $main = $row['api_txt2'];
-        $description = $row['api_txt2'];
-    }
+        $description = $row['api_txt3'];
 
     if(strcmp($today,$db_today)==1){
       $jsonfile = file_get_contents("http://api.openweathermap.org/data/2.5/forecast?q=Munemi,KR&units=metric&appid=5c331b6c10405ea2b5c6c670a1814c62");
@@ -32,8 +29,8 @@ function weather($skin_dir='basic',$days=1)
           $description = $value['weather'][0]['description'];
           $sql = " update g5_apis
                       set api_txt1 = '{$today}', api_txt2 = '{$main}', api_txt3 = '{$description}'
-                    where api_id   = 'weatherforecast' ";
-          sql_query($sql);
+                    where api_id   = 'weather' ";
+          sql_fetch($sql);
           break;
         }
       }
@@ -67,5 +64,5 @@ function weather($skin_dir='basic',$days=1)
     ob_end_clean();
 
     return $content;
-}*/
+}
 ?>
